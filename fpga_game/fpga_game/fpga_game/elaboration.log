@@ -1,0 +1,27 @@
+Active-HDL 15.0.261.9132 2026-03-17 16:14:38
+
+Elaboration top modules:
+Verilog Module                tb
+
+
+---------------------------------------------------------------------------------------------
+Verilog Module          | Library   | Info | Compiler Version          | Compilation Options
+---------------------------------------------------------------------------------------------
+tb                      | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+vga_sync_gen            | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+delay                   | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+pong_main               | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+rect_painter            | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+---------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------
+Library                 | Comment
+---------------------------------------------------------------------------------------------
+fpga_game               | None
+---------------------------------------------------------------------------------------------
+
+
+Simulation Options: asim -O5 +access +r +access +r+w tb
+
+
+The performance of simulation is reduced. Version Student Edition

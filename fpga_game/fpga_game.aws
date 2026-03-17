@@ -1,0 +1,11 @@
+[Version]
+Version=15.0
+[Designs]
+fpga_game=.\fpga_game\fpga_game.adf
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+[Expand]
+fpga_game=1
