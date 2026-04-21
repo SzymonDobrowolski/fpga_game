@@ -1,5 +1,6 @@
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/pong_main.v|]
 TemplateId=2
+ActiveDocument=1
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/pll_75mhz.v|]
 TemplateId=2
@@ -7,7 +8,7 @@ tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/pong_top.v|]
 TemplateId=2
 tab=lu
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src\rect_painter.v|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/rect_painter.v|]
 TemplateId=2
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/ddr.v|]
@@ -31,7 +32,15 @@ tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/delay.v|]
 TemplateId=2
 tab=lu
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src\clk_divider.v|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/clk_divider.v|]
 TemplateId=2
-ActiveDocument=1
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/hdmi_i2c_cfg.v|]
+TemplateId=2
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/dev_i2c_phy_scaler.v|]
+TemplateId=2
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/dev_i2c_phy_bit.v|]
+TemplateId=2
 tab=lu
