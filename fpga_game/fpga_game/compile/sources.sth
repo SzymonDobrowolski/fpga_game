@@ -1,6 +1,6 @@
 [Files List]
-C:/Aldec/Active-HDL-Student-Edition/vlib/std/src/standard.vhd=S
-C:/Users/Szym0/Desktop/Github/fpga_game/fpga_game/fpga_game/fpga_game/src/pong_main.v=S
-C:/Users/Szym0/Desktop/Github/fpga_game/fpga_game/fpga_game/fpga_game/src/delay.v=S
-C:/Users/Szym0/Desktop/Github/fpga_game/fpga_game/fpga_game/fpga_game/src/vga_sync_gen.v=S
-C:/Users/Szym0/Desktop/Github/fpga_game/fpga_game/fpga_game/fpga_game/src/tb.v=S
+D:/Aldec Active HDL/vlib/std/src/standard.vhd=S
+D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/pong_main.v=S
+D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/delay.v=S
+D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/vga_sync_gen.v=S
+D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/tb.v=S

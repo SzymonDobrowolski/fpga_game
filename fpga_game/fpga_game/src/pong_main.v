@@ -22,42 +22,39 @@ module pong_main
 	output wire [3:0] LED
   );
   
+  // NAPRAWA B£ÊDU: OpóŸniamy V_CNT o 1 takt zegara
+  reg [10:0] V_CNT_fixed;
+  always @(posedge CLK or posedge RST) begin
+      if (RST) V_CNT_fixed <= 0;
+      else     V_CNT_fixed <= V_CNT;
+  end
+  
   // Wymiary czo³gu
   localparam TANK_W = 5;
   localparam TANK_H = 5;
-
-  // Pozycja czo³gu (rejestry, bo bêd¹ siê zmieniaæ)
-  // Inicjujemy go np. na œrodku ekranu
   reg [10:0] tank_x = SCR_W / 2;
   reg [10:0] tank_y = SCR_H / 2;
 
-  // Logika rysowania: czy piksel nale¿y do czo³gu?
+  // LOGIKA RYSOWANIA (U¿ywa V_CNT_fixed!)
   wire is_tank = (H_CNT >= tank_x) && (H_CNT < tank_x + TANK_W) && 
-  (V_CNT >= tank_y) && (V_CNT < tank_y + TANK_H);
+                 (V_CNT_fixed >= tank_y) && (V_CNT_fixed < tank_y + TANK_H);
   
-// Wymiary lufy (skierowanej w górê)
   localparam PIPE_W = 1;
   localparam PIPE_H = 2;
-  
-  // Pozycja lufy obliczana w locie!
-  // X: œrodek czo³gu (tank_x + po³owa szerokoœci, czyli +2)
-  // Y: nad czo³giem (tank_y minus wysokoœæ lufy)
   wire [10:0] pipe_x = tank_x + 2; 
   wire [10:0] pipe_y = tank_y - PIPE_H; 
 
-  // Logika rysowania lufy
   wire is_pipe = (H_CNT >= pipe_x) && (H_CNT < pipe_x + PIPE_W) && 
-                 (V_CNT >= pipe_y) && (V_CNT < pipe_y + PIPE_H);
+                 (V_CNT_fixed >= pipe_y) && (V_CNT_fixed < pipe_y + PIPE_H);
   
+// T³o to wszystko od 1 do maksymalnej rozdzielczoœci
+  wire is_bg     = (H_CNT >= 1 && H_CNT <= SCR_W) && (V_CNT >= 1 && V_CNT <= SCR_H);
   
- // 1. Definiujemy "strefy" jako sygna³y 1-bitowe (prawda/fa³sz)
-  // Jeœli piksel jest w danym obszarze, sygna³ przyjmie wartoœæ 1.
-  
-  wire is_bg     = (H_CNT >= 0  && H_CNT < 30) && (V_CNT >= 0 && V_CNT < 20);
-  wire is_top    = (H_CNT >= 0  && H_CNT < 30) && (V_CNT >= 0 && V_CNT <= 1);
-  wire is_left   = (H_CNT >= 0  && H_CNT <= 1)  && (V_CNT >= 0 && V_CNT < 20);
-  wire is_right  = (H_CNT >= 29 && H_CNT < 30) && (V_CNT >= 0 && V_CNT < 20); 
-  wire is_down   = (H_CNT >= 0  && H_CNT < 30) && (V_CNT >= 19 && V_CNT < 20);
+  // Gruba ramka (po 2 piksele), œciœle przylegaj¹ca do krawêdzi 1-based
+  wire is_top    = (H_CNT >= 0 && H_CNT <= SCR_W) && (V_CNT >= 0 && V_CNT < 1);
+  wire is_down   = (H_CNT >= 0 && H_CNT <= SCR_W) && (V_CNT >= SCR_H - 1 && V_CNT <= SCR_H);
+  wire is_left   = (H_CNT >= 0 && H_CNT < 1)     && (V_CNT >= 0 && V_CNT <= SCR_H);
+  wire is_right  = (H_CNT >= SCR_W - 1 && H_CNT <= SCR_W) && (V_CNT >= 0 && V_CNT <= SCR_H);
   
 
   // 2. Ustalamy kolor na podstawie tego, w której strefie jesteœmy
@@ -81,9 +78,25 @@ module pong_main
 				   (is_bg)                                    ? 8'h00 : 8'h00;
 
   // 3. Wyprowadzenie na zewn¹trz
-  assign RED   = final_R;
-  assign GREEN = final_G;
-  assign BLUE  = final_B;
+  // Wewnêtrzne rejestry do opóŸnienia sygna³u o 1 takt
+  reg [7:0] r_red, r_green, r_blue;
+
+  always @(posedge CLK or posedge RST) begin
+      if (RST) begin
+          r_red   <= 8'h00;
+          r_green <= 8'h00;
+          r_blue  <= 8'h00;
+      end else begin
+          r_red   <= final_R;
+          r_green <= final_G;
+          r_blue  <= final_B;
+      end
+  end
+
+  // Wyprowadzenie opóŸnionych sygna³ów na zewn¹trz modu³u
+  assign RED   = r_red;
+  assign GREEN = r_green;
+  assign BLUE  = r_blue;
 
   // Constant output 
   //assign RED   = 8'hFF;
