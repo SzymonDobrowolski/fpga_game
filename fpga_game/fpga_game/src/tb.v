@@ -122,18 +122,30 @@ module tb();
   //---------------------------------------
   initial
     begin
-      EncA_QA = 1;
-      EncA_QB = 1;
-      EncB_QA = 1;
-      EncB_QB = 1;
-      #100 
-      EncA_QA = 0;
+	RST = 1'b1;
+    #100 RST = 1'b0;
+    // Symulacja 3 kroków w prawo (oœ X - EncA)
+    #1000; EncA_QA = 0; EncA_QB = 1; // Krok 1
+    #1000; EncA_QA = 0; EncA_QB = 0;
+    #1000; EncA_QA = 1; EncA_QB = 0;
+    #1000; EncA_QA = 1; EncA_QB = 1;
+
+    #1000; EncA_QA = 0; EncA_QB = 1; // Krok 2
+    #1000; EncA_QA = 0; EncA_QB = 0;
+    #1000; EncA_QA = 1; EncA_QB = 0;
+    #1000; EncA_QA = 1; EncA_QB = 1;
+
+    #1000; EncA_QA = 0; EncA_QB = 1; // Krok 3
+    #1000; EncA_QA = 0; EncA_QB = 0;
+    #1000; EncA_QA = 1; EncA_QB = 0;
+    #1000; EncA_QA = 1; EncA_QB = 1;
       file = $fopen("size.txt", "w+");
       $fwrite(file, "%d\n%d\n%d\n", SCR_W, SCR_H, pixel);
       $fclose(file);
       
       // Dodajemy czas dla du¿ej ramki (czekamy 50 mikrosekund)
-      #2000000; 
+      #5000000;
+	  $display("Symulacja zakonczona - sprawdz dane.txt");
       $finish; // Brutalnie koñczymy symulacjê
     end                              
              

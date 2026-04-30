@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2026-04-30 11:52:27
+Active-HDL 15.0.261.9132 2026-04-30 12:54:45
 
 Elaboration top modules:
 Verilog Module                tb
@@ -11,6 +11,7 @@ tb                      | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv
 vga_sync_gen            | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 delay                   | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 pong_main               | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+quad_decoder            | fpga_game |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 ---------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------

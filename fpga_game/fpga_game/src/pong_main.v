@@ -1,115 +1,157 @@
+// =============================================================================
+// MODU£ DEKODERA ENKODERA KWADRATUROWEGO
+// =============================================================================
+module quad_decoder(
+    input wire clk,
+    input wire a,
+    input wire b,
+    output reg step_up,
+    output reg step_down
+);
+    reg a_delayed, b_delayed;
+    always @(posedge clk) begin
+        a_delayed <= a;
+        b_delayed <= b;
+        step_up   <= (a ^ b_delayed) && (a != a_delayed);   
+        step_down <= (a ^ b_delayed) == 0 && (a != a_delayed); 
+    end
+endmodule
+
+// =============================================================================
+// G£ÓWNY MODU£ GRY - PONG TANK
+// =============================================================================
 module pong_main
 #(
-  parameter SCR_W = 1280,
-  parameter SCR_H = 720
+    parameter SCR_W = 60,
+    parameter SCR_H = 40
 )
 (
-	input wire        CLK, // CLK 75MHz
-	input wire        RST, // Active high reset
+    input wire        CLK,
+    input wire        RST,
   
-	input wire [10:0] H_CNT, // horizontal pixel pointer
-	input wire [10:0] V_CNT, // vertical   pixel pointer
-	
-	input wire        EncA_QA, 
-	input wire        EncA_QB,
-	input wire        EncB_QA,
-	input wire        EncB_QB,
-	
-	output wire [7:0] RED,
-	output wire [7:0] GREEN,
-	output wire [7:0] BLUE,
-	
-	output wire [3:0] LED
-  );
-  
-  // NAPRAWA B£ÊDU: OpóŸniamy V_CNT o 1 takt zegara
-  reg [10:0] V_CNT_fixed;
-  always @(posedge CLK or posedge RST) begin
-      if (RST) V_CNT_fixed <= 0;
-      else     V_CNT_fixed <= V_CNT;
-  end
-  
-  // Wymiary czo³gu
-  localparam TANK_W = 5;
-  localparam TANK_H = 5;
-  reg [10:0] tank_x = SCR_W / 2;
-  reg [10:0] tank_y = SCR_H / 2;
+    input wire [10:0] H_CNT,
+    input wire [10:0] V_CNT,
+    
+    input wire        EncA_QA,
+    input wire        EncA_QB,
+    input wire        EncB_QA,
+    input wire        EncB_QB,
+    
+    output wire [7:0] RED,
+    output wire [7:0] GREEN,
+    output wire [7:0] BLUE,
+    
+    output wire [3:0] LED
+);
 
-  // LOGIKA RYSOWANIA (U¿ywa V_CNT_fixed!)
-  wire is_tank = (H_CNT >= tank_x) && (H_CNT < tank_x + TANK_W) && 
-                 (V_CNT_fixed >= tank_y) && (V_CNT_fixed < tank_y + TANK_H);
-  
-  localparam PIPE_W = 1;
-  localparam PIPE_H = 2;
-  wire [10:0] pipe_x = tank_x + 2; 
-  wire [10:0] pipe_y = tank_y - PIPE_H; 
+    // --- PARAMETRY ---
+    localparam TANK_W = 3;
+    localparam TANK_H = 3;
+    localparam TIME_LIMIT = 5000; 
 
-  wire is_pipe = (H_CNT >= pipe_x) && (H_CNT < pipe_x + PIPE_W) && 
-                 (V_CNT_fixed >= pipe_y) && (V_CNT_fixed < pipe_y + PIPE_H);
-  
-// T³o to wszystko od 1 do maksymalnej rozdzielczoœci
-  wire is_bg     = (H_CNT >= 1 && H_CNT <= SCR_W) && (V_CNT >= 1 && V_CNT <= SCR_H);
-  
-  // Gruba ramka (po 2 piksele), œciœle przylegaj¹ca do krawêdzi 1-based
-  wire is_top    = (H_CNT >= 0 && H_CNT <= SCR_W) && (V_CNT >= 0 && V_CNT < 1);
-  wire is_down   = (H_CNT >= 0 && H_CNT <= SCR_W) && (V_CNT >= SCR_H - 1 && V_CNT <= SCR_H);
-  wire is_left   = (H_CNT >= 0 && H_CNT < 1)     && (V_CNT >= 0 && V_CNT <= SCR_H);
-  wire is_right  = (H_CNT >= SCR_W - 1 && H_CNT <= SCR_W) && (V_CNT >= 0 && V_CNT <= SCR_H);
-  
+    // --- REJESTRY POZYCJI (SHADOW REGISTERS) ---
+    reg [10:0] next_tank_x, next_tank_y;
+    reg [1:0]  next_direction;
+    reg [3:0]  auto_step;
 
-  // 2. Ustalamy kolor na podstawie tego, w której strefie jesteœmy
-  // U¿ywamy operatora warunkowego przypisania: warunek ? wartoœæ_jeœli_prawda : wartoœæ_jeœli_fa³sz
-  
-  wire [7:0] final_R, final_G, final_B;
+    reg [10:0] tank_x, tank_y;
+    reg [1:0]  direction;
 
-  assign final_R = (is_top || is_left || is_right || is_down) ? 8'hFF : 
-                   (is_tank)                                  ? 8'h00 : 
-                   (is_pipe)								  ? 8'h00 :
-				   (is_bg)                                    ? 8'h00 : 8'h00;
-                   
-  assign final_G = (is_top || is_left || is_right || is_down) ? 8'hFF : 
-                   (is_tank)                                  ? 8'hFF : // 8'hFF dla zielonego czo³gu
-                   (is_pipe)								  ? 8'hFF :
-				   (is_bg)                                    ? 8'h00 : 8'h00;
+    // --- LOGIKA CZASU (ANIMACJA) ---
+    reg [26:0] timer;
+    wire tick_sec = (timer == TIME_LIMIT);
 
-  assign final_B = (is_top || is_left || is_right || is_down) ? 8'hFF : 
-                   (is_tank)                                  ? 8'h00 : 
-                   (is_pipe)								  ? 8'h00 :
-				   (is_bg)                                    ? 8'h00 : 8'h00;
+    always @(posedge CLK or posedge RST) begin
+        if (RST) timer <= 0;
+        else if (tick_sec) timer <= 0;
+        else timer <= timer + 1;
+    end
 
-  // 3. Wyprowadzenie na zewn¹trz
-  // Wewnêtrzne rejestry do opóŸnienia sygna³u o 1 takt
-  reg [7:0] r_red, r_green, r_blue;
+    // --- OBLICZANIE RUCHU ---
+    wire rotate_cw, rotate_ccw;
+    quad_decoder dec_rot (.clk(CLK), .a(EncA_QA), .b(EncA_QB), .step_up(rotate_cw), .step_down(rotate_ccw));
 
-  always @(posedge CLK or posedge RST) begin
-      if (RST) begin
-          r_red   <= 8'h00;
-          r_green <= 8'h00;
-          r_blue  <= 8'h00;
-      end else begin
-          r_red   <= final_R;
-          r_green <= final_G;
-          r_blue  <= final_B;
-      end
-  end
+    always @(posedge CLK or posedge RST) begin
+        if (RST) begin
+            next_tank_x <= SCR_W / 2;
+            next_tank_y <= SCR_H / 2;
+            next_direction <= 0;
+            auto_step <= 0;
+        end else begin
+            if (rotate_cw)  next_direction <= next_direction + 1;
+            if (rotate_ccw) next_direction <= next_direction - 1;
 
-  // Wyprowadzenie opóŸnionych sygna³ów na zewn¹trz modu³u
-  assign RED   = r_red;
-  assign GREEN = r_green;
-  assign BLUE  = r_blue;
+            if (tick_sec) begin
+                auto_step <= auto_step + 1;
+                case (auto_step)
+                    0, 1, 2: begin next_direction <= 0; next_tank_y <= next_tank_y - 1; end 
+                    3      : begin next_direction <= 1; end                                 
+                    4, 5, 6: begin next_direction <= 1; next_tank_x <= next_tank_x + 1; end 
+                    7      : begin next_direction <= 2; end                                 
+                    8, 9, 10: begin next_direction <= 2; next_tank_y <= next_tank_y + 1; end 
+                    default: auto_step <= 0;
+                endcase
+            end
+        end
+    end
 
-  // Constant output 
-  //assign RED   = 8'hFF;
-  //assign GREEN = 8'h67;
-  //assign BLUE  = 8'hDF;
-  
-  //-----------------------------------------
-  // assign LED to counter bits to indicate FPGA is working
-  reg [31:0] heartbeat;
-  always@(posedge CLK or posedge RST)
-  if(RST) heartbeat <=             32'd0;
-  else    heartbeat <= heartbeat + 32'd1;
-  
-  assign LED[3:0] = heartbeat[26:23];
-  //-----------------------------------------
+    // --- SYNCHRONIZACJA KLATKI (Shadow Copy) ---
+    wire start_of_frame = (H_CNT == 0 && V_CNT == 0);
+
+    always @(posedge CLK or posedge RST) begin
+        if (RST) begin
+            tank_x    <= SCR_W / 2;
+            tank_y    <= SCR_H / 2;
+            direction <= 0;
+        end else if (start_of_frame) begin
+            tank_x    <= next_tank_x;
+            tank_y    <= next_tank_y;
+            direction <= next_direction;
+        end
+    end
+
+    // --- LOGIKA RYSOWANIA (KOMBINACYJNA - BEZ OPÓNIEÑ) ---
+    // Obliczamy wszystko bezpoœrednio na podstawie H_CNT i V_CNT
+    
+    wire is_bg    = (H_CNT >= 0 && H_CNT < SCR_W) && (V_CNT >= 0 && V_CNT < SCR_H);
+    wire is_frame = is_bg && (V_CNT == 0 || V_CNT == SCR_H-1 || H_CNT == 0 || H_CNT == SCR_W-1);
+
+    wire is_tank  = (H_CNT >= tank_x) && (H_CNT < tank_x + TANK_W) && 
+                    (V_CNT >= tank_y) && (V_CNT < tank_y + TANK_H);
+
+    reg is_pipe;
+    always @(*) begin
+        case (direction)
+            0: is_pipe = (H_CNT == tank_x+1 && V_CNT == tank_y-1);
+            1: is_pipe = (H_CNT == tank_x+3 && V_CNT == tank_y+1);
+            2: is_pipe = (H_CNT == tank_x+1 && V_CNT == tank_y+3);
+            3: is_pipe = (H_CNT == tank_x-1 && V_CNT == tank_y+1);
+            default: is_pipe = 1'b0;
+        endcase
+    end
+
+    // --- KOLORY (TYLKO JEDEN REJESTR WYJŒCIOWY) ---
+    // Ten blok wprowadza tylko 1 takt opóŸnienia, co jest akceptowalne dla SimVid
+    reg [7:0] r_red, r_green, r_blue;
+    always @(posedge CLK) begin
+        if (is_frame) begin
+            r_red <= 8'hFF; r_green <= 8'hFF; r_blue <= 8'hFF;
+        end else if (is_tank || is_pipe) begin
+            r_red <= 8'h00; r_green <= 8'hFF; r_blue <= 8'h00;
+        end else if (is_bg) begin
+            r_red <= 8'h00; r_green <= 8'h00; r_blue <= 8'h00;
+        end else begin
+            r_red <= 8'h00; r_green <= 8'h00; r_blue <= 8'h00;
+        end
+    end
+
+    assign RED   = r_red;
+    assign GREEN = r_green;
+    assign BLUE  = r_blue;
+
+    // --- HEARTBEAT ---
+    reg [31:0] heartbeat;
+    always @(posedge CLK) heartbeat <= heartbeat + 1;
+    assign LED = heartbeat[26:23];
+
 endmodule
