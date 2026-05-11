@@ -1,25 +1,8 @@
 # ELBREAD: Elaboration process.
 # ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: quad_decoder tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
@@ -48,24 +31,25 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Elaboration phase ...
 # SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 56 (100.00%) other processes in SLP
-# SLP: 94 (66.67%) signals in SLP and 47 (33.33%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
+# SLP: Generation phase ... done : 20.7 [s]
+# SLP: Finished : 20.9 [s]
+# SLP: 0 primitives and 54 (100.00%) other processes in SLP
+# SLP: 80 (61.07%) signals in SLP and 47 (35.88%) interface signals
+# ELAB2: Elaboration final pass complete - time: 21.0 [s].
+# KERNEL: SLP loading done - time: 0.1 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4756 kB (elbread=427 elab2=4192 kernel=136 sdf=0)
+# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4891 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:01, czwartek, 30 kwietnia 2026
+#  10:16, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
 run @5sec
-# RUNTIME: Info: RUNTIME_0068 tb.v (135): $finish called.
-# KERNEL: Time: 2000800 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2000800 ns
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
 # VSIM: Simulation has finished.
@@ -75,17 +59,10 @@ alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main
 # Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
 # Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# Compile success 0 Errors 7 Warnings  Analysis time: 1[s].
 # done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
@@ -108,52 +85,26 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.5 [s]
 # SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 56 (100.00%) other processes in SLP
-# SLP: 94 (66.67%) signals in SLP and 47 (33.33%) interface signals
+# SLP: 0 primitives and 55 (100.00%) other processes in SLP
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.6 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4758 kB (elbread=427 elab2=4193 kernel=136 sdf=0)
+# Allocation: Simulator allocated 5465 kB (elbread=427 elab2=4901 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:05, czwartek, 30 kwietnia 2026
+#  10:23, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
 run @5sec
-# RUNTIME: Info: RUNTIME_0068 tb.v (146): $finish called.
-# KERNEL: Time: 2012 us,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012 us
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
 # VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Error: VCP2505 pong_main.v : (113, 10): Duplicate identifier: is_pipe.
-# Info: VCP7802 pong_main.v : (64, 8): ... see previous "is_pipe" declaration.
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Compile failure 1 Errors 5 Warnings  Analysis time: 1[s].
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
 # ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
@@ -163,6 +114,14 @@ asim -O5 +access +r +access +r+w tb
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
 # 
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/pong_main.v
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
 # KERNEL: Main thread initiated.
 # KERNEL: Kernel process initialization phase.
 # ELAB2: Elaboration final pass...
@@ -171,891 +130,23 @@ asim -O5 +access +r +access +r+w tb
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.5 [s]
 # SLP: Finished : 0.6 [s]
 # SLP: 0 primitives and 55 (100.00%) other processes in SLP
-# SLP: 94 (66.20%) signals in SLP and 48 (33.80%) interface signals
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.6 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4757 kB (elbread=427 elab2=4193 kernel=137 sdf=0)
+# Allocation: Simulator allocated 5464 kB (elbread=427 elab2=4900 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:11, czwartek, 30 kwietnia 2026
+#  10:26, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
 run @5sec
-# RUNTIME: Info: RUNTIME_0068 tb.v (146): $finish called.
-# KERNEL: Time: 2012 us,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012 us
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4750 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:15, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4750 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:17, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# RUNTIME: Info: RUNTIME_0068 tb.v (146): $finish called.
-# KERNEL: Time: 512 us,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 512 us
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-run @5000.512ms
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4751 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:21, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 212100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 212100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-run
-run
-run @5000212.1us
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4751 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:22, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 512100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 512100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4751 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:22, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 1012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 1012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4751 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:23, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-run
-run
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 59 (100.00%) other processes in SLP
-# SLP: 94 (65.28%) signals in SLP and 50 (34.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4751 kB (elbread=427 elab2=4186 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:23, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:30, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:30, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-endsim
-# VSIM: Simulation has finished.
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:31, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-endsim
-# VSIM: Simulation has finished.
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:33, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Error: VCP2000 pong_main.v : (48, 28): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (49, 28): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (50, 35): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (54, 42): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (55, 32): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (56, 27): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (59, 32): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (60, 27): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (63, 23): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (73, 33): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (104, 55): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (119, 29): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (137, 50): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (138, 23): Syntax error. Unexpected token: =.
-# Error: VCP2000 pong_main.v : (139, 23): Syntax error. Unexpected token: =.
-# Error: VCP2000 pong_main.v : (141, 39): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (149, 27): Syntax error. Unexpected token: [.
-# Error: VCP1023 vga_sync_gen.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 vga_sync_gen.v : (4, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 tb.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 tb.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 ddr.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy_bit.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy_bit.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy_scaler.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy_scaler.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 pll_75mhz.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 uart_rx.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 vo_phy_ddr.v : (6, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 vo_phy_ddr.v : (8, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Compile failure 32 Errors 5 Warnings  Analysis time: 1[s].
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Error: VCP2000 pong_main.v : (64, 44): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (73, 33): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (104, 55): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (119, 29): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (137, 50): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (138, 23): Syntax error. Unexpected token: =.
-# Error: VCP2000 pong_main.v : (139, 23): Syntax error. Unexpected token: =.
-# Error: VCP2000 pong_main.v : (141, 39): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (149, 27): Syntax error. Unexpected token: [.
-# Error: VCP1023 vga_sync_gen.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 vga_sync_gen.v : (4, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 tb.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 tb.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 ddr.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy_bit.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy_bit.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy_scaler.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy_scaler.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 pll_75mhz.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 uart_rx.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 vo_phy_ddr.v : (6, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 vo_phy_ddr.v : (8, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Compile failure 24 Errors 5 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:37, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:37, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:39, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:39, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:40, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 2012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 2012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:40, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
 # KERNEL: Symulacja zakonczona - sprawdz dane.txt
 # RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
 # KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
@@ -1069,8 +160,10 @@ alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main
 # Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
 # Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
 # done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
@@ -1089,117 +182,48 @@ asim -O5 +access +r +access +r+w tb
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 58 (100.00%) other processes in SLP
-# SLP: 84 (62.22%) signals in SLP and 47 (34.81%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4892 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:43, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 5012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Error: VCP2000 pong_main.v : (39, 28): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (40, 28): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (41, 35): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (43, 42): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (44, 32): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (45, 27): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (47, 32): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (48, 27): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (51, 23): Syntax error. Unexpected token: [.
-# Error: VCP2020 pong_main.v : (65, 12): begin...end pair(s) mismatch detected. 1 <end> tokens are missing.
-# Error: VCP2020 pong_main.v : (65, 12): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
-# Error: VCP2000 pong_main.v : (65, 12): Syntax error. Unexpected token: end[_END].
-# Error: VCP2000 pong_main.v : (79, 55): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (91, 11): Syntax error. Unexpected token: always[_ALWAYS].
-# Error: VCP2000 pong_main.v : (97, 93): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (110, 43): Syntax error. Unexpected token: [.
-# Error: VCP2000 pong_main.v : (117, 27): Syntax error. Unexpected token: [.
-# Error: VCP1023 vga_sync_gen.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 vga_sync_gen.v : (4, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 tb.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 tb.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 ddr.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy_bit.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy_bit.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 dev_i2c_phy_scaler.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 dev_i2c_phy_scaler.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 pll_75mhz.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1041 uart_rx.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Error: VCP1023 vo_phy_ddr.v : (6, 22): Compiler directive `default_nettype is not allowed inside a module.
-# Error: VCP1041 vo_phy_ddr.v : (8, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Compile failure 32 Errors 5 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Elaboration phase ... done : 0.0 [s]
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.5 [s]
 # SLP: Finished : 0.6 [s]
 # SLP: 0 primitives and 55 (100.00%) other processes in SLP
-# SLP: 82 (62.60%) signals in SLP and 45 (34.35%) interface signals
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.6 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5454 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
+# Allocation: Simulator allocated 5464 kB (elbread=427 elab2=4900 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:46, czwartek, 30 kwietnia 2026
+#  10:27, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
-run
-restart
-restart
+run @5sec
 endsim
-# KERNEL: stopped at time: 1839888600 ps
+# KERNEL: stopped at time: 2387279400 ps
 # VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Error: VCP5103 pong_main.v : (218, 31): Undeclared identifier: is_bg.
+# Compile failure 1 Errors 7 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
 # ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
@@ -1209,108 +233,28 @@ asim -O5 +access +r +access +r+w tb
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
 # 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 55 (100.00%) other processes in SLP
-# SLP: 82 (62.60%) signals in SLP and 45 (34.35%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5454 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:46, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 5012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 55 (100.00%) other processes in SLP
-# SLP: 82 (62.60%) signals in SLP and 45 (34.35%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5454 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:47, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 5012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 55 (100.00%) other processes in SLP
-# SLP: 82 (62.60%) signals in SLP and 45 (34.35%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5454 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:48, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 5012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
+# ELBREAD: Error: Seek failed: 4294967295, D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\fpga_game\1fpga_game.mgf
+# ELBREAD: Error: Elaboration process completed with errors.
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
 # Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
 # done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
@@ -1333,19 +277,19 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.5 [s]
 # SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 51 (100.00%) other processes in SLP
-# SLP: 77 (58.33%) signals in SLP and 51 (38.64%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# SLP: 0 primitives and 55 (100.00%) other processes in SLP
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.7 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5453 kB (elbread=427 elab2=4888 kernel=136 sdf=0)
+# Allocation: Simulator allocated 5466 kB (elbread=427 elab2=4902 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:50, czwartek, 30 kwietnia 2026
+#  10:31, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
-run
+run @5sec
 # KERNEL: Symulacja zakonczona - sprawdz dane.txt
 # RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
 # KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
@@ -1359,8 +303,10 @@ alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main
 # Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
 # Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
 # done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
@@ -1383,95 +329,21 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.5 [s]
 # SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 51 (100.00%) other processes in SLP
-# SLP: 77 (57.89%) signals in SLP and 52 (39.10%) interface signals
+# SLP: 0 primitives and 55 (100.00%) other processes in SLP
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.6 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5453 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
+# Allocation: Simulator allocated 5465 kB (elbread=427 elab2=4901 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:52, czwartek, 30 kwietnia 2026
+#  10:34, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
-run
+run @5sec
 endsim
-# KERNEL: stopped at time: 934131 ns
-# VSIM: Simulation has finished.
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 51 (100.00%) other processes in SLP
-# SLP: 77 (57.89%) signals in SLP and 52 (39.10%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5453 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:52, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-run
-restart
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 5012100 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 51 (100.00%) other processes in SLP
-# SLP: 77 (57.89%) signals in SLP and 52 (39.10%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.1 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5453 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:53, czwartek, 30 kwietnia 2026
-#  Simulation has been initialized
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
-# done
-endsim
+# KERNEL: stopped at time: 3652935 ns
 # VSIM: Simulation has finished.
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
@@ -1479,8 +351,10 @@ alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main
 # Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
 # Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
 # done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
@@ -1503,19 +377,19 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.5 [s]
 # SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 51 (100.00%) other processes in SLP
-# SLP: 77 (57.89%) signals in SLP and 52 (39.10%) interface signals
+# SLP: 0 primitives and 55 (100.00%) other processes in SLP
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.6 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5453 kB (elbread=427 elab2=4889 kernel=136 sdf=0)
+# Allocation: Simulator allocated 5465 kB (elbread=427 elab2=4901 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:53, czwartek, 30 kwietnia 2026
+#  10:34, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
-run
+run @5sec
 # KERNEL: Symulacja zakonczona - sprawdz dane.txt
 # RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
 # KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
@@ -1523,6 +397,163 @@ run
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
 # VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 53 (100.00%) other processes in SLP
+# SLP: 80 (56.34%) signals in SLP and 58 (40.85%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5462 kB (elbread=427 elab2=4897 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:35, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+endsim
+# KERNEL: stopped at time: 1620920400 ps
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 53 (100.00%) other processes in SLP
+# SLP: 80 (56.34%) signals in SLP and 58 (40.85%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5462 kB (elbread=427 elab2=4897 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:36, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 55 (100.00%) other processes in SLP
+# SLP: 84 (56.38%) signals in SLP and 61 (40.94%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5465 kB (elbread=427 elab2=4901 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:38, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# done
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
@@ -1563,11 +594,274 @@ asim -O5 +access +r +access +r+w tb
 # KERNEL: Kernel process initialization done.
 # Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4891 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:54, czwartek, 30 kwietnia 2026
+#  10:40, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
-run
+run @5sec
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
-# KERNEL: stopped at time: 1997318400 ps
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 59 (100.00%) other processes in SLP
+# SLP: 89 (60.14%) signals in SLP and 55 (37.16%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5469 kB (elbread=427 elab2=4905 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:42, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 60 (100.00%) other processes in SLP
+# SLP: 91 (59.87%) signals in SLP and 57 (37.50%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5473 kB (elbread=427 elab2=4909 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:45, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 tb.v : (96, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 7 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 63 (100.00%) other processes in SLP
+# SLP: 91 (59.48%) signals in SLP and 58 (37.91%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5475 kB (elbread=427 elab2=4910 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:49, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Symulacja zakonczona - sprawdz dane.txt
+# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
+# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
+# KERNEL: stopped at time: 5012100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 63 (100.00%) other processes in SLP
+# SLP: 93 (60.39%) signals in SLP and 61 (39.61%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4768 kB (elbread=427 elab2=4204 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:53, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (156): $finish called.
+# KERNEL: Time: 184100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 184100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 63 (100.00%) other processes in SLP
+# SLP: 93 (60.39%) signals in SLP and 61 (39.61%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4768 kB (elbread=427 elab2=4204 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:54, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (156): $finish called.
+# KERNEL: Time: 184100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 184100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+run @5000184.1us
+endsim
 # VSIM: Simulation has finished.
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
@@ -1586,23 +880,574 @@ asim -O5 +access +r +access +r+w tb
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 54 (100.00%) other processes in SLP
-# SLP: 80 (61.07%) signals in SLP and 47 (35.88%) interface signals
+# SLP: 0 primitives and 63 (100.00%) other processes in SLP
+# SLP: 93 (60.39%) signals in SLP and 61 (39.61%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.1 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 5456 kB (elbread=427 elab2=4891 kernel=136 sdf=0)
+# Allocation: Simulator allocated 4768 kB (elbread=427 elab2=4204 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  12:54, czwartek, 30 kwietnia 2026
+#  10:55, poniedzia쿮k, 11 maja 2026
 #  Simulation has been initialized
 run
-# KERNEL: Symulacja zakonczona - sprawdz dane.txt
-# RUNTIME: Info: RUNTIME_0068 tb.v (149): $finish called.
-# KERNEL: Time: 5012100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#123_3@.
-# KERNEL: stopped at time: 5012100 ns
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (156): $finish called.
+# KERNEL: Time: 184100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 184100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 63 (100.00%) other processes in SLP
+# SLP: 93 (60.39%) signals in SLP and 61 (39.61%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4768 kB (elbread=427 elab2=4204 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:57, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 1604100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 1604100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 63 (100.00%) other processes in SLP
+# SLP: 93 (60.39%) signals in SLP and 61 (39.61%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4768 kB (elbread=427 elab2=4204 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  10:58, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 1604100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 1604100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Error: VCP1023 vga_sync_gen.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
+# Error: VCP1041 vga_sync_gen.v : (4, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 vga_sync_gen.v : (6, 7): Syntax error. Unexpected token: module[_MODULE].
+# Error: VCP2000 vga_sync_gen.v : (45, 11): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 vga_sync_gen.v : (46, 11): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 vga_sync_gen.v : (47, 11): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 vga_sync_gen.v : (48, 11): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 vga_sync_gen.v : (52, 4): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 vga_sync_gen.v : (78, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (89, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (99, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (104, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (111, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (123, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (135, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (147, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (152, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (159, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (164, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (171, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (176, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (181, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (189, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 vga_sync_gen.v : (196, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2020 vga_sync_gen.v : (215, 10): begin...end pair(s) mismatch detected. 2 <end> tokens are missing.
+# Error: VCP2020 vga_sync_gen.v : (215, 10): case/x/z...endcase pair(s) mismatch detected. 1 <endcase> tokens are missing.
+# Error: VCP2020 vga_sync_gen.v : (215, 10): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 vga_sync_gen.v : (215, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1041 tb.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP1023 tb.v : (2, 22): Compiler directive `default_nettype is not allowed inside a module.
+# Error: VCP2000 tb.v : (8, 6): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 tb.v : (18, 6): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 tb.v : (20, 9): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 tb.v : (24, 6): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 tb.v : (45, 13): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 tb.v : (46, 13): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 tb.v : (47, 6): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 tb.v : (55, 33): Syntax error. Unexpected token: pong_vga_sync_gen[_IDENTIFIER].
+# Error: VCP2000 tb.v : (88, 12): Syntax error. Unexpected token: parameter[_PARAMETER].
+# Error: VCP2000 tb.v : (89, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 tb.v : (89, 26): Syntax error. Unexpected token: ).
+# Error: VCP2000 tb.v : (90, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 tb.v : (90, 26): Syntax error. Unexpected token: ).
+# Error: VCP2000 tb.v : (91, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 tb.v : (91, 26): Syntax error. Unexpected token: ).
+# Error: VCP2000 tb.v : (92, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 tb.v : (92, 26): Syntax error. Unexpected token: ,.
+# Error: VCP2000 tb.v : (92, 33): Syntax error. Unexpected token: ).
+# Error: VCP2000 tb.v : (93, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 tb.v : (93, 26): Syntax error. Unexpected token: ,.
+# Error: VCP2000 tb.v : (93, 33): Syntax error. Unexpected token: ).
+# Error: VCP2000 tb.v : (98, 4): Syntax error. Unexpected token: #.
+# Error: VCP2000 tb.v : (99, 21): Syntax error. Unexpected token: ,.
+# Error: VCP2000 tb.v : (101, 4): Syntax error. Unexpected token: ).
+# Error: VCP2000 tb.v : (125, 10): Syntax error. Unexpected token: initial[_INITIAL].
+# Error: VCP2000 tb.v : (163, 6): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 tb.v : (163, 37): Syntax error. Unexpected token: ;.
+# Error: VCP2000 tb.v : (203, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1041 ddr.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 ddr.v : (9, 10): Syntax error. Unexpected token: input[_INPUT].
+# Error: VCP2000 ddr.v : (24, 16): Syntax error. Unexpected token: Inst4_OB[_IDENTIFIER].
+# Error: VCP2000 ddr.v : (27, 25): Syntax error. Unexpected token: Inst3_ODDRXE0[_IDENTIFIER].
+# Error: VCP2000 ddr.v : (30, 23): Syntax error. Unexpected token: scuba_vlo_inst[_IDENTIFIER].
+# Error: VCP2000 ddr.v : (32, 23): Syntax error. Unexpected token: scuba_vhi_inst[_IDENTIFIER].
+# Error: VCP2000 ddr.v : (34, 24): Syntax error. Unexpected token: Inst2_ODDRXE[_IDENTIFIER].
+# Error: VCP2000 ddr.v : (37, 17): Syntax error. Unexpected token: Inst1_OB0[_IDENTIFIER].
+# Error: VCP2000 ddr.v : (50, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1023 dev_i2c_phy.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
+# Error: VCP1041 dev_i2c_phy.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 dev_i2c_phy.v : (72, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (73, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (74, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (75, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (77, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (78, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (79, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (80, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (82, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (84, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (136, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (137, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (139, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (140, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (141, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (142, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (143, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (144, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (146, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (147, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy.v : (151, 26): Syntax error. Unexpected token: scaler[_IDENTIFIER].
+# Error: VCP2000 dev_i2c_phy.v : (163, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (170, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (177, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (183, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (192, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (205, 27): Syntax error. Unexpected token: bit_sender[_IDENTIFIER].
+# Error: VCP2000 dev_i2c_phy.v : (227, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (232, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (237, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy.v : (246, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1023 dev_i2c_phy_bit.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
+# Error: VCP1041 dev_i2c_phy_bit.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 dev_i2c_phy_bit.v : (58, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (59, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (61, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (62, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (63, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (64, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (66, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (67, 5): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 dev_i2c_phy_bit.v : (71, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (75, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (79, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (84, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (89, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (99, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (133, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (167, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (173, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (177, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (181, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (192, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (196, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (200, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (205, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_bit.v : (216, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1023 dev_i2c_phy_scaler.v : (5, 22): Compiler directive `default_nettype is not allowed inside a module.
+# Error: VCP1041 dev_i2c_phy_scaler.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 dev_i2c_phy_scaler.v : (30, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 dev_i2c_phy_scaler.v : (39, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP2000 hdmi_i2c_cfg.v : (42, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 hdmi_i2c_cfg.v : (46, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 hdmi_i2c_cfg.v : (82, 21): Syntax error. Unexpected token: i2c_phy1[_IDENTIFIER].
+# Error: VCP2000 hdmi_i2c_cfg.v : (106, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1041 pll_75mhz.v : (7, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 pll_75mhz.v : (9, 10): Syntax error. Unexpected token: input[_INPUT].
+# Error: VCP2000 pll_75mhz.v : (20, 23): Syntax error. Unexpected token: scuba_vlo_inst[_IDENTIFIER].
+# Error: VCP2000 pll_75mhz.v : (22, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (23, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (24, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (25, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (26, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (27, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (28, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (29, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (30, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (31, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (32, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (33, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (34, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (35, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (36, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (37, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (38, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (39, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (40, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (41, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (42, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (43, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (44, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (45, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (46, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (47, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (48, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (49, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (50, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (51, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (52, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (53, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (54, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (55, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (56, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (57, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (58, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (59, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (60, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (61, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (62, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (63, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (64, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (65, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (66, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (67, 13): Syntax error. Unexpected token: defparam[_DEFPARAM].
+# Error: VCP2000 pll_75mhz.v : (68, 22): Syntax error. Unexpected token: PLLInst_0[_IDENTIFIER].
+# Error: VCP2000 pll_75mhz.v : (103, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP2000 pong_top.v : (31, 7): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 pong_top.v : (37, 21): Syntax error. Unexpected token: pong_pll[_IDENTIFIER].
+# Error: VCP2000 pong_top.v : (41, 7): Syntax error. Unexpected token: wire[_WIRE].
+# Error: VCP2000 pong_top.v : (57, 33): Syntax error. Unexpected token: pong_vga_sync_gen[_IDENTIFIER].
+# Error: VCP2000 pong_top.v : (91, 13): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 pong_top.v : (92, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 pong_top.v : (92, 26): Syntax error. Unexpected token: ).
+# Error: VCP2000 pong_top.v : (93, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 pong_top.v : (93, 26): Syntax error. Unexpected token: ).
+# Error: VCP2000 pong_top.v : (94, 10): Syntax error. Unexpected token: #.
+# Error: VCP2000 pong_top.v : (94, 26): Syntax error. Unexpected token: ).
+# Error: VCP2000 pong_top.v : (99, 4): Syntax error. Unexpected token: #.
+# Error: VCP2000 pong_top.v : (100, 20): Syntax error. Unexpected token: ,.
+# Error: VCP2000 pong_top.v : (102, 4): Syntax error. Unexpected token: ).
+# Error: VCP2000 pong_top.v : (127, 29): Syntax error. Unexpected token: pong_vo_phy_ddr[_IDENTIFIER].
+# Error: VCP2000 pong_top.v : (151, 33): Syntax error. Unexpected token: pong_hdmi_i2c_cfg[_IDENTIFIER].
+# Error: VCP2000 pong_top.v : (158, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1041 uart_rx.v : (1, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 uart_rx.v : (36, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (37, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (38, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (39, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (40, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (41, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (42, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (43, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (44, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (45, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (46, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (47, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_rx.v : (51, 4): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 uart_rx.v : (63, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (64, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (67, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (76, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (81, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (100, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (114, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (121, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_rx.v : (129, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP2000 uart_tx.v : (20, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (21, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (22, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (23, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (24, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (25, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (26, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (27, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (28, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (29, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (30, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (31, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (32, 9): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 uart_tx.v : (35, 4): Syntax error. Unexpected token: reg[_REG].
+# Error: VCP2000 uart_tx.v : (47, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_tx.v : (52, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_tx.v : (73, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_tx.v : (78, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_tx.v : (85, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 uart_tx.v : (102, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP1023 vo_phy_ddr.v : (6, 22): Compiler directive `default_nettype is not allowed inside a module.
+# Error: VCP1041 vo_phy_ddr.v : (8, 11): Compiler directive `timescale is not allowed inside a module. Use "-err VCP1041 W1" to suppress this error.
+# Error: VCP2000 vo_phy_ddr.v : (55, 9): Syntax error. Unexpected token: generate[_GENERATE]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2020 vo_phy_ddr.v : (114, 12): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 vo_phy_ddr.v : (114, 12): Syntax error. Unexpected token: endgenerate[_ENDGENERATE]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 rect_painter.v : (3, 27): Syntax error. Unexpected token: ,.
+# Error: VCP2000 rect_painter.v : (3, 40): Syntax error. Unexpected token: ,.
+# Error: VCP2000 rect_painter.v : (4, 6): Syntax error. Unexpected token: ).
+# Error: VCP2020 rect_painter.v : (27, 10): module/macromodule...endmodule pair(s) mismatch detected. 1 <module/macromodule> tokens are missing.
+# Error: VCP2000 rect_painter.v : (27, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Error: VCP2000 clk_divider.v : (14, 7): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 clk_divider.v : (27, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Compile failure 257 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 68 (100.00%) other processes in SLP
+# SLP: 97 (57.40%) signals in SLP and 71 (42.01%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4776 kB (elbread=427 elab2=4212 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  11:01, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 1604100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 1604100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+run @5001604.1us
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 68 (100.00%) other processes in SLP
+# SLP: 97 (57.74%) signals in SLP and 71 (42.26%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4774 kB (elbread=427 elab2=4210 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  11:04, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 1604100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 1604100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/tb.v
+# Unit top modules: tb.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 68 (100.00%) other processes in SLP
+# SLP: 97 (57.74%) signals in SLP and 71 (42.26%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4778 kB (elbread=427 elab2=4214 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  11:05, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 2204100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 2204100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 68 (100.00%) other processes in SLP
+# SLP: 97 (57.74%) signals in SLP and 71 (42.26%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4774 kB (elbread=427 elab2=4210 kernel=136 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  11:05, poniedzia쿮k, 11 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 11304100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 11304100 ns
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
 # VSIM: Simulation has finished.

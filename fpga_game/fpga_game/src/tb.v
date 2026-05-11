@@ -25,6 +25,7 @@ module tb();
   reg        EncA_QB;
   reg        EncB_QA;
   reg        EncB_QB;
+  reg 		 BTN_SHOOT;
   
   wire       VID_HSYNC;
   wire       VID_VSYNC;
@@ -114,40 +115,47 @@ module tb();
     .EncA_QB(EncA_QB),   // encoder A input
     .EncB_QA(EncB_QA),   // encoder B input
     .EncB_QB(EncB_QB),   // encoder B input
+	.BTN_SHOOT(BTN_SHOOT),
 
     .LED    (LED)        // general purpose LED output
     );   
   //---------------------------------------
   // encoders signals generation
   //---------------------------------------
-  initial
-    begin
-	RST = 1'b1;
-    #100 RST = 1'b0;
-    // Symulacja 3 kroków w prawo (oœ X - EncA)
-    #1000; EncA_QA = 0; EncA_QB = 1; // Krok 1
-    #1000; EncA_QA = 0; EncA_QB = 0;
-    #1000; EncA_QA = 1; EncA_QB = 0;
-    #1000; EncA_QA = 1; EncA_QB = 1;
+  initial begin
+        // 1. Stan pocz¹tkowy
+        RST = 1'b1;
+        BTN_SHOOT = 1'b0;
+        EncA_QA = 1'b0; EncA_QB = 1'b0;
+        EncB_QA = 1'b0; EncB_QB = 1'b0;
 
-    #1000; EncA_QA = 0; EncA_QB = 1; // Krok 2
-    #1000; EncA_QA = 0; EncA_QB = 0;
-    #1000; EncA_QA = 1; EncA_QB = 0;
-    #1000; EncA_QA = 1; EncA_QB = 1;
+        #100;
+        RST = 1'b0;
 
-    #1000; EncA_QA = 0; EncA_QB = 1; // Krok 3
-    #1000; EncA_QA = 0; EncA_QB = 0;
-    #1000; EncA_QA = 1; EncA_QB = 0;
-    #1000; EncA_QA = 1; EncA_QB = 1;
-      file = $fopen("size.txt", "w+");
-      $fwrite(file, "%d\n%d\n%d\n", SCR_W, SCR_H, pixel);
-      $fclose(file);
-      
-      // Dodajemy czas dla du¿ej ramki (czekamy 50 mikrosekund)
-      #5000000;
-	  $display("Symulacja zakonczona - sprawdz dane.txt");
-      $finish; // Brutalnie koñczymy symulacjê
-    end                              
+        // 2. Czekamy na zakoñczenie automatycznej sekwencji czo³gu 
+        // 1 000 000 jednostek czasu da mu swobodnie dojechaæ do punktu strza³u
+        #1000000;
+
+        // 3. Rêczny strza³ w mur!
+        BTN_SHOOT = 1'b1;
+        #2000; 
+        BTN_SHOOT = 1'b0;
+
+        // 4. Czekamy, a¿ pocisk doleci i zniszczy œcianê
+        // Pocisk leci szybciej, ale wci¹¿ potrzebuje czasu na przebycie ekranu
+        #300000;
+
+        // 5. Strzelamy drugi raz (w pust¹ przestrzeñ po murze)
+        BTN_SHOOT = 1'b1;
+        #2000;
+        BTN_SHOOT = 1'b0;
+
+        // 6. Czekamy, a¿ drugi pocisk przeleci
+        #10000000;
+
+        $display("Koniec strzelaniny! Odpal SimVid i sprawdz.");
+        $finish; 
+    end                             
              
   //---------------------------------------
   // screen memory

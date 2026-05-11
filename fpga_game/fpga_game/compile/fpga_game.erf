@@ -3,3 +3,4 @@ WARNING VCP2515 "Undefined module: ODDRXE was used. Port connection rules will n
 WARNING VCP2515 "Undefined module: VLO was used. Port connection rules will not be checked at such instantiations." "D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/ddr.v" 30 40
 WARNING VCP2515 "Undefined module: VHI was used. Port connection rules will not be checked at such instantiations." "D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/ddr.v" 32 40
 WARNING VCP2515 "Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations." "D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/pll_75mhz.v" 87 47
+WARNING VCP2597 "Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT." "D:/Github/FPGA_GAME/fpga_game/fpga_game/fpga_game/src/pong_top.v" 98 1
