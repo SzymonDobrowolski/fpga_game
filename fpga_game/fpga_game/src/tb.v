@@ -122,8 +122,12 @@ module tb();
   //---------------------------------------
   // encoders signals generation
   //---------------------------------------
+ 
+  //---------------------------------------
+  // MEGA-SCENARIUSZ TESTOWY (Przewijanie FSM)
+  //---------------------------------------
   initial begin
-        // 1. Stan pocz¹tkowy
+        $display("Rozpoczynam Mega-Test FSM...");
         RST = 1'b1;
         BTN_SHOOT = 1'b0;
         EncA_QA = 1'b0; EncA_QB = 1'b0;
@@ -132,30 +136,58 @@ module tb();
         #100;
         RST = 1'b0;
 
-        // 2. Czekamy na zakoñczenie automatycznej sekwencji czo³gu 
-        // 1 000 000 jednostek czasu da mu swobodnie dojechaæ do punktu strza³u
-        #1000000;
+        // 1. EKRAN STARTOWY
+        // Gra w³¹cza siê i wisi na bia³ym napisie THE TANK GAME
+        #150000;
+        
+        $display("Wciskam START -> Wchodzimy do Poziomu 1...");
+        BTN_SHOOT = 1'b1; #2000; BTN_SHOOT = 1'b0;
 
-        // 3. Rêczny strza³ w mur!
-        BTN_SHOOT = 1'b1;
-        #2000; 
-        BTN_SHOOT = 1'b0;
+        // 2. POZIOM 1
+        // Dajemy grze chwilê na wygenerowanie klatek z map¹ "BliŸniacze Fortece"
+        #200000; 
 
-        // 4. Czekamy, a¿ pocisk doleci i zniszczy œcianê
-        // Pocisk leci szybciej, ale wci¹¿ potrzebuje czasu na przebycie ekranu
-        #300000;
+        $display("CHEAT CODE: Wymuszam ukonczenie Poziomu 1...");
+        // Sztucznie ustawiamy, ¿e to ju¿ 4 fala i zabiliœmy 4 wrogów
+        force my_pong_inst.current_wave = 4;
+        force my_pong_inst.enemies_killed = 4;
+        #20000; // Czekamy, a¿ FSM to zauwa¿y i zmieni stan
+        release my_pong_inst.current_wave;
+        release my_pong_inst.enemies_killed;
 
-        // 5. Strzelamy drugi raz (w pust¹ przestrzeñ po murze)
-        BTN_SHOOT = 1'b1;
-        #2000;
-        BTN_SHOOT = 1'b0;
+        // 3. EKRAN VICTORY (Zakoñczenie Poziomu)
+        // Ekran robi siê zielony, widzimy napis VICTORY
+        #150000; 
+        
+        $display("Wciskam START -> Wchodzimy do Poziomu 2...");
+        BTN_SHOOT = 1'b1; #2000; BTN_SHOOT = 1'b0;
 
-        // 6. Czekamy, a¿ drugi pocisk przeleci
-        #10000000;
+        // 4. POZIOM 2
+        // Ogl¹damy zupe³nie now¹ mapê (korytarz poziom-pion)
+        #200000; 
 
-        $display("Koniec strzelaniny! Odpal SimVid i sprawdz.");
-        $finish; 
-    end                             
+        $display("CHEAT CODE: Wymuszam Game Over na Poziomie 2...");
+        // Zerujemy ¿ycia i rêcznie przepychamy FSM do stanu pora¿ki
+        force my_pong_inst.lives = 0;
+        force my_pong_inst.state = 3'd4; // 3'd4 to STATE_GAMEOVER
+        #20000;
+        release my_pong_inst.lives;
+        release my_pong_inst.state;
+
+        // 5. EKRAN GAME OVER
+        // Ekran robi siê czerwony, widzimy napis GAME OVER
+        #150000; 
+        
+        $display("Wciskam START -> Powrot do ekranu tytulowego...");
+        BTN_SHOOT = 1'b1; #2000; BTN_SHOOT = 1'b0;
+
+        // 6. EKRAN STARTOWY PONOWNIE
+        // Upewniamy siê, ¿e gra poprawnie zresetowa³a ca³¹ pêtlê
+        #150000;
+        
+        $display("Koniec symulacji. Odpal SimVid!");
+        $finish;
+    end                 
              
   //---------------------------------------
   // screen memory

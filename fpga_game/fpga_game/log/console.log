@@ -30,25 +30,29 @@ asim -O5 +access +r +access +r+w tb
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Elaboration phase ... done : 0.0 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 1.1 [s]
-# SLP: Finished : 1.2 [s]
-# SLP: 0 primitives and 68 (100.00%) other processes in SLP
-# SLP: 97 (57.74%) signals in SLP and 71 (42.26%) interface signals
-# ELAB2: Elaboration final pass complete - time: 1.3 [s].
-# KERNEL: SLP loading done - time: 0.1 [s].
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.6 [s]
+# SLP: 0 primitives and 83 (100.00%) other processes in SLP
+# SLP: 110 (53.40%) signals in SLP and 96 (46.60%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.7 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4774 kB (elbread=427 elab2=4210 kernel=136 sdf=0)
+# Allocation: Simulator allocated 4819 kB (elbread=427 elab2=4255 kernel=136 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  13:46, wtorek, 12 maja 2026
+#  14:38, wtorek, 12 maja 2026
 #  Simulation has been initialized
 run @5sec
+# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
+# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
+# KERNEL: Time: 11304100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
+# KERNEL: stopped at time: 11304100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
-# KERNEL: stopped at time: 5578524600 ps
 # VSIM: Simulation has finished.
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
@@ -79,24 +83,255 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Elaboration phase ...
 # SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 77 (100.00%) other processes in SLP
+# SLP: 103 (48.36%) signals in SLP and 110 (51.64%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.7 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4835 kB (elbread=427 elab2=4270 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  14:43, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+endsim
+# KERNEL: stopped at time: 9020497200 ps
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 70 (100.00%) other processes in SLP
+# SLP: 104 (51.23%) signals in SLP and 99 (48.77%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.7 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4833 kB (elbread=427 elab2=4268 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  14:49, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+endsim
+# KERNEL: stopped at time: 8087739 ns
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 70 (100.00%) other processes in SLP
+# SLP: 104 (51.23%) signals in SLP and 99 (48.77%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4833 kB (elbread=427 elab2=4268 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  14:50, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+endsim
+# KERNEL: stopped at time: 2540993400 ps
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 70 (100.00%) other processes in SLP
+# SLP: 108 (51.92%) signals in SLP and 100 (48.08%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.8 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4833 kB (elbread=427 elab2=4269 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  14:54, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+endsim
+# KERNEL: stopped at time: 4066728600 ps
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 70 (100.00%) other processes in SLP
+# SLP: 107 (51.44%) signals in SLP and 101 (48.56%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.7 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4835 kB (elbread=427 elab2=4271 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  14:58, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+endsim
+# KERNEL: stopped at time: 7183195800 ps
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.6 [s]
 # SLP: Finished : 0.7 [s]
 # SLP: 0 primitives and 76 (100.00%) other processes in SLP
-# SLP: 104 (58.10%) signals in SLP and 75 (41.90%) interface signals
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.7 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4787 kB (elbread=427 elab2=4223 kernel=136 sdf=0)
+# Allocation: Simulator allocated 4855 kB (elbread=427 elab2=4290 kernel=137 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  13:55, wtorek, 12 maja 2026
+#  15:02, wtorek, 12 maja 2026
 #  Simulation has been initialized
 run @5sec
 endsim
-# KERNEL: stopped at time: 5409683400 ps
+# KERNEL: stopped at time: 9181411800 ps
 # VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
+# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
@@ -126,34 +361,28 @@ asim -O5 +access +r +access +r+w tb
 # SLP: Elaboration phase ...
 # SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 80 (100.00%) other processes in SLP
-# SLP: 106 (56.08%) signals in SLP and 83 (43.92%) interface signals
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
 # ELAB2: Elaboration final pass complete - time: 0.7 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4796 kB (elbread=427 elab2=4232 kernel=136 sdf=0)
+# Allocation: Simulator allocated 4856 kB (elbread=427 elab2=4291 kernel=137 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  13:59, wtorek, 12 maja 2026
+#  15:07, wtorek, 12 maja 2026
 #  Simulation has been initialized
 run @5sec
+# KERNEL: Rozpoczynam symulacje...
+# KERNEL: RST zwolniony. Stan: START_SCREEN
+# KERNEL: Wcisniecie przycisku: START GRY
+# KERNEL: Wcisniecie przycisku: STRZAL
 endsim
-# KERNEL: stopped at time: 4870027800 ps
+# KERNEL: stopped at time: 2029189800 ps
 # VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
-# done
 asim -O5 +access +r +access +r+w tb
 # ELBREAD: Elaboration process.
 # ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
@@ -170,28 +399,180 @@ asim -O5 +access +r +access +r+w tb
 # KERNEL: Time resolution set to 100ps.
 # ELAB2: Create instances complete.
 # SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 79 (100.00%) other processes in SLP
-# SLP: 106 (56.08%) signals in SLP and 83 (43.92%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.7 [s].
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4797 kB (elbread=427 elab2=4232 kernel=136 sdf=0)
+# Allocation: Simulator allocated 4856 kB (elbread=427 elab2=4291 kernel=137 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  14:05, wtorek, 12 maja 2026
+#  15:07, wtorek, 12 maja 2026
 #  Simulation has been initialized
 run @5sec
-# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
-# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
-# KERNEL: Time: 11304100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
-# KERNEL: stopped at time: 11304100 ns
+# KERNEL: Rozpoczynam symulacje...
+# KERNEL: RST zwolniony. Stan: START_SCREEN
+# KERNEL: Wcisniecie przycisku: START GRY
+# KERNEL: Wcisniecie przycisku: STRZAL
+# KERNEL: Koniec symulacji scenariusza FSM! Generowanie pliku dla SimVid...
+# RUNTIME: Info: RUNTIME_0068 tb.v (173): $finish called.
+# KERNEL: Time: 3254100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#128_3@.
+# KERNEL: stopped at time: 3254100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4856 kB (elbread=427 elab2=4291 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  15:08, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run
+# KERNEL: Rozpoczynam symulacje...
+# KERNEL: RST zwolniony. Stan: START_SCREEN
+# KERNEL: Wcisniecie przycisku: START GRY
+# KERNEL: Wcisniecie przycisku: STRZAL
+endsim
+# KERNEL: stopped at time: 427066200 ps
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4856 kB (elbread=427 elab2=4291 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  15:08, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Rozpoczynam symulacje...
+# KERNEL: RST zwolniony. Stan: START_SCREEN
+# KERNEL: Wcisniecie przycisku: START GRY
+# KERNEL: Wcisniecie przycisku: STRZAL
+endsim
+# KERNEL: stopped at time: 1608268200 ps
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4856 kB (elbread=427 elab2=4291 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  15:08, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run @5sec
+# KERNEL: Rozpoczynam symulacje...
+# KERNEL: RST zwolniony. Stan: START_SCREEN
+# KERNEL: Wcisniecie przycisku: START GRY
+# KERNEL: Wcisniecie przycisku: STRZAL
+endsim
+# KERNEL: stopped at time: 811767 ns
+# VSIM: Simulation has finished.
+asim -O5 +access +r +access +r+w tb
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 100ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4856 kB (elbread=427 elab2=4291 kernel=137 sdf=0)
+# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
+#  15:09, wtorek, 12 maja 2026
+#  Simulation has been initialized
+run
+# KERNEL: Rozpoczynam symulacje...
+# KERNEL: RST zwolniony. Stan: START_SCREEN
+# KERNEL: Wcisniecie przycisku: START GRY
+# KERNEL: Wcisniecie przycisku: STRZAL
+# KERNEL: Koniec symulacji scenariusza FSM! Generowanie pliku dla SimVid...
+# RUNTIME: Info: RUNTIME_0068 tb.v (173): $finish called.
+# KERNEL: Time: 3254100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#128_3@.
+# KERNEL: stopped at time: 3254100 ns
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
 # VSIM: Simulation has finished.
@@ -202,23 +583,9 @@ alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main
 # Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
-# Error: VCP5103 pong_main.v : (158, 37): Undeclared identifier: e_bullet_hits_player.
-# Error: VCP2000 pong_main.v : (178, 54): Syntax error. Unexpected token: ..
-# Error: VCP2000 pong_main.v : (179, 52): Syntax error. Unexpected token: ..
-# Error: VCP5103 pong_main.v : (195, 33): Undeclared identifier: is_wall.
-# Compile failure 4 Errors 6 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
-# Error: VCP5103 pong_main.v : (158, 37): Undeclared identifier: e_bullet_hits_player.
-# Error: VCP2000 pong_main.v : (178, 54): Syntax error. Unexpected token: ..
-# Error: VCP2000 pong_main.v : (179, 52): Syntax error. Unexpected token: ..
-# Error: VCP5103 pong_main.v : (195, 33): Undeclared identifier: is_wall.
-# Compile failure 4 Errors 6 Warnings  Analysis time: 1[s].
+# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
+# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
+# done
 alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
 # Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
 # Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
@@ -246,121 +613,33 @@ asim -O5 +access +r +access +r+w tb
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 4.4 [s]
-# SLP: Finished : 4.5 [s]
-# SLP: 0 primitives and 80 (100.00%) other processes in SLP
-# SLP: 110 (55.84%) signals in SLP and 87 (44.16%) interface signals
-# ELAB2: Elaboration final pass complete - time: 4.5 [s].
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 76 (100.00%) other processes in SLP
+# SLP: 111 (49.33%) signals in SLP and 114 (50.67%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.8 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4807 kB (elbread=427 elab2=4243 kernel=136 sdf=0)
+# Allocation: Simulator allocated 4859 kB (elbread=427 elab2=4294 kernel=137 sdf=0)
 # KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  14:13, wtorek, 12 maja 2026
+#  15:13, wtorek, 12 maja 2026
 #  Simulation has been initialized
-run @5sec
-endsim
-# KERNEL: stopped at time: 10883749800 ps
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 81 (100.00%) other processes in SLP
-# SLP: 110 (55.28%) signals in SLP and 89 (44.72%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.7 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4809 kB (elbread=427 elab2=4245 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  14:20, wtorek, 12 maja 2026
-#  Simulation has been initialized
-run @5sec
-# KERNEL: Koniec strzelaniny! Odpal SimVid i sprawdz.
-# RUNTIME: Info: RUNTIME_0068 tb.v (157): $finish called.
-# KERNEL: Time: 11304100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#125_3@.
-# KERNEL: stopped at time: 11304100 ns
+run
+# KERNEL: Rozpoczynam Mega-Test FSM...
+# KERNEL: Wciskam START -> Wchodzimy do Poziomu 1...
+# KERNEL: CHEAT CODE: Wymuszam ukonczenie Poziomu 1...
+# KERNEL: Wciskam START -> Wchodzimy do Poziomu 2...
+# KERNEL: CHEAT CODE: Wymuszam Game Over na Poziomie 2...
+# KERNEL: Wciskam START -> Powrot do ekranu tytulowego...
+# KERNEL: Koniec symulacji. Odpal SimVid!
+# RUNTIME: Info: RUNTIME_0068 tb.v (189): $finish called.
+# KERNEL: Time: 1046100 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#129_7@.
+# KERNEL: stopped at time: 1046100 ns
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -sv2k17 -work fpga_game $dsn/src/delay.v $dsn/src/pong_main.v $dsn/src/vga_sync_gen.v $dsn/src/tb.v $dsn/src/ddr.v $dsn/src/dev_i2c_phy.v $dsn/src/dev_i2c_phy_bit.v $dsn/src/dev_i2c_phy_scaler.v $dsn/src/hdmi_i2c_cfg.v $dsn/src/pll_75mhz.v $dsn/src/pong_top.v $dsn/src/uart_rx.v $dsn/src/uart_tx.v $dsn/src/vo_phy_ddr.v $dsn/src/rect_painter.v $dsn/src/clk_divider.v
-# Warning: VCP2515 ddr.v : (25, 49): Undefined module: OB was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (28, 25): Undefined module: ODDRXE was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (30, 40): Undefined module: VLO was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 ddr.v : (32, 40): Undefined module: VHI was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2515 pll_75mhz.v : (87, 47): Undefined module: EHXPLLJ was used. Port connection rules will not be checked at such instantiations.
-# Warning: VCP2597 pong_top.v : (98, 1): Some unconnected ports remain at instance: my_pong_inst. Module pong_main has unconnected  port(s) : BTN_SHOOT.
-# Unit top modules: tb pong_top uart_rx uart_tx rect_painter clk_divider.
-# Compile success 0 Errors 6 Warnings  Analysis time: 0[s].
-# done
-asim -O5 +access +r +access +r+w tb
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "delay" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "pong_main" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "quad_decoder" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 100ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.5 [s]
-# SLP: Finished : 0.6 [s]
-# SLP: 0 primitives and 81 (100.00%) other processes in SLP
-# SLP: 110 (55.00%) signals in SLP and 90 (45.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.7 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4810 kB (elbread=427 elab2=4245 kernel=136 sdf=0)
-# KERNEL: ASDB file was created in location D:\Github\FPGA_GAME\fpga_game\fpga_game\fpga_game\src\wave.asdb
-#  14:24, wtorek, 12 maja 2026
-#  Simulation has been initialized
-run @5sec
-endsim
-# KERNEL: stopped at time: 11283115800 ps
 # VSIM: Simulation has finished.
