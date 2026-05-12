@@ -46,7 +46,7 @@ SimulationAccessNetsModules=
 /vo_phy_ddr.v=-1
 /rect_painter.v=-1
 /clk_divider.v=-1
-/tb.v=-1
+/pong_main.v=-1
 [Files.Data]
 .\src\delay.v=Verilog Source Code
 .\src\pong_main.v=Verilog Source Code
@@ -64,7 +64,7 @@ SimulationAccessNetsModules=
 .\src\vo_phy_ddr.v=Verilog Source Code
 .\src\rect_painter.v=Verilog Source Code
 .\src\clk_divider.v=Verilog Source Code
-.\src\tb.v=Verilog Source Code
+.\src\pong_main.v=Verilog Source Code
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel
