@@ -6,9 +6,9 @@ FileTimeLow=2640408057
 FileTimeHigh=31250549
 Status=Compiled
 [COMPILESTATUS|.\src\pong_main.v]
-FileTimeLow=3624815746
-FileTimeHigh=31253007
-Status=Compiled
+FileTimeLow=2931762243
+FileTimeHigh=31255399
+Status=Modified
 [COMPILESTATUS|.\src\vga_sync_gen.v]
 FileTimeLow=2640485109
 FileTimeHigh=31250549
@@ -24,7 +24,7 @@ WindowWorkspaceInfo="LAAAAAAAAAADAAAA/////////////////////ykBAACZAAAA/wUAAIICAAA
 [COMPILESTATUS|.\src\tb.v]
 FileTimeLow=1790056610
 FileTimeHigh=31253009
-Status=Modified
+Status=Compiled
 [COMPILESTATUS|.\src\ddr.v]
 FileTimeLow=2640408057
 FileTimeHigh=31250549
@@ -88,8 +88,8 @@ WindowWorkspaceInfo="LAAAAAAAAAADAAAA/////////////////////ykBAACZAAAA/wUAAIICAAA
 [Gui config]
 RunFor=5 sec
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\fpga_game\src/pong_main.v|]
-CurrentLine=478
-CurrentColumn=93
+CurrentLine=229
+CurrentColumn=120
 Bookmarks=-1
 BookmarksLength=3
 ZoomFactor=0

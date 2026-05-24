@@ -17,12 +17,13 @@ module quad_decoder(
 endmodule
 
 // =============================================================================
-// G£ÓWNY MODU£ GRY - PONG TANK (Odbugowana Fizyka i FSM)
+// G£ÓWNY MODU£ GRY - PONG TANK (Final Version v1.0)
 // =============================================================================
 module pong_main
 #(
     parameter SCR_W = 60,
-    parameter SCR_H = 40
+    parameter SCR_H = 40,
+    parameter SIM_MODE = 1  // ZMIEÑ NA 0 PRZED WGRANIEM NA FIZYCZNE FPGA!
 )
 (
     input wire        CLK,
@@ -37,7 +38,10 @@ module pong_main
     output wire [3:0] LED
 );
 
-    localparam TANK_W = 3, TANK_H = 3, TIME_LIMIT = 5000; 
+    // --- AUTOMATYCZNA KONTROLA CZASU (Sim vs Hardware) ---
+    localparam TANK_W = 3, TANK_H = 3; 
+    localparam TIME_LIMIT = SIM_MODE ? 5000 : 1250000; 
+    localparam DEMO_WAIT  = SIM_MODE ? 150000 : 750000000; 
     
     localparam STATE_START       = 3'd0;
     localparam STATE_LOAD_LEVEL  = 3'd1;
@@ -53,10 +57,13 @@ module pong_main
     reg [1:0]  current_level;
     reg [2:0]  current_wave;
     reg [2:0]  enemies_killed;
+    
+    reg        demo_mode;
+    reg [31:0] idle_timer;
 
     reg [10:0] tank_x, tank_y, next_tank_x, next_tank_y;
     reg [1:0]  direction, next_direction;
-    reg [3:0]  auto_step;
+    reg [3:0]  p_step; // Zmienna kroków dla AI Gracza w trybie Demo
 
     reg [10:0] enemy_x [0:3], next_enemy_x [0:3], enemy_y [0:3], next_enemy_y [0:3];
     reg [1:0]  enemy_dir [0:3], next_enemy_dir [0:3];
@@ -77,7 +84,7 @@ module pong_main
     reg [59:0] map_vram [0:39]; 
     integer i, r, c;
 
-    // --- ZEGARY ---
+    // --- ZEGARY I MIGACZ ---
     reg [26:0] timer, bullet_timer;
     reg [31:0] heartbeat; 
     
@@ -113,14 +120,13 @@ module pong_main
         endcase
     end
 
-    // --- STEROWANIE ---
+    // --- STEROWANIE I DEMO AI ---
     wire rotate_cw, rotate_ccw;
     quad_decoder dec_rot (.clk(CLK), .a(EncA_QA), .b(EncA_QB), .step_up(rotate_cw), .step_down(rotate_ccw));
-    wire auto_shoot_trigger = (tick_sec && auto_step == 11);
-    wire fire_cmd = (BTN_SHOOT || auto_shoot_trigger);
+    
+    wire fire_cmd = demo_mode ? (tick_sec && (lfsr[11:9] == 3'b111)) : BTN_SHOOT;
 
-    // --- SYSTEM KOLIZJI (GRACZ I WROGOWIE) ---
-    // Gracz
+    // --- SYSTEM KOLIZJI ---
     reg [10:0] p_pipe_x, p_pipe_y;
     always @(*) begin
         case (next_direction)
@@ -140,10 +146,8 @@ module pong_main
                      map_vram[next_tank_y+1][next_tank_x] | map_vram[next_tank_y+1][next_tank_x+1] | map_vram[next_tank_y+1][next_tank_x+2] |
                      map_vram[next_tank_y+2][next_tank_x] | map_vram[next_tank_y+2][next_tank_x+1] | map_vram[next_tank_y+2][next_tank_x+2]) : 1'b0;
     wire p_col_wall = (p_pipe_y < 40 && p_pipe_x < 60) ? map_vram[p_pipe_y][p_pipe_x] : 1'b0;
-    
     wire collision = col_frame || col_wall || p_col_frame || p_col_wall;
 
-    // Wrogowie
     reg enemy_collision [0:3];
     reg [10:0] ex, ey, epx, epy;
     reg ec_f, ec_w, epc_f, epc_w, ec_p;
@@ -162,14 +166,10 @@ module pong_main
                     default: begin epx = ex; epy = ey; end
                 endcase
                 
-                // Zderzenia z ramkami
                 ec_f = (ex < 1 || ex + TANK_W > SCR_W-1 || ey < 9 || ey + TANK_H > SCR_H-1);
                 epc_f = (epx < 1 || epx >= SCR_W-1 || epy < 9 || epy >= SCR_H-1);
-                
-                // Zderzenia z graczem
                 ec_p = (ex + TANK_W > next_tank_x && ex < next_tank_x + TANK_W && ey + TANK_H > next_tank_y && ey < next_tank_y + TANK_H);
                 
-                // Zderzenia ze œcianami VRAM (Zabezpieczone przed out-of-bounds)
                 ec_w = 0; epc_w = 0;
                 if (ey < 38 && ex < 58) begin
                     ec_w = map_vram[ey][ex] | map_vram[ey][ex+1] | map_vram[ey][ex+2] |
@@ -177,8 +177,6 @@ module pong_main
                            map_vram[ey+2][ex] | map_vram[ey+2][ex+1] | map_vram[ey+2][ex+2];
                 end
                 if (epy < 40 && epx < 60) epc_w = map_vram[epy][epx];
-                
-                // Suma kolizji
                 enemy_collision[e_i] = ec_f | epc_f | ec_w | epc_w | ec_p;
             end
         end
@@ -194,21 +192,38 @@ module pong_main
             current_level <= 1; current_wave <= 1; enemies_killed <= 0;
             enemy_alive <= 0; next_bullet_act <= 0; next_e_bullet_act <= 0;
             trigger_p_respawn <= 0; trigger_wave_spawn <= 0;
+            idle_timer <= 0; demo_mode <= 0;
         end else begin
             trigger_p_respawn <= 0; trigger_wave_spawn <= 0;
 
+            if (demo_mode && (BTN_SHOOT || rotate_cw || rotate_ccw)) begin
+                demo_mode <= 0;
+                state <= STATE_START;
+            end
+
             case (state)
                 STATE_START: begin
-                    lives <= 3; score_tens <= 0; score_ones <= 0; current_level <= 1; 
-                    if (BTN_SHOOT) state <= STATE_LOAD_LEVEL;
+                    lives <= 3; score_tens <= 0; score_ones <= 0; current_level <= 1; demo_mode <= 0;
+                    if (BTN_SHOOT || rotate_cw || rotate_ccw) begin
+                        state <= STATE_LOAD_LEVEL;
+                        idle_timer <= 0;
+                    end else begin
+                        idle_timer <= idle_timer + 1;
+                        if (idle_timer >= DEMO_WAIT) begin
+                            demo_mode <= 1;
+                            state <= STATE_LOAD_LEVEL;
+                            idle_timer <= 0;
+                        end
+                    end
                 end
                 
                 STATE_GAMEOVER, STATE_GAME_CLEAR: begin
-                    if (BTN_SHOOT) state <= STATE_START;
+                    if (demo_mode) begin state <= STATE_START; end
+                    else if (BTN_SHOOT) state <= STATE_START;
                 end
                 
                 STATE_LEVEL_CLEAR: begin
-                    if (BTN_SHOOT) begin
+                    if (demo_mode || BTN_SHOOT) begin
                         if (current_level == 3) state <= STATE_GAME_CLEAR;
                         else begin current_level <= current_level + 1; state <= STATE_LOAD_LEVEL; end
                     end
@@ -223,7 +238,8 @@ module pong_main
                         for (c = 16; c < 21; c = c + 1) begin map_vram[16][c] <= 1; map_vram[24][c] <= 1; end
                         for (c = 39; c < 44; c = c + 1) begin map_vram[16][c] <= 1; map_vram[24][c] <= 1; end
                     end else if (current_level == 2) begin
-                        for (c = 10; c < 50; c = c + 1) if (c < 25 || c > 35) map_vram[20][c] <= 1;
+                        // Œciana zaczyna siê od X=15, daj¹c czo³gowi (X=10) bezpieczny start!
+                        for (c = 15; c < 45; c = c + 1) if (c < 25 || c > 35) map_vram[20][c] <= 1;
                         for (r = 10; r < 35; r = r + 1) if (r < 18 || r > 22) map_vram[r][30] <= 1;
                     end else if (current_level == 3) begin
                         for (r = 12; r < 28; r = r + 1) begin map_vram[r][20] <= 1; map_vram[r][40] <= 1; end
@@ -235,7 +251,6 @@ module pong_main
                 end
                 
                 STATE_PLAY: begin
-                    // Obs³uga Fal
                     if (enemies_killed >= current_wave) begin
                         if (current_wave == 4) state <= STATE_LEVEL_CLEAR;
                         else begin
@@ -307,24 +322,35 @@ module pong_main
     // --- RUCH GRACZA ---
     always @(posedge CLK) begin
         if (state == STATE_START || trigger_p_respawn || trigger_wave_spawn) begin
-            tank_x <= 10; next_tank_x <= 10; tank_y <= 20; next_tank_y <= 20; direction <= 1; next_direction <= 1; auto_step <= 0;
+            tank_x <= 10; next_tank_x <= 10; tank_y <= 20; next_tank_y <= 20; direction <= 1; next_direction <= 1; p_step <= 0;
         end else if (state == STATE_PLAY) begin
-            if (rotate_cw)  next_direction <= next_direction + 1;
-            if (rotate_ccw) next_direction <= next_direction - 1;
-            if (tick_sec) begin
-                auto_step <= auto_step + 1;
-                case (auto_step)
-                    0, 1, 2: begin next_tank_y <= next_tank_y - 1; next_direction <= 0; end
-                    3      : begin next_direction <= 1; end
-                    4, 5, 6: begin next_tank_x <= next_tank_x + 1; next_direction <= 1; end
-                    7      : begin next_direction <= 2; end
-                    8, 9, 10: begin next_tank_y <= next_tank_y + 1; next_direction <= 2; end
-                    11     : begin next_direction <= 1; end
-                    default: auto_step <= 0;
-                endcase
+            if (demo_mode) begin
+                if (tick_sec) begin
+                    if (p_step == 0) begin next_direction <= lfsr[7:6]; p_step <= lfsr[12:10] + 2; end 
+                    else begin
+                        case (next_direction)
+                            0: next_tank_y <= next_tank_y - 1; 1: next_tank_x <= next_tank_x + 1;
+                            2: next_tank_y <= next_tank_y + 1; 3: next_tank_x <= next_tank_x - 1;
+                        endcase
+                        p_step <= p_step - 1;
+                    end
+                end
+            end else begin
+                if (rotate_cw)  next_direction <= next_direction + 1;
+                if (rotate_ccw) next_direction <= next_direction - 1;
+                if (tick_sec) begin
+                    case (direction)
+                        0: next_tank_y <= next_tank_y - 1; 1: next_tank_x <= next_tank_x + 1;
+                        2: next_tank_y <= next_tank_y + 1; 3: next_tank_x <= next_tank_x - 1;
+                    endcase
+                end
             end
+            
             if (start_of_frame) begin
-                if (collision) begin next_tank_x <= tank_x; next_tank_y <= tank_y; next_direction <= direction; end
+                if (collision) begin 
+                    next_tank_x <= tank_x; next_tank_y <= tank_y; next_direction <= direction; 
+                    if (demo_mode) p_step <= 0; 
+                end
                 else begin tank_x <= next_tank_x; tank_y <= next_tank_y; direction <= next_direction; end
             end
         end
@@ -334,18 +360,15 @@ module pong_main
     always @(posedge CLK) begin
         if (state == STATE_START || trigger_wave_spawn) begin
             for (i=0; i<4; i=i+1) begin
-                enemy_x[i] <= 48; next_enemy_x[i] <= 48; 
-                enemy_y[i] <= 12+(i*6); next_enemy_y[i] <= 12+(i*6); 
+                enemy_x[i] <= 48; next_enemy_x[i] <= 48; enemy_y[i] <= 12+(i*6); next_enemy_y[i] <= 12+(i*6); 
                 enemy_dir[i] <= 3; next_enemy_dir[i] <= 3; enemy_step[i] <= 0;
             end
         end else if (state == STATE_PLAY) begin
             if (tick_sec) begin
                 for (i=0; i<4; i=i+1) begin
                     if (enemy_alive[i]) begin
-                        if (enemy_step[i] == 0) begin 
-                            next_enemy_dir[i] <= lfsr[1:0] ^ i[1:0]; 
-                            enemy_step[i] <= lfsr[4:2] + 3; 
-                        end else begin
+                        if (enemy_step[i] == 0) begin next_enemy_dir[i] <= lfsr[1:0] ^ i[1:0]; enemy_step[i] <= lfsr[4:2] + 3; end 
+                        else begin
                             case (next_enemy_dir[i])
                                 0: next_enemy_y[i] <= next_enemy_y[i] - 1; 1: next_enemy_x[i] <= next_enemy_x[i] + 1;
                                 2: next_enemy_y[i] <= next_enemy_y[i] + 1; 3: next_enemy_x[i] <= next_enemy_x[i] - 1;
@@ -359,10 +382,9 @@ module pong_main
                 for (i=0; i<4; i=i+1) begin
                     if (enemy_collision[i]) begin 
                         next_enemy_x[i] <= enemy_x[i]; next_enemy_y[i] <= enemy_y[i]; 
-                        next_enemy_dir[i] <= enemy_dir[i]; enemy_step[i] <= 0; // Wymuszenie szukania trasy
+                        next_enemy_dir[i] <= enemy_dir[i]; enemy_step[i] <= 0; 
                     end else begin 
-                        enemy_x[i] <= next_enemy_x[i]; enemy_y[i] <= next_enemy_y[i]; 
-                        enemy_dir[i] <= next_enemy_dir[i]; 
+                        enemy_x[i] <= next_enemy_x[i]; enemy_y[i] <= next_enemy_y[i]; enemy_dir[i] <= next_enemy_dir[i]; 
                     end
                 end
             end
@@ -390,14 +412,15 @@ module pong_main
                 "6": bitmap = 15'b111_100_111_101_111; "7": bitmap = 15'b111_001_001_010_010;
                 "8": bitmap = 15'b111_101_111_101_111; "9": bitmap = 15'b111_101_111_001_111;
                 "A": bitmap = 15'b010_101_111_101_101; "C": bitmap = 15'b011_100_100_100_011;
-                "E": bitmap = 15'b111_100_110_100_111; "G": bitmap = 15'b011_100_101_101_011;
-                "H": bitmap = 15'b101_101_111_101_101; "I": bitmap = 15'b111_010_010_010_111;
-                "K": bitmap = 15'b101_110_100_110_101; "L": bitmap = 15'b100_100_100_100_111;
-                "M": bitmap = 15'b101_111_101_101_101; "N": bitmap = 15'b111_101_101_101_101;
-                "O": bitmap = 15'b010_101_101_101_010; "P": bitmap = 15'b110_101_110_100_100;
-                "R": bitmap = 15'b110_101_110_101_101; "S": bitmap = 15'b011_100_010_001_110;
-                "T": bitmap = 15'b111_010_010_010_010; "V": bitmap = 15'b101_101_101_101_010;
-                "X": bitmap = 15'b101_101_010_101_101; "Y": bitmap = 15'b101_101_010_010_010;
+                "D": bitmap = 15'b110_101_101_101_110; "E": bitmap = 15'b111_100_110_100_111; 
+                "G": bitmap = 15'b011_100_101_101_011; "H": bitmap = 15'b101_101_111_101_101; 
+                "I": bitmap = 15'b111_010_010_010_111; "K": bitmap = 15'b101_110_100_110_101; 
+                "L": bitmap = 15'b100_100_100_100_111; "M": bitmap = 15'b101_111_101_101_101; 
+                "N": bitmap = 15'b111_101_101_101_101; "O": bitmap = 15'b010_101_101_101_010; 
+                "P": bitmap = 15'b110_101_110_100_100; "R": bitmap = 15'b110_101_110_101_101; 
+                "S": bitmap = 15'b011_100_010_001_110; "T": bitmap = 15'b111_010_010_010_010; 
+                "V": bitmap = 15'b101_101_101_101_010; "X": bitmap = 15'b101_101_010_101_101; 
+                "Y": bitmap = 15'b101_101_010_010_010;
                 default: bitmap = 15'b0;
             endcase
             get_font_pixel = (bitmap >> (14 - (cy * 3 + cx))) & 1'b1;
@@ -421,12 +444,16 @@ module pong_main
     wire [7:0] t_vic = (H_CNT/4==4)? "V": (H_CNT/4==5)? "I": (H_CNT/4==6)? "C": (H_CNT/4==7)? "T": (H_CNT/4==8)? "O": (H_CNT/4==9)? "R": (H_CNT/4==10)? "Y": " ";
     wire is_victory = (state == STATE_LEVEL_CLEAR || state == STATE_GAME_CLEAR) && (V_CNT >= 15 && V_CNT <= 19) && (H_CNT >= 16 && H_CNT <= 43) && (cx_v < 3) ? get_font_pixel(t_vic, cx_v, V_CNT-15) : 0;
 
+    wire [10:0] cx_d = (H_CNT - 4) % 4;
+    wire [7:0] t_demo = (H_CNT/4==1)? "D": (H_CNT/4==2)? "E": (H_CNT/4==3)? "M": (H_CNT/4==4)? "O": " ";
+    wire is_demo_text = demo_mode && (state == STATE_PLAY) && (V_CNT >= 34 && V_CNT <= 38) && (H_CNT >= 4 && H_CNT <= 19) && heartbeat[23] && (cx_d < 3) ? get_font_pixel(t_demo, cx_d, V_CNT-34) : 0;
+
     wire is_score = (H_CNT >= 50 && H_CNT <= 52 && V_CNT >= 2 && V_CNT <= 6) ? get_font_pixel("0"+score_tens, H_CNT-50, V_CNT-2) : (H_CNT >= 54 && H_CNT <= 56 && V_CNT >= 2 && V_CNT <= 6) ? get_font_pixel("0"+score_ones, H_CNT-54, V_CNT-2) : 1'b0;
     
     wire is_h1 = (lives >= 1) && ((V_CNT == 2 && (H_CNT == 3 || H_CNT == 5)) || (V_CNT == 3 && (H_CNT >= 3 && H_CNT <= 5)) || (V_CNT == 4 && H_CNT == 4));
     wire is_h2 = (lives >= 2) && ((V_CNT == 2 && (H_CNT == 7 || H_CNT == 9)) || (V_CNT == 3 && (H_CNT >= 7 && H_CNT <= 9)) || (V_CNT == 4 && H_CNT == 8));
     wire is_h3 = (lives >= 3) && ((V_CNT == 2 && (H_CNT == 11|| H_CNT == 13))|| (V_CNT == 3 && (H_CNT >= 11&& H_CNT <= 13))|| (V_CNT == 4 && H_CNT == 12));
-    wire is_hearts = is_h1 || is_h2 || is_h3;
+    wire is_hearts = (state != STATE_START) && (is_h1 || is_h2 || is_h3);
 
     // --- RYSOWANIE OBIEKTÓW ---
     wire is_bg    = (H_CNT >= 0 && H_CNT < SCR_W) && (V_CNT >= 0 && V_CNT < SCR_H);
@@ -478,6 +505,7 @@ module pong_main
         end else begin 
             if (is_frame) begin r_red <= 8'hFF; r_green <= 8'hFF; r_blue <= 8'hFF; end
             else if (is_score) begin r_red <= 8'hFF; r_green <= 8'hFF; r_blue <= 8'h00; end 
+            else if (is_demo_text) begin r_red <= 8'hFF; r_green <= 8'hFF; r_blue <= 8'hFF; end 
             else if (is_hearts) begin r_red <= 8'hFF; r_green <= 8'h00; r_blue <= 8'h00; end 
             else if (is_wall) begin r_red <= 8'h00; r_green <= 8'hA0; r_blue <= 8'hFF; end 
             else if (is_bullet) begin r_red <= 8'hFF; r_green <= 8'hFF; r_blue <= 8'h00; end 
