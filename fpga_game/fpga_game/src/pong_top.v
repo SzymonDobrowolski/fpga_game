@@ -1,14 +1,35 @@
+module debouncer(
+    input wire clk,
+    input wire btn_in,
+    output reg btn_out
+);
+    reg [15:0] counter;
+    reg state;
+    always @(posedge clk) begin
+        if (btn_in != state) begin
+            counter <= counter + 1;
+            if (counter == 16'hFFFF) begin
+                state <= btn_in;
+                btn_out <= btn_in;
+                counter <= 0;
+            end
+        end else begin
+            counter <= 0;
+        end
+    end
+endmodule
+
 module pong_top(
   input wire          CLK,  // CLK 50 MHz
   input wire          nRST, // Active low reset
   
   output wire [3:0]   LED,
   
-  output wire         VID_DDR_PCLK,  // 
-  output wire         VID_DDR_HSYNC, //
-  output wire         VID_DDR_VSYNC, //
-  output wire         VID_DDR_DE,    //
-  output wire  [11:0] VID_DDR_DAT,   //
+  output wire         VID_DDR_PCLK,  
+  output wire         VID_DDR_HSYNC, 
+  output wire         VID_DDR_VSYNC, 
+  output wire         VID_DDR_DE,    
+  output wire  [11:0] VID_DDR_DAT,   
   
   inout wire          I2C_C,
   inout wire          I2C_D,
@@ -16,27 +37,21 @@ module pong_top(
   input wire          EncA_QA,
   input wire          EncA_QB,
   input wire          EncB_QA,
-  input wire          EncB_QB
+  input wire          EncB_QB,
+  input wire          BTN_SHOOT
   );
-  
-  //---------------------------------------
-  // Generacja sygna³u resetu
-  //---------------------------------------
-  wire RST;
-  assign RST = ~nRST;
-  
-  //---------------------------------------
-  // Generacja potrzebnych sygnalow zegarowych
-  //---------------------------------------
+
+  // --- ODCZYT PRZYCISKÓW ---
+  wire rst_clean, shoot_clean;
+  debouncer deb_rst   (.clk(CLK), .btn_in(~nRST),   .btn_out(rst_clean)); // nRST to Active Low!
+  debouncer deb_shoot (.clk(CLK), .btn_in(BTN_SHOOT), .btn_out(shoot_clean));
+
+  // --- ZEGARY ---
   wire CLK75_0;
   wire CLK75_90;
   wire CLK75_180;
-  // PLL 
-  // Create 75MHz clock from the input 50MHz clock
-  // 3 clocks with 0, 90 and 180 deg. phase shift are generated
-  pll_75mhz pong_pll(.CLKI(CLK), .CLKOP(CLK75_0), .CLKOS(CLK75_90), .CLKOS2(CLK75_180));
   
-  //---------------------------------------
+  pll_75mhz pong_pll(.CLKI(CLK), .CLKOP(CLK75_0), .CLKOS(CLK75_90), .CLKOS2(CLK75_180));
 
   wire       VID_HSYNC;
   wire       VID_VSYNC;
@@ -44,100 +59,80 @@ module pong_top(
   wire [7:0] VID_RED;
   wire [7:0] VID_GREEN;
   wire [7:0] VID_BLUE;
+  
   wire       VID_HSYNC_d;
   wire       VID_VSYNC_d;
   wire       VID_DE_d;
-  
-  //---------------------------------------
-  // VESA signal generator
-  //---------------------------------------
+
   wire [10:0] x_hcnt;
   wire [10:0] x_vcnt;
-  
+
+  // --- GENERATOR WIDEO (1280x720 @ 60Hz) ---
   vga_sync_gen pong_vga_sync_gen (
-    .CLK (CLK75_0),
-    .RST (RST),
-    
-    // output ports
-    .GEN_ACTIVE    (VID_DE),        // [ 0:0]
-    .GEN_RGB       (),              // [23:0] TEST PATERN OUTPUT
-
-    .GEN_HSYNC     (),              // [ 0:0] HORIZONTAL SYNCHRONIZATION  
-    .GEN_HSYNCP    (VID_HSYNC),     // [ 0:0] HORIZONTAL SYNCHRONIZATION (POLARITY)
-    .GEN_HCNT      (x_hcnt),        // [10:0] PIXEL IN LINE ID
-
-    .GEN_VSYNC     (),              // [ 0:0] VERTICAL SYNCHRONIZATION
-    .GEN_VSYNCP    (VID_VSYNC),     // [ 0:0] VERTICAL SYNCHRONIZATION (POLARITY)
-    .GEN_VCNT      (x_vcnt),        // [10:0] LINE IN FRAME ID
-
-    // Parametry H
-    .H_ACTIVE      (11'd1280),      // [10:0] FRAME WIDTH
-    .H_FRONT_PORCH (11'd64),        // [10:0] VESA BLANKING PERIOD PARAMETER
-    .H_BACK_PORCH  (11'd192),       // [10:0] VESA BLANKING PERIOD PARAMETER
-    .H_SYNC        (11'd128),       // [10:0] VESA BLANKING PERIOD PARAMETER
-    .H_SYNC_POL    (1'd0),          // [ 0:0] SYNCHRONIZATION SIGNAL POLARIZATION 0(-), 1(+)
-
-    // Parametry V
-    .V_ACTIVE      (11'd720),       // [10:0] FRAME HEIGHT
-    .V_FRONT_PORCH (11'd3),         // [10:0] VESA BLANKING PERIOD PARAMETER
-    .V_BACK_PORCH  (11'd20),        // [10:0] VESA BLANKING PERIOD PARAMETER
-    .V_SYNC        (11'd5),         // [10:0] VESA BLANKING PERIOD PARAMETER
-    .V_SYNC_POL    (1'd0)           // [ 0:0] SYNCHRONIZATION SIGNAL POLARIZATION 0(-), 1(+)
+    .CLK           (CLK75_0),
+    .RST           (rst_clean),
+    .GEN_ACTIVE    (VID_DE),
+    .GEN_RGB       (),
+    .GEN_HSYNC     (),  
+    .GEN_HSYNCP    (VID_HSYNC),
+    .GEN_HCNT      (x_hcnt),
+    .GEN_VSYNC     (),
+    .GEN_VSYNCP    (VID_VSYNC),
+    .GEN_VCNT      (x_vcnt),
+    .H_ACTIVE      (11'd1280),
+    .H_FRONT_PORCH (11'd64),
+    .H_BACK_PORCH  (11'd192),
+    .H_SYNC        (11'd128),
+    .H_SYNC_POL    (1'd0),
+    .V_ACTIVE      (11'd720),
+    .V_FRONT_PORCH (11'd3),
+    .V_BACK_PORCH  (11'd20),
+    .V_SYNC        (11'd5),
+    .V_SYNC_POL    (1'd0)
   );
-  
-  //---------------------------------------
-  // Delay HSYNC, VSYNC, DE
-  //---------------------------------------
+
   localparam CTRL_DELAY = 3;
   delay #(.D(CTRL_DELAY)) del1 (.CLK(CLK75_0), .I(   VID_DE), .O(   VID_DE_d));
   delay #(.D(CTRL_DELAY)) del2 (.CLK(CLK75_0), .I(VID_HSYNC), .O(VID_HSYNC_d));
   delay #(.D(CTRL_DELAY)) del3 (.CLK(CLK75_0), .I(VID_VSYNC), .O(VID_VSYNC_d));
-  //---------------------------------------
-  // PONG game
-  //---------------------------------------
-  pong_main 
-  #(
-    .SCR_W  (1280),
-    .SCR_H  ( 720)
-  )
-  my_pong_inst
-  (
-    .CLK    (CLK75_0),   // 75 MHz clock signal
-    .RST    (RST),       // active high reset
-    
-    .H_CNT  (x_hcnt),    // input horizontal pixel pointer 
-    .V_CNT  (x_vcnt),    // input vertical   pixel pointer
-    
-    .RED    (VID_RED),   // generated value for pixel (x_hcnt, x_vcnt)
-    .GREEN  (VID_GREEN), // generated value for pixel (x_hcnt, x_vcnt)
-    .BLUE   (VID_BLUE),  // generated value for pixel (x_hcnt, x_vcnt)
-    
-    .EncA_QA(EncA_QA),   // encoder A input
-    .EncA_QB(EncA_QB),   // encoder A input
-    .EncB_QA(EncB_QA),   // encoder B input
-    .EncB_QB(EncB_QB),   // encoder B input
-    
-    .LED    (LED)        // general purpose LED output
-  );
-      
-  //---------------------------------------
-  // VESA signals SDR->DDR converter 
-  //---------------------------------------
+
+  // --- SKALER I SILNIK GRY (Z 60x40 na œrodek 1280x720, powiêkszenie 16x) ---
+  wire [10:0] game_x = (x_hcnt >= 160 && x_hcnt < 1120) ? (x_hcnt - 160) >> 4 : 11'h7FF;
+  wire [10:0] game_y = (x_vcnt >= 40  && x_vcnt < 680)  ? (x_vcnt - 40) >> 4  : 11'h7FF;
   
+  pong_main #(
+    .SCR_W  (60),
+    .SCR_H  (40),
+    .SIM_MODE(0)
+  ) my_pong_inst (
+    .CLK      (CLK75_0),
+    .RST      (rst_clean),
+    .H_CNT    (game_x),
+    .V_CNT    (game_y),
+    .RED      (VID_RED),
+    .GREEN    (VID_GREEN),
+    .BLUE     (VID_BLUE),
+    .EncA_QA  (EncA_QA),
+    .EncA_QB  (EncA_QB),
+    .EncB_QA  (1'b0),
+    .EncB_QB  (1'b0),
+    .BTN_SHOOT(shoot_clean),
+    .LED      (LED)
+  );
+
+  // --- BLOKI KONFIGURACJI I WYSY£KI WIDEO ---
   vo_phy_ddr pong_vo_phy_ddr(
     .i_phy_clk0     (CLK75_0),
     .i_phy_clk90    (CLK75_90),
     .i_phy_clk180   (CLK75_180),
-    .i_phy_rst0     (RST),
-    .i_phy_rst90    (RST),
-    
+    .i_phy_rst0     (rst_clean),
+    .i_phy_rst90    (rst_clean),
     .i_phy_hsync    (VID_HSYNC_d),
     .i_phy_vsync    (VID_VSYNC_d),
     .i_phy_de       (VID_DE_d),
-    .i_phy_red      (VID_RED),
-    .i_phy_green    (VID_GREEN),
-    .i_phy_blue     (VID_BLUE),
-    
+    .i_phy_red      ((VID_DE && x_hcnt >= 160 && x_hcnt < 1120 && x_vcnt >= 40 && x_vcnt < 680) ? VID_RED : 8'd0),
+    .i_phy_green    ((VID_DE && x_hcnt >= 160 && x_hcnt < 1120 && x_vcnt >= 40 && x_vcnt < 680) ? VID_GREEN : 8'd0),
+    .i_phy_blue     ((VID_DE && x_hcnt >= 160 && x_hcnt < 1120 && x_vcnt >= 40 && x_vcnt < 680) ? VID_BLUE : 8'd0),
     .o_pclk_pin     (VID_DDR_PCLK),
     .o_hsync_pin    (VID_DDR_HSYNC),
     .o_vsync_pin    (VID_DDR_VSYNC),
@@ -145,14 +140,11 @@ module pong_top(
     .o_data_pin     (VID_DDR_DAT)
   );
 
-  //---------------------------------------
-  // Konfigurator ukladu TFP410
-  //---------------------------------------
   hdmi_i2c_cfg pong_hdmi_i2c_cfg(
     .CLK            (CLK75_0),
-    .RST            (RST),       
+    .RST            (rst_clean),       
     .I2C_C          (I2C_C),
     .I2C_D          (I2C_D)
   );
-  //---------------------------------------
+
 endmodule
