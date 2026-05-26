@@ -1,0 +1,2239 @@
+
+synpwrap -msg -prj "fpga_game_SD_impl1_synplify.tcl" -log "fpga_game_SD_impl1.srf"
+Copyright (C) 1992-2020 Lattice Semiconductor Corporation. All rights reserved.
+Lattice Diamond Version 3.12.0.240.2
+    <postMsg mid="2011000" type="Info"    dynamic="0" navigation="0"  />
+
+==contents of fpga_game_SD_impl1.srf
+#Build: Synplify Pro (R) Q-2020.03L-SP1, Build 182R, Oct 29 2020
+#install: C:\lscc\diamond\3.12\synpbase
+#OS: Windows 8 6.2
+#Hostname: LAPTOP-RAFAL
+
+# Tue May 26 20:44:16 2026
+
+#Implementation: impl1
+
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: LAPTOP-RAFAL
+
+Implementation : impl1
+Synopsys HDL Compiler, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+@N|Running in 64-bit mode
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: LAPTOP-RAFAL
+
+Implementation : impl1
+Synopsys Verilog Compiler, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+@N|Running in 64-bit mode
+@I::"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v" (library work)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\lucent\pmi_def.v" (library work)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\clk_divider.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\ddr.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\delay.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_bit.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_scaler.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pll_75mhz.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\rect_painter.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\uart_rx.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\uart_tx.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v" (library work)
+@I::"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pll_50_to_40Mhz_0_90_180.v" (library work)
+Verilog syntax check successful!
+
+Compiler output is up to date.  No re-compile necessary
+
+Selecting top level module top
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":1:7:1:15|Synthesizing module debouncer in library work.
+Running optimization stage 1 on debouncer .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1124:7:1124:9|Synthesizing module VLO in library work.
+Running optimization stage 1 on VLO .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1730:7:1730:13|Synthesizing module EHXPLLJ in library work.
+Running optimization stage 1 on EHXPLLJ .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pll_50_to_40Mhz_0_90_180.v":8:7:8:30|Synthesizing module pll_50_to_40Mhz_0_90_180 in library work.
+Running optimization stage 1 on pll_50_to_40Mhz_0_90_180 .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":6:7:6:18|Synthesizing module vga_sync_gen in library work.
+Running optimization stage 1 on vga_sync_gen .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\delay.v":1:7:1:11|Synthesizing module delay in library work.
+
+	W=32'b00000000000000000000000000000001
+	D=32'b00000000000000000000000000000011
+   Generated name = delay_1s_3s
+Running optimization stage 1 on delay_1s_3s .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":4:7:4:18|Synthesizing module quad_decoder in library work.
+Running optimization stage 1 on quad_decoder .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":22:7:22:15|Synthesizing module pong_main in library work.
+
+	SCR_W=32'b00000000000000000000000000111100
+	SCR_H=32'b00000000000000000000000000101000
+	SIM_MODE=32'b00000000000000000000000000000000
+	TANK_W=32'b00000000000000000000000000000011
+	TANK_H=32'b00000000000000000000000000000011
+	TIME_LIMIT=32'b00000000000100110001001011010000
+	DEMO_WAIT=32'b00101100101101000001011110000000
+	STATE_START=3'b000
+	STATE_LOAD_LEVEL=3'b001
+	STATE_PLAY=3'b010
+	STATE_LEVEL_CLEAR=3'b011
+	STATE_GAMEOVER=3'b100
+	STATE_GAME_CLEAR=3'b101
+   Generated name = pong_main_Z1
+Running optimization stage 1 on pong_main_Z1 .......
+@W: CL169 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning unused register enemy_hit_flag[1:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning unused register enemy_fired. Make sure that there are no unused intermediate registers.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_e_bullet_y[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_e_bullet_x[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_e_bullet_dir[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_bullet_y[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_bullet_x[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_bullet_dir[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":10:7:10:16|Synthesizing module vo_phy_ddr in library work.
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":857:7:857:8|Synthesizing module OB in library work.
+Running optimization stage 1 on OB .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1601:7:1601:12|Synthesizing module ODDRXE in library work.
+Running optimization stage 1 on ODDRXE .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1120:7:1120:9|Synthesizing module VHI in library work.
+Running optimization stage 1 on VHI .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\ddr.v":8:7:8:9|Synthesizing module ddr in library work.
+Running optimization stage 1 on ddr .......
+Running optimization stage 1 on vo_phy_ddr .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_scaler.v":9:7:9:24|Synthesizing module dev_i2c_phy_scaler in library work.
+Running optimization stage 1 on dev_i2c_phy_scaler .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_bit.v":9:7:9:21|Synthesizing module dev_i2c_phy_bit in library work.
+@N: CG179 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_bit.v":129:90:129:94|Removing redundant assignment.
+Running optimization stage 1 on dev_i2c_phy_bit .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":16:7:16:17|Synthesizing module dev_i2c_phy in library work.
+@W: CG360 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|Removing wire o_run, as there is no assignment to it.
+@W: CG133 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":46:12:46:14|Object run is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on dev_i2c_phy .......
+@W: CL318 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|*Output o_run has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":1:7:1:18|Synthesizing module hdmi_i2c_cfg in library work.
+@W: CG360 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":10:12:10:20|Removing wire x_run_stb, as there is no assignment to it.
+Running optimization stage 1 on hdmi_i2c_cfg .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":22:7:22:9|Synthesizing module top in library work.
+Running optimization stage 1 on top .......
+Running optimization stage 2 on top .......
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":39:22:39:28|Input EncB_QA is unused.
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":40:22:40:28|Input EncB_QB is unused.
+Running optimization stage 2 on hdmi_i2c_cfg .......
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":46:0:46:5|Trying to extract state machine for register cfg_state.
+Extracted state machine for register cfg_state
+State machine has 5 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000000011
+   00000000000000000000000000000100
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 10 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 7 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 5 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL156 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":10:12:10:20|*Input x_run_stb to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+Running optimization stage 2 on dev_i2c_phy .......
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":84:0:84:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 34 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000001010
+   00000000000000000000000000001011
+   00000000000000000000000000001100
+   00000000000000000000000000001101
+   00000000000000000000000000010100
+   00000000000000000000000000010101
+   00000000000000000000000000010110
+   00000000000000000000000000010111
+   00000000000000000000000000110010
+   00000000000000000000000000110011
+   00000000000000000000000000110100
+   00000000000000000000000000110101
+   00000000000000000000000000110110
+   00000000000000000000000000110111
+   00000000000000000000000000111000
+   00000000000000000000000000111001
+   00000000000000000000000001000110
+   00000000000000000000000001000111
+   00000000000000000000000001001000
+   00000000000000000000000001001001
+   00000000000000000000000001001010
+   00000000000000000000000001001011
+   00000000000000000000000001001100
+   00000000000000000000000001001101
+   00000000000000000000000001001110
+   00000000000000000000000001001111
+   00000000000000000000000001010000
+   00000000000000000000000001010001
+   00000000000000000000000001010010
+   00000000000000000000000001010011
+   00000000000000000000000001010100
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":21:20:21:24|Input i_run is unused.
+Running optimization stage 2 on dev_i2c_phy_bit .......
+Running optimization stage 2 on dev_i2c_phy_scaler .......
+Running optimization stage 2 on ddr .......
+Running optimization stage 2 on VHI .......
+Running optimization stage 2 on ODDRXE .......
+Running optimization stage 2 on OB .......
+Running optimization stage 2 on vo_phy_ddr .......
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":16:20:16:30|Input i_phy_rst90 is unused.
+Running optimization stage 2 on pong_main_Z1 .......
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[17] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[18] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[19] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[20] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[21] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[22] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[23] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[24] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[25] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[26] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[21] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[22] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[23] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[24] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[25] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[26] is always 0.
+@W: CL190 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Optimizing register bit idle_timer[30] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Optimizing register bit idle_timer[31] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 7 to 6 of r_red[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 4 to 1 of r_red[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bit 6 of r_green[7:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 4 to 1 of r_green[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 7 to 1 of r_blue[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning register bits 31 to 30 of idle_timer[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Pruning register bits 26 to 21 of timer[26:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Pruning register bits 26 to 17 of bullet_timer[26:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 6 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+   101
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":34:22:34:28|Input EncB_QA is unused.
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":34:31:34:37|Input EncB_QB is unused.
+Running optimization stage 2 on quad_decoder .......
+Running optimization stage 2 on delay_1s_3s .......
+@N: CL135 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\delay.v":23:12:23:17|Found sequential shift genblk1.del_stage[2].d with address depth of 3 words and data bit width of 1.
+Running optimization stage 2 on vga_sync_gen .......
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":111:0:111:5|Trying to extract state machine for register fsm_v.
+Extracted state machine for register fsm_v
+State machine has 5 reachable states with original encodings of:
+   00000000
+   00011110
+   00101000
+   00110010
+   00111100
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":89:0:89:5|Trying to extract state machine for register fsm_h.
+Extracted state machine for register fsm_h
+State machine has 5 reachable states with original encodings of:
+   00000000
+   00011110
+   00101000
+   00110010
+   00111100
+Running optimization stage 2 on pll_50_to_40Mhz_0_90_180 .......
+Running optimization stage 2 on EHXPLLJ .......
+Running optimization stage 2 on VLO .......
+Running optimization stage 2 on debouncer .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\layer0.rt.csv
+
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 92MB peak: 93MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue May 26 20:44:16 2026
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: LAPTOP-RAFAL
+
+Implementation : impl1
+Synopsys Synopsys Netlist Linker, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 96MB peak: 96MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue May 26 20:44:16 2026
+
+###########################################################]
+
+For a summary of runtime and memory usage for all design units, please see file:
+==========================================================
+@L: C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\fpga_game_SD_impl1_comp.rt.csv
+
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 24MB peak: 25MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue May 26 20:44:16 2026
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: LAPTOP-RAFAL
+
+Implementation : impl1
+Synopsys Synopsys Netlist Linker, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+@N|Running in 64-bit mode
+File C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\fpga_game_SD_impl1_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 96MB peak: 97MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue May 26 20:44:17 2026
+
+###########################################################]
+# Tue May 26 20:44:17 2026
+
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: LAPTOP-RAFAL
+
+Implementation : impl1
+Synopsys Lattice Technology Pre-mapping, Version map202003lat, Build 172R, Built Nov  2 2020 09:31:45, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 119MB)
+
+@A: MF827 |No constraint file specified.
+@L: C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\fpga_game_SD_impl1_scck.rpt 
+See clock summary report "C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\fpga_game_SD_impl1_scck.rpt"
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 133MB peak: 133MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 133MB peak: 133MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 144MB peak: 144MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 145MB peak: 146MB)
+
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_top.v":8:4:8:9|Removing sequential instance deb_shoot.btn_out because it is equivalent to instance deb_shoot.state. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: MO111 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|Tristate driver o_run (in view: work.dev_i2c_phy(verilog)) on net o_run (in view: work.dev_i2c_phy(verilog)) has its enable tied to GND.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_bit.v":200:0:200:5|Removing sequential instance val_3 (in view: work.dev_i2c_phy_bit(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":227:0:227:5|Removing sequential instance din_val (in view: work.dev_i2c_phy(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":237:0:237:5|Removing sequential instance din_data[7:0] (in view: work.dev_i2c_phy(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":232:0:232:5|Removing sequential instance din_err (in view: work.dev_i2c_phy(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":78:0:78:5|Removing sequential instance test_pattern[23:0] (in view: work.vga_sync_gen(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":152:0:152:5|Removing sequential instance sync_h (in view: work.vga_sync_gen(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":164:0:164:5|Removing sequential instance sync_v (in view: work.vga_sync_gen(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+Encoding state machine fsm_h[4:0] (in view: work.vga_sync_gen(verilog))
+original code -> new code
+   00000000 -> 00001
+   00011110 -> 00010
+   00101000 -> 00100
+   00110010 -> 01000
+   00111100 -> 10000
+Encoding state machine fsm_v[4:0] (in view: work.vga_sync_gen(verilog))
+original code -> new code
+   00000000 -> 00001
+   00011110 -> 00010
+   00101000 -> 00100
+   00110010 -> 01000
+   00111100 -> 10000
+Encoding state machine state[5:0] (in view: work.pong_main_Z1(verilog))
+original code -> new code
+   000 -> 000001
+   001 -> 000010
+   010 -> 000100
+   011 -> 001000
+   100 -> 010000
+   101 -> 100000
+Encoding state machine state[33:0] (in view: work.dev_i2c_phy(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 0000000000000000000000000000000001
+   00000000000000000000000000000001 -> 0000000000000000000000000000000010
+   00000000000000000000000000000010 -> 0000000000000000000000000000000100
+   00000000000000000000000000001010 -> 0000000000000000000000000000001000
+   00000000000000000000000000001011 -> 0000000000000000000000000000010000
+   00000000000000000000000000001100 -> 0000000000000000000000000000100000
+   00000000000000000000000000001101 -> 0000000000000000000000000001000000
+   00000000000000000000000000010100 -> 0000000000000000000000000010000000
+   00000000000000000000000000010101 -> 0000000000000000000000000100000000
+   00000000000000000000000000010110 -> 0000000000000000000000001000000000
+   00000000000000000000000000010111 -> 0000000000000000000000010000000000
+   00000000000000000000000000110010 -> 0000000000000000000000100000000000
+   00000000000000000000000000110011 -> 0000000000000000000001000000000000
+   00000000000000000000000000110100 -> 0000000000000000000010000000000000
+   00000000000000000000000000110101 -> 0000000000000000000100000000000000
+   00000000000000000000000000110110 -> 0000000000000000001000000000000000
+   00000000000000000000000000110111 -> 0000000000000000010000000000000000
+   00000000000000000000000000111000 -> 0000000000000000100000000000000000
+   00000000000000000000000000111001 -> 0000000000000001000000000000000000
+   00000000000000000000000001000110 -> 0000000000000010000000000000000000
+   00000000000000000000000001000111 -> 0000000000000100000000000000000000
+   00000000000000000000000001001000 -> 0000000000001000000000000000000000
+   00000000000000000000000001001001 -> 0000000000010000000000000000000000
+   00000000000000000000000001001010 -> 0000000000100000000000000000000000
+   00000000000000000000000001001011 -> 0000000001000000000000000000000000
+   00000000000000000000000001001100 -> 0000000010000000000000000000000000
+   00000000000000000000000001001101 -> 0000000100000000000000000000000000
+   00000000000000000000000001001110 -> 0000001000000000000000000000000000
+   00000000000000000000000001001111 -> 0000010000000000000000000000000000
+   00000000000000000000000001010000 -> 0000100000000000000000000000000000
+   00000000000000000000000001010001 -> 0001000000000000000000000000000000
+   00000000000000000000000001010010 -> 0010000000000000000000000000000000
+   00000000000000000000000001010011 -> 0100000000000000000000000000000000
+   00000000000000000000000001010100 -> 1000000000000000000000000000000000
+Encoding state machine cfg_state[4:0] (in view: work.hdmi_i2c_cfg(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 00001
+   00000000000000000000000000000001 -> 00010
+   00000000000000000000000000000010 -> 00100
+   00000000000000000000000000000011 -> 01000
+   00000000000000000000000000000100 -> 10000
+
+Starting clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 183MB peak: 183MB)
+
+
+Finished clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 183MB peak: 184MB)
+
+
+Starting clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 183MB peak: 184MB)
+
+
+Finished clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 183MB peak: 184MB)
+
+@N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist top 
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 184MB peak: 184MB)
+
+
+
+Clock Summary
+******************
+
+          Start                                             Requested     Requested     Clock        Clock                   Clock
+Level     Clock                                             Frequency     Period        Type         Group                   Load 
+----------------------------------------------------------------------------------------------------------------------------------
+0 -       System                                            100.0 MHz     10.000        system       system_clkgroup         0    
+                                                                                                                                  
+0 -       pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     637  
+                                                                                                                                  
+0 -       top|CLK                                           100.0 MHz     10.000        inferred     Inferred_clkgroup_1     34   
+==================================================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                                                  Clock     Source                                Clock Pin                            Non-clock Pin     Non-clock Pin
+Clock                                             Load      Pin                                   Seq Example                          Seq Example       Comb Example 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                            0         -                                     -                                    -                 -            
+                                                                                                                                                                      
+pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     637       pong_pll.PLLInst_0.CLKOP(EHXPLLJ)     pong_hdmi_i2c_cfg.cfg_data[11].C     -                 -            
+                                                                                                                                                                      
+top|CLK                                           34        CLK(port)                             deb_shoot.state.C                    -                 -            
+======================================================================================================================================================================
+
+@W: MT529 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":111:0:111:5|Found inferred clock pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock which controls 637 sequential elements including pong_vga_sync_gen.fsm_v[4]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_top.v":8:4:8:9|Found inferred clock top|CLK which controls 34 sequential elements including deb_rst.counter[15:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+
+ICG Latch Removal Summary:
+Number of ICG latches removed: 0
+Number of ICG latches not removed:	0
+
+
+@S |Clock Optimization Summary
+
+
+
+#### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[
+
+2 non-gated/non-generated clock tree(s) driving 671 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+======================================= Non-Gated/Non-Generated Clocks ========================================
+Clock Tree ID     Driving Element              Drive Element Type     Fanout     Sample Instance               
+---------------------------------------------------------------------------------------------------------------
+@KP:ckid0_0       pong_pll.PLLInst_0.CLKOP     EHXPLLJ                637        pong_hdmi_i2c_cfg.cfg_state[4]
+@KP:ckid0_1       CLK                          port                   34         deb_shoot.counter[15:0]       
+===============================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######
+
+@N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+Finished Pre Mapping Phase.
+
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 184MB peak: 184MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 184MB peak: 185MB)
+
+
+Finished constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 185MB peak: 185MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 99MB peak: 186MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Tue May 26 20:44:20 2026
+
+###########################################################]
+# Tue May 26 20:44:20 2026
+
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: LAPTOP-RAFAL
+
+Implementation : impl1
+Synopsys Lattice Technology Mapper, Version map202003lat, Build 172R, Built Nov  2 2020 09:31:45, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 119MB)
+
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 130MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 130MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 135MB peak: 135MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 138MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 173MB peak: 173MB)
+
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance PCLK\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DE\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance VSYNC\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance HSYNC\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[3\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[6\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[9\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[2\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[5\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[8\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[11\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[1\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[4\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[7\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[10\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+@W: BN114 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":34:11:34:22|Removing instance DATA\[0\]\.ddr.Inst2_ODDRXE (in view: work.vo_phy_ddr(verilog)) of black box view:work.ODDRXE(verilog) because it does not drive other instances.
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@W: FA239 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|ROM get_font_pixel_5\.bitmap_12[14:0] (in view: work.pong_main_Z1(verilog)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@W: FA239 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|ROM bitmap_14[10:0] (in view: work.pong_main_Z1(verilog)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@N: MO106 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|Found ROM bitmap_14[10:0] (in view: work.pong_main_Z1(verilog)) with 10 words by 11 bits.
+@W: FA239 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|ROM get_font_pixel_5\.bitmap_12[14:0] (in view: work.pong_main_Z1(verilog)) mapped in logic. To map to a technology ROM, apply attribute syn_romstyle on this instance.
+@N: MO106 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|Found ROM get_font_pixel_5\.bitmap_12[14:0] (in view: work.pong_main_Z1(verilog)) with 10 words by 15 bits.
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 181MB peak: 181MB)
+
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[20] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[23] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[22] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[19] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[18]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[18] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[17]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[17] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[16]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[12] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[14] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[11] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[9] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[8] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[4] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[6] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[7] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[5] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[3] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[2] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":45:0:45:5|Removing instance pong_vo_phy_ddr.buff_rgb[1] because it is equivalent to instance pong_vo_phy_ddr.buff_rgb[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":189:0:189:5|Found counter in view:work.vga_sync_gen(verilog) instance cnt_ha[10:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Found counter in view:work.vga_sync_gen(verilog) instance cnt_va[10:0] 
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_x[9] because it is equivalent to instance my_pong_inst.tank_x[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_x[8] because it is equivalent to instance my_pong_inst.tank_x[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_x[7] because it is equivalent to instance my_pong_inst.tank_x[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_x[6] because it is equivalent to instance my_pong_inst.tank_x[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_y[9] because it is equivalent to instance my_pong_inst.tank_y[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_y[8] because it is equivalent to instance my_pong_inst.tank_y[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_y[7] because it is equivalent to instance my_pong_inst.tank_y[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing instance my_pong_inst.tank_y[6] because it is equivalent to instance my_pong_inst.tank_y[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Found counter in view:work.pong_main_Z1(verilog) instance idle_timer[29:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Found counter in view:work.pong_main_Z1(verilog) instance score_tens[3:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Found counter in view:work.pong_main_Z1(verilog) instance score_ones[3:0] 
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_V_CNT_281 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_enemy_x\[0\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_V_CNT_280 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_H_CNT_278 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_H_CNT_279 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_enemy_x\[1\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_V_CNT_277 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_enemy_y\[0\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_enemy_y\[1\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_H_CNT_275 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_tank_x_276 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_tank_y_274 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":437:20:437:43|Found 11 by 11 bit equality operator ('==') un1_H_CNT_360 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":438:49:438:72|Found 11 by 11 bit equality operator ('==') un1_V_CNT_361 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":457:28:457:60|Found 11 by 11 bit equality operator ('==') _l1\.un1_H_CNT_363 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":457:28:457:60|Found 11 by 11 bit equality operator ('==') _l0\.un1_H_CNT_364 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":458:66:458:98|Found 11 by 11 bit equality operator ('==') _l1\.un1_V_CNT_365 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":458:66:458:98|Found 11 by 11 bit equality operator ('==') _l0\.un1_V_CNT_366 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":444:63:444:82|Found 11 by 11 bit equality operator ('==') un1_V_CNT_99 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":443:57:443:74|Found 11 by 11 bit equality operator ('==') un1_V_CNT_96 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":443:36:443:54|Found 11 by 11 bit equality operator ('==') un1_H_CNT_97 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":444:40:444:60|Found 11 by 11 bit equality operator ('==') un1_H_CNT_98 (in view: work.pong_main_Z1(verilog))
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing sequential instance tank_x[10] (in view: work.pong_main_Z1(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing sequential instance tank_y[10] (in view: work.pong_main_Z1(verilog)) because it does not drive other instances.
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":46:0:46:5|Found counter in view:work.hdmi_i2c_cfg(verilog) instance cfg_addr[7:0] 
+@W: BN132 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":177:0:177:5|Removing instance pong_hdmi_i2c_cfg.i2c_phy1.data_mode[2] because it is equivalent to instance pong_hdmi_i2c_cfg.i2c_phy1.data_mode[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":170:0:170:5|Found counter in view:work.dev_i2c_phy(verilog) instance data_cnt[3:0] 
+
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 194MB peak: 194MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 212MB peak: 212MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 212MB peak: 235MB)
+
+@N: FA113 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":300:8:300:9|Pipelining module un1_p_step_842[3:0]. For more information, search for "pipelining" in Online Help.
+@N: MF169 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Pushed in register p_step[3:0].
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 215MB peak: 235MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 259MB peak: 259MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:12s; Memory used current: 260MB peak: 260MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 260MB peak: 260MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 331MB peak: 358MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:16s		   -10.37ns		1955 /       644
+   2		0h:00m:16s		   -10.37ns		1924 /       644
+   3		0h:00m:16s		    -9.11ns		1923 /       644
+   4		0h:00m:16s		    -9.68ns		1923 /       644
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Replicating instance pong_vga_sync_gen.cnt_va[2] (in view: work.top(verilog)) with 4 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Replicating instance pong_vga_sync_gen.cnt_va[4] (in view: work.top(verilog)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Replicating instance pong_vga_sync_gen.cnt_va[5] (in view: work.top(verilog)) with 4 loads 1 time to improve timing.
+Timing driven replication report
+Added 3 Registers via timing driven replication
+Added 0 LUTs via timing driven replication
+
+   5		0h:00m:19s		    -9.55ns		1927 /       647
+   6		0h:00m:19s		    -9.26ns		1930 /       647
+   7		0h:00m:19s		    -9.26ns		1930 /       647
+   8		0h:00m:19s		    -9.31ns		1933 /       647
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Replicating instance my_pong_inst.next_tank_x[0] (in view: work.top(verilog)) with 33 loads 2 times to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Replicating instance my_pong_inst.next_tank_y[0] (in view: work.top(verilog)) with 30 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":333:4:333:9|Replicating instance my_pong_inst.next_enemy_x\[0\][0] (in view: work.top(verilog)) with 35 loads 2 times to improve timing.
+Added 5 Registers via timing driven replication
+Added 5 LUTs via timing driven replication
+
+   9		0h:00m:19s		    -9.31ns		1936 /       652
+  10		0h:00m:19s		    -9.38ns		1936 /       652
+  11		0h:00m:19s		    -9.16ns		1942 /       652
+  12		0h:00m:19s		    -9.51ns		1946 /       652
+  13		0h:00m:19s		    -9.11ns		1949 /       652
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:19s; Memory used current: 332MB peak: 358MB)
+
+@N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 334MB peak: 358MB)
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 282MB peak: 358MB)
+
+Writing Analyst data base C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\fpga_game_SD_impl1_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 329MB peak: 358MB)
+
+Writing EDIF Netlist and constraint files
+@N: FX1056 |Writing EDF file: C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\fpga_game_SD_impl1.edi
+@N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 334MB peak: 358MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 324MB peak: 358MB)
+
+@W: MT246 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\ddr.v":27:11:27:23|Blackbox ODDRXE is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT246 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pll_50_to_40mhz_0_90_180.v":68:12:68:20|Blackbox EHXPLLJ is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT420 |Found inferred clock pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock with period 10.00ns. Please declare a user-defined clock on net pong_pll.CLK40_0.
+@W: MT420 |Found inferred clock top|CLK with period 10.00ns. Please declare a user-defined clock on port CLK.
+
+
+##### START OF TIMING REPORT #####[
+# Timing report written on Tue May 26 20:44:43 2026
+#
+
+
+Top view:               top
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: -10.758
+
+@N: MT286 |System clock period 0.000 stretches to negative invalid value -- ignoring stretching.
+                                                  Requested     Estimated     Requested     Estimated                 Clock        Clock              
+Starting Clock                                    Frequency     Frequency     Period        Period        Slack       Type         Group              
+------------------------------------------------------------------------------------------------------------------------------------------------------
+pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     100.0 MHz     48.2 MHz      10.000        20.758        -10.758     inferred     Inferred_clkgroup_0
+top|CLK                                           100.0 MHz     159.2 MHz     10.000        6.282         3.718       inferred     Inferred_clkgroup_1
+System                                            100.0 MHz     NA            10.000        0.000         10.000      system       system_clkgroup    
+======================================================================================================================================================
+Estimated period and frequency reported as NA means no slack depends directly on the clock waveform
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                                                                        |    rise  to  rise     |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                       Ending                                         |  constraint  slack    |  constraint  slack  |  constraint  slack  |  constraint  slack
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                         System                                         |  10.000      10.000   |  No paths    -      |  No paths    -      |  No paths    -    
+pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock  System                                         |  10.000      8.780    |  No paths    -      |  No paths    -      |  No paths    -    
+pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock  pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock  |  10.000      -10.758  |  No paths    -      |  No paths    -      |  No paths    -    
+top|CLK                                        System                                         |  10.000      8.218    |  No paths    -      |  No paths    -      |  No paths    -    
+top|CLK                                        pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock  |  Diff grp    -        |  No paths    -      |  No paths    -      |  No paths    -    
+top|CLK                                        top|CLK                                        |  10.000      3.718    |  No paths    -      |  No paths    -      |  No paths    -    
+======================================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                      Starting                                                                                      Arrival            
+Instance                              Reference                                         Type        Pin     Net                     Time        Slack  
+                                      Clock                                                                                                            
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_y\[0\][0]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       un13_ec_f               1.302       -10.758
+my_pong_inst.next_enemy_x\[1\][1]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       un26_ec_f_axb_1_i       1.299       -10.727
+my_pong_inst.next_enemy_x\[0\][1]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       un7_ec_f_axb_1_i        1.302       -10.710
+my_pong_inst.next_tank_x[1]           pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3JX     Q       next_tank_x[1]          1.299       -10.676
+my_pong_inst.next_tank_y[1]           pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       next_tank_y[1]          1.280       -10.657
+my_pong_inst.next_tank_x[2]           pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       next_tank_x[2]          1.276       -10.653
+my_pong_inst.next_tank_y[2]           pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3JX     Q       next_tank_y[2]          1.276       -10.653
+my_pong_inst.next_tank_y_fast[0]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       next_tank_y_fast[0]     1.108       -10.628
+my_pong_inst.next_enemy_x\[0\][2]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       un7_ec_f_axb_2          1.268       -10.581
+my_pong_inst.next_enemy_y\[0\][1]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     Q       un13_ec_f_axb_1_i       1.268       -10.581
+=======================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                       Starting                                                                                           Required            
+Instance                               Reference                                         Type        Pin     Net                          Time         Slack  
+                                       Clock                                                                                                                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_x\[0\][9]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[0\]_11[9]      9.894        -10.758
+my_pong_inst.next_enemy_x\[0\][10]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[0\]_11[10]     9.894        -10.758
+my_pong_inst.next_enemy_x\[1\][9]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[1\]_11[9]      9.894        -10.727
+my_pong_inst.next_enemy_x\[1\][10]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[1\]_11[10]     9.894        -10.727
+my_pong_inst.next_enemy_y\[0\][9]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_y\[0\]_11[9]      9.894        -10.622
+my_pong_inst.next_enemy_y\[0\][10]     pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_y\[0\]_11[10]     9.894        -10.622
+my_pong_inst.next_enemy_x\[0\][7]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[0\]_11[7]      9.894        -10.616
+my_pong_inst.next_enemy_x\[0\][8]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[0\]_11[8]      9.894        -10.616
+my_pong_inst.next_enemy_x\[1\][7]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[1\]_11[7]      9.894        -10.584
+my_pong_inst.next_enemy_x\[1\][8]      pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock     FD1S3IX     D       next_enemy_x\[1\]_11[8]      9.894        -10.584
+==============================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.106
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.894
+
+    - Propagation time:                      20.653
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -10.758
+
+    Number of logic level(s):                21
+    Starting point:                          my_pong_inst.next_enemy_y\[0\][0] / Q
+    Ending point:                            my_pong_inst.next_enemy_x\[0\][10] / D
+    The start point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                                               Pin      Pin               Arrival      No. of    
+Name                                            Type         Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_y\[0\][0]               FD1S3IX      Q        Out     1.302     1.302 r      -         
+un13_ec_f                                       Net          -        -       -         -            26        
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        A1       In      0.000     1.302 r      -         
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        COUT     Out     1.544     2.847 r      -         
+un13_ec_f_cry_0                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        CIN      In      0.000     2.847 r      -         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        COUT     Out     0.143     2.990 r      -         
+un13_ec_f_cry_2                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        CIN      In      0.000     2.990 r      -         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        S1       Out     1.621     4.611 r      -         
+un19_ec_p_4                                     Net          -        -       -         -            2         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        A1       In      0.000     4.611 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        COUT     Out     1.544     6.155 r      -         
+un19_ec_p_cry_4                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        CIN      In      0.000     6.155 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        COUT     Out     0.143     6.298 r      -         
+un19_ec_p_cry_6                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        CIN      In      0.000     6.298 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        COUT     Out     0.143     6.441 r      -         
+un19_ec_p_cry_8                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        CIN      In      0.000     6.441 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        COUT     Out     0.143     6.583 r      -         
+un19_ec_p_cry_10                                Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        CIN      In      0.000     6.583 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        S1       Out     1.549     8.132 r      -         
+un19_ec_p                                       Net          -        -       -         -            1         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     C        In      0.000     8.132 r      -         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     Z        Out     1.017     9.149 r      -         
+ec_p_2                                          Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     A        In      0.000     9.149 r      -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     Z        Out     1.017     10.166 r     -         
+enemy_collision\[0\]_2_23                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     D        In      0.000     10.166 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     Z        Out     1.017     11.183 r     -         
+enemy_collision\[0\]_2_25                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     C        In      0.000     11.183 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     Z        Out     1.017     12.200 r     -         
+enemy_collision\[0\]_2_27                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     C        In      0.000     12.200 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     Z        Out     1.153     13.352 r     -         
+enemy_collision\[0\]_2                          Net          -        -       -         -            3         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     A        In      0.000     13.352 r     -         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     Z        Out     1.277     14.629 r     -         
+enemy_dir\[0\]_0_sqmuxa                         Net          -        -       -         -            10        
+my_pong_inst.un1_i43_818                        ORCALUT4     A        In      0.000     14.629 r     -         
+my_pong_inst.un1_i43_818                        ORCALUT4     Z        Out     1.225     15.854 f     -         
+un1_i43_818                                     Net          -        -       -         -            5         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     C        In      0.000     15.854 f     -         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     Z        Out     1.277     17.131 r     -         
+un1_i43_839[1]                                  Net          -        -       -         -            10        
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        A0       In      0.000     17.131 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        COUT     Out     1.544     18.675 r     -         
+next_enemy_x\[0\]_11_cry_2                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        CIN      In      0.000     18.675 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        COUT     Out     0.143     18.818 r     -         
+next_enemy_x\[0\]_11_cry_4                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        CIN      In      0.000     18.818 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        COUT     Out     0.143     18.961 r     -         
+next_enemy_x\[0\]_11_cry_6                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        CIN      In      0.000     18.961 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        COUT     Out     0.143     19.104 r     -         
+next_enemy_x\[0\]_11_cry_8                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        CIN      In      0.000     19.104 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        S1       Out     1.549     20.653 r     -         
+next_enemy_x\[0\]_11[10]                        Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\][10]              FD1S3IX      D        In      0.000     20.653 r     -         
+===============================================================================================================
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.106
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.894
+
+    - Propagation time:                      20.653
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -10.758
+
+    Number of logic level(s):                21
+    Starting point:                          my_pong_inst.next_enemy_y\[0\][0] / Q
+    Ending point:                            my_pong_inst.next_enemy_x\[0\][10] / D
+    The start point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                                               Pin      Pin               Arrival      No. of    
+Name                                            Type         Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_y\[0\][0]               FD1S3IX      Q        Out     1.302     1.302 r      -         
+un13_ec_f                                       Net          -        -       -         -            26        
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        A1       In      0.000     1.302 r      -         
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        COUT     Out     1.544     2.847 r      -         
+un13_ec_f_cry_0                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        CIN      In      0.000     2.847 r      -         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        COUT     Out     0.143     2.990 r      -         
+un13_ec_f_cry_2                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        CIN      In      0.000     2.990 r      -         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        COUT     Out     0.143     3.132 r      -         
+un13_ec_f_cry_4                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_5_0                  CCU2D        CIN      In      0.000     3.132 r      -         
+my_pong_inst.un13_ec_f_cry_5_0                  CCU2D        S1       Out     1.621     4.753 r      -         
+un19_ec_p_6                                     Net          -        -       -         -            2         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        A1       In      0.000     4.753 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        COUT     Out     1.544     6.298 r      -         
+un19_ec_p_cry_6                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        CIN      In      0.000     6.298 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        COUT     Out     0.143     6.441 r      -         
+un19_ec_p_cry_8                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        CIN      In      0.000     6.441 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        COUT     Out     0.143     6.583 r      -         
+un19_ec_p_cry_10                                Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        CIN      In      0.000     6.583 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        S1       Out     1.549     8.132 r      -         
+un19_ec_p                                       Net          -        -       -         -            1         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     C        In      0.000     8.132 r      -         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     Z        Out     1.017     9.149 r      -         
+ec_p_2                                          Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     A        In      0.000     9.149 r      -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     Z        Out     1.017     10.166 r     -         
+enemy_collision\[0\]_2_23                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     D        In      0.000     10.166 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     Z        Out     1.017     11.183 r     -         
+enemy_collision\[0\]_2_25                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     C        In      0.000     11.183 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     Z        Out     1.017     12.200 r     -         
+enemy_collision\[0\]_2_27                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     C        In      0.000     12.200 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     Z        Out     1.153     13.352 r     -         
+enemy_collision\[0\]_2                          Net          -        -       -         -            3         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     A        In      0.000     13.352 r     -         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     Z        Out     1.277     14.629 r     -         
+enemy_dir\[0\]_0_sqmuxa                         Net          -        -       -         -            10        
+my_pong_inst.un1_i43_818                        ORCALUT4     A        In      0.000     14.629 r     -         
+my_pong_inst.un1_i43_818                        ORCALUT4     Z        Out     1.225     15.854 f     -         
+un1_i43_818                                     Net          -        -       -         -            5         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     C        In      0.000     15.854 f     -         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     Z        Out     1.277     17.131 r     -         
+un1_i43_839[1]                                  Net          -        -       -         -            10        
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        A0       In      0.000     17.131 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        COUT     Out     1.544     18.675 r     -         
+next_enemy_x\[0\]_11_cry_2                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        CIN      In      0.000     18.675 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        COUT     Out     0.143     18.818 r     -         
+next_enemy_x\[0\]_11_cry_4                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        CIN      In      0.000     18.818 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        COUT     Out     0.143     18.961 r     -         
+next_enemy_x\[0\]_11_cry_6                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        CIN      In      0.000     18.961 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        COUT     Out     0.143     19.104 r     -         
+next_enemy_x\[0\]_11_cry_8                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        CIN      In      0.000     19.104 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        S1       Out     1.549     20.653 r     -         
+next_enemy_x\[0\]_11[10]                        Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\][10]              FD1S3IX      D        In      0.000     20.653 r     -         
+===============================================================================================================
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
+    - Setup time:                            0.106
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.894
+
+    - Propagation time:                      20.653
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -10.758
+
+    Number of logic level(s):                21
+    Starting point:                          my_pong_inst.next_enemy_y\[0\][0] / Q
+    Ending point:                            my_pong_inst.next_enemy_x\[0\][10] / D
+    The start point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                                               Pin      Pin               Arrival      No. of    
+Name                                            Type         Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_y\[0\][0]               FD1S3IX      Q        Out     1.302     1.302 r      -         
+un13_ec_f                                       Net          -        -       -         -            26        
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        A1       In      0.000     1.302 r      -         
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        COUT     Out     1.544     2.847 r      -         
+un13_ec_f_cry_0                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        CIN      In      0.000     2.847 r      -         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        COUT     Out     0.143     2.990 r      -         
+un13_ec_f_cry_2                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        CIN      In      0.000     2.990 r      -         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        S0       Out     1.621     4.611 r      -         
+un19_ec_p_3                                     Net          -        -       -         -            2         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        A0       In      0.000     4.611 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        COUT     Out     1.544     6.155 r      -         
+un19_ec_p_cry_4                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        CIN      In      0.000     6.155 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        COUT     Out     0.143     6.298 r      -         
+un19_ec_p_cry_6                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        CIN      In      0.000     6.298 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        COUT     Out     0.143     6.441 r      -         
+un19_ec_p_cry_8                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        CIN      In      0.000     6.441 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        COUT     Out     0.143     6.583 r      -         
+un19_ec_p_cry_10                                Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        CIN      In      0.000     6.583 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        S1       Out     1.549     8.132 r      -         
+un19_ec_p                                       Net          -        -       -         -            1         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     C        In      0.000     8.132 r      -         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     Z        Out     1.017     9.149 r      -         
+ec_p_2                                          Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     A        In      0.000     9.149 r      -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     Z        Out     1.017     10.166 r     -         
+enemy_collision\[0\]_2_23                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     D        In      0.000     10.166 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     Z        Out     1.017     11.183 r     -         
+enemy_collision\[0\]_2_25                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     C        In      0.000     11.183 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     Z        Out     1.017     12.200 r     -         
+enemy_collision\[0\]_2_27                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     C        In      0.000     12.200 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     Z        Out     1.153     13.352 r     -         
+enemy_collision\[0\]_2                          Net          -        -       -         -            3         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     A        In      0.000     13.352 r     -         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     Z        Out     1.277     14.629 r     -         
+enemy_dir\[0\]_0_sqmuxa                         Net          -        -       -         -            10        
+my_pong_inst.un1_i43_818                        ORCALUT4     A        In      0.000     14.629 r     -         
+my_pong_inst.un1_i43_818                        ORCALUT4     Z        Out     1.225     15.854 f     -         
+un1_i43_818                                     Net          -        -       -         -            5         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     C        In      0.000     15.854 f     -         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     Z        Out     1.277     17.131 r     -         
+un1_i43_839[1]                                  Net          -        -       -         -            10        
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        A0       In      0.000     17.131 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        COUT     Out     1.544     18.675 r     -         
+next_enemy_x\[0\]_11_cry_2                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        CIN      In      0.000     18.675 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        COUT     Out     0.143     18.818 r     -         
+next_enemy_x\[0\]_11_cry_4                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        CIN      In      0.000     18.818 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        COUT     Out     0.143     18.961 r     -         
+next_enemy_x\[0\]_11_cry_6                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        CIN      In      0.000     18.961 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        COUT     Out     0.143     19.104 r     -         
+next_enemy_x\[0\]_11_cry_8                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        CIN      In      0.000     19.104 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        S1       Out     1.549     20.653 r     -         
+next_enemy_x\[0\]_11[10]                        Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\][10]              FD1S3IX      D        In      0.000     20.653 r     -         
+===============================================================================================================
+
+
+Path information for path number 4: 
+      Requested Period:                      10.000
+    - Setup time:                            0.106
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.894
+
+    - Propagation time:                      20.653
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -10.758
+
+    Number of logic level(s):                21
+    Starting point:                          my_pong_inst.next_enemy_y\[0\][0] / Q
+    Ending point:                            my_pong_inst.next_enemy_x\[0\][10] / D
+    The start point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                                               Pin      Pin               Arrival      No. of    
+Name                                            Type         Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_y\[0\][0]               FD1S3IX      Q        Out     1.302     1.302 r      -         
+un13_ec_f                                       Net          -        -       -         -            26        
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        A1       In      0.000     1.302 r      -         
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        COUT     Out     1.544     2.847 r      -         
+un13_ec_f_cry_0                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        CIN      In      0.000     2.847 r      -         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        COUT     Out     0.143     2.990 r      -         
+un13_ec_f_cry_2                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        CIN      In      0.000     2.990 r      -         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        S1       Out     1.621     4.611 r      -         
+un19_ec_p_4                                     Net          -        -       -         -            2         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        A1       In      0.000     4.611 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        COUT     Out     1.544     6.155 r      -         
+un19_ec_p_cry_4                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        CIN      In      0.000     6.155 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        COUT     Out     0.143     6.298 r      -         
+un19_ec_p_cry_6                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        CIN      In      0.000     6.298 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        COUT     Out     0.143     6.441 r      -         
+un19_ec_p_cry_8                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        CIN      In      0.000     6.441 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        COUT     Out     0.143     6.583 r      -         
+un19_ec_p_cry_10                                Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        CIN      In      0.000     6.583 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        S1       Out     1.549     8.132 r      -         
+un19_ec_p                                       Net          -        -       -         -            1         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     C        In      0.000     8.132 r      -         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     Z        Out     1.017     9.149 r      -         
+ec_p_2                                          Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     A        In      0.000     9.149 r      -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     Z        Out     1.017     10.166 r     -         
+enemy_collision\[0\]_2_23                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     D        In      0.000     10.166 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     Z        Out     1.017     11.183 r     -         
+enemy_collision\[0\]_2_25                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     C        In      0.000     11.183 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     Z        Out     1.017     12.200 r     -         
+enemy_collision\[0\]_2_27                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     C        In      0.000     12.200 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     Z        Out     1.153     13.352 r     -         
+enemy_collision\[0\]_2                          Net          -        -       -         -            3         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     A        In      0.000     13.352 r     -         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     Z        Out     1.277     14.629 r     -         
+enemy_dir\[0\]_0_sqmuxa                         Net          -        -       -         -            10        
+my_pong_inst.un1_i43_818                        ORCALUT4     A        In      0.000     14.629 r     -         
+my_pong_inst.un1_i43_818                        ORCALUT4     Z        Out     1.225     15.854 f     -         
+un1_i43_818                                     Net          -        -       -         -            5         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     C        In      0.000     15.854 f     -         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     Z        Out     1.277     17.131 r     -         
+un1_i43_839[1]                                  Net          -        -       -         -            10        
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        A1       In      0.000     17.131 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        COUT     Out     1.544     18.675 r     -         
+next_enemy_x\[0\]_11_cry_2                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        CIN      In      0.000     18.675 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        COUT     Out     0.143     18.818 r     -         
+next_enemy_x\[0\]_11_cry_4                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        CIN      In      0.000     18.818 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        COUT     Out     0.143     18.961 r     -         
+next_enemy_x\[0\]_11_cry_6                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        CIN      In      0.000     18.961 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        COUT     Out     0.143     19.104 r     -         
+next_enemy_x\[0\]_11_cry_8                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        CIN      In      0.000     19.104 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        S1       Out     1.549     20.653 r     -         
+next_enemy_x\[0\]_11[10]                        Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\][10]              FD1S3IX      D        In      0.000     20.653 r     -         
+===============================================================================================================
+
+
+Path information for path number 5: 
+      Requested Period:                      10.000
+    - Setup time:                            0.106
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.894
+
+    - Propagation time:                      20.653
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -10.758
+
+    Number of logic level(s):                21
+    Starting point:                          my_pong_inst.next_enemy_y\[0\][0] / Q
+    Ending point:                            my_pong_inst.next_enemy_x\[0\][9] / D
+    The start point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            pll_50_to_40Mhz_0_90_180|CLKOP_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                                               Pin      Pin               Arrival      No. of    
+Name                                            Type         Name     Dir     Delay     Time         Fan Out(s)
+---------------------------------------------------------------------------------------------------------------
+my_pong_inst.next_enemy_y\[0\][0]               FD1S3IX      Q        Out     1.302     1.302 r      -         
+un13_ec_f                                       Net          -        -       -         -            26        
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        A1       In      0.000     1.302 r      -         
+my_pong_inst.un13_ec_f_cry_0_0                  CCU2D        COUT     Out     1.544     2.847 r      -         
+un13_ec_f_cry_0                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        CIN      In      0.000     2.847 r      -         
+my_pong_inst.un13_ec_f_cry_1_0                  CCU2D        COUT     Out     0.143     2.990 r      -         
+un13_ec_f_cry_2                                 Net          -        -       -         -            1         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        CIN      In      0.000     2.990 r      -         
+my_pong_inst.un13_ec_f_cry_3_0                  CCU2D        S1       Out     1.621     4.611 r      -         
+un19_ec_p_4                                     Net          -        -       -         -            2         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        A1       In      0.000     4.611 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_3_0             CCU2D        COUT     Out     1.544     6.155 r      -         
+un19_ec_p_cry_4                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        CIN      In      0.000     6.155 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_5_0             CCU2D        COUT     Out     0.143     6.298 r      -         
+un19_ec_p_cry_6                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        CIN      In      0.000     6.298 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_7_0             CCU2D        COUT     Out     0.143     6.441 r      -         
+un19_ec_p_cry_8                                 Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        CIN      In      0.000     6.441 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_9_0             CCU2D        COUT     Out     0.143     6.583 r      -         
+un19_ec_p_cry_10                                Net          -        -       -         -            1         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        CIN      In      0.000     6.583 r      -         
+my_pong_inst._l0\.un19_ec_p_cry_11_0            CCU2D        S1       Out     1.549     8.132 r      -         
+un19_ec_p                                       Net          -        -       -         -            1         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     C        In      0.000     8.132 r      -         
+my_pong_inst._l0\.ec_p_2                        ORCALUT4     Z        Out     1.017     9.149 r      -         
+ec_p_2                                          Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     A        In      0.000     9.149 r      -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_23     ORCALUT4     Z        Out     1.017     10.166 r     -         
+enemy_collision\[0\]_2_23                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     D        In      0.000     10.166 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_25     ORCALUT4     Z        Out     1.017     11.183 r     -         
+enemy_collision\[0\]_2_25                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     C        In      0.000     11.183 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2_27     ORCALUT4     Z        Out     1.017     12.200 r     -         
+enemy_collision\[0\]_2_27                       Net          -        -       -         -            1         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     C        In      0.000     12.200 r     -         
+my_pong_inst._l0\.enemy_collision\[0\]_2        ORCALUT4     Z        Out     1.153     13.352 r     -         
+enemy_collision\[0\]_2                          Net          -        -       -         -            3         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     A        In      0.000     13.352 r     -         
+my_pong_inst.enemy_dir\[0\]_0_sqmuxa            ORCALUT4     Z        Out     1.277     14.629 r     -         
+enemy_dir\[0\]_0_sqmuxa                         Net          -        -       -         -            10        
+my_pong_inst.un1_i43_818                        ORCALUT4     A        In      0.000     14.629 r     -         
+my_pong_inst.un1_i43_818                        ORCALUT4     Z        Out     1.225     15.854 f     -         
+un1_i43_818                                     Net          -        -       -         -            5         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     C        In      0.000     15.854 f     -         
+my_pong_inst.un1_i43_839[1]                     ORCALUT4     Z        Out     1.277     17.131 r     -         
+un1_i43_839[1]                                  Net          -        -       -         -            10        
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        A0       In      0.000     17.131 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_1_0       CCU2D        COUT     Out     1.544     18.675 r     -         
+next_enemy_x\[0\]_11_cry_2                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        CIN      In      0.000     18.675 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_3_0       CCU2D        COUT     Out     0.143     18.818 r     -         
+next_enemy_x\[0\]_11_cry_4                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        CIN      In      0.000     18.818 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_5_0       CCU2D        COUT     Out     0.143     18.961 r     -         
+next_enemy_x\[0\]_11_cry_6                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        CIN      In      0.000     18.961 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_7_0       CCU2D        COUT     Out     0.143     19.104 r     -         
+next_enemy_x\[0\]_11_cry_8                      Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        CIN      In      0.000     19.104 r     -         
+my_pong_inst.next_enemy_x\[0\]_11_cry_9_0       CCU2D        S0       Out     1.549     20.653 r     -         
+next_enemy_x\[0\]_11[9]                         Net          -        -       -         -            1         
+my_pong_inst.next_enemy_x\[0\][9]               FD1S3IX      D        In      0.000     20.653 r     -         
+===============================================================================================================
+
+
+
+
+====================================
+Detailed Report for Clock: top|CLK
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                          Starting                                           Arrival          
+Instance                  Reference     Type         Pin     Net             Time        Slack
+                          Clock                                                               
+----------------------------------------------------------------------------------------------
+deb_shoot.counter[9]      top|CLK       FD1S3IX      Q       counter[9]      1.044       3.718
+deb_rst.counter[9]        top|CLK       FD1S3IX      Q       counter[9]      1.044       3.718
+deb_rst.counter[10]       top|CLK       FD1S3IX      Q       counter[10]     1.044       3.718
+deb_shoot.counter[10]     top|CLK       FD1S3IX      Q       counter[10]     1.044       3.718
+deb_rst.counter[11]       top|CLK       FD1S3IX      Q       counter[11]     1.044       3.718
+deb_shoot.counter[11]     top|CLK       FD1S3IX      Q       counter[11]     1.044       3.718
+deb_shoot.counter[12]     top|CLK       FD1S3IX      Q       counter[12]     1.044       3.718
+deb_rst.counter[12]       top|CLK       FD1S3IX      Q       counter[12]     1.044       3.718
+deb_rst.state             top|CLK       FD1P3AX      Q       rst_clean       1.782       3.997
+deb_shoot_stateio         top|CLK       IFS1P3DX     Q       shoot_clean     1.232       4.547
+==============================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                         Starting                                                       Required          
+Instance                 Reference     Type        Pin     Net                          Time         Slack
+                         Clock                                                                            
+----------------------------------------------------------------------------------------------------------
+deb_rst.counter[0]       top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNI658O     9.197        3.718
+deb_shoot.counter[0]     top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNICROP     9.197        3.718
+deb_shoot.counter[1]     top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNICROP     9.197        3.718
+deb_rst.counter[1]       top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNI658O     9.197        3.718
+deb_rst.counter[2]       top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNI658O     9.197        3.718
+deb_shoot.counter[2]     top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNICROP     9.197        3.718
+deb_rst.counter[3]       top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNI658O     9.197        3.718
+deb_shoot.counter[3]     top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNICROP     9.197        3.718
+deb_shoot.counter[4]     top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNICROP     9.197        3.718
+deb_rst.counter[4]       top|CLK       FD1S3IX     CD      btn_out_0_sqmuxa_RNI658O     9.197        3.718
+==========================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.803
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.197
+
+    - Propagation time:                      5.479
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 3.718
+
+    Number of logic level(s):                4
+    Starting point:                          deb_shoot.counter[9] / Q
+    Ending point:                            deb_shoot.counter[0] / CD
+    The start point is clocked by            top|CLK [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            top|CLK [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                                      Pin      Pin               Arrival     No. of    
+Name                                   Type         Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------
+deb_shoot.counter[9]                   FD1S3IX      Q        Out     1.044     1.044 r     -         
+counter[9]                             Net          -        -       -         -           2         
+deb_shoot.btn_out_0_sqmuxa_8           ORCALUT4     A        In      0.000     1.044 r     -         
+deb_shoot.btn_out_0_sqmuxa_8           ORCALUT4     Z        Out     1.017     2.061 r     -         
+btn_out_0_sqmuxa_8                     Net          -        -       -         -           1         
+deb_shoot.btn_out_0_sqmuxa_12          ORCALUT4     B        In      0.000     2.061 r     -         
+deb_shoot.btn_out_0_sqmuxa_12          ORCALUT4     Z        Out     1.017     3.077 r     -         
+btn_out_0_sqmuxa_12                    Net          -        -       -         -           1         
+deb_shoot.btn_out_0_sqmuxa             ORCALUT4     D        In      0.000     3.077 r     -         
+deb_shoot.btn_out_0_sqmuxa             ORCALUT4     Z        Out     1.089     4.166 r     -         
+btn_out_0_sqmuxa                       Net          -        -       -         -           2         
+deb_shoot.btn_out_0_sqmuxa_RNICROP     ORCALUT4     B        In      0.000     4.166 r     -         
+deb_shoot.btn_out_0_sqmuxa_RNICROP     ORCALUT4     Z        Out     1.313     5.479 r     -         
+btn_out_0_sqmuxa_RNICROP               Net          -        -       -         -           16        
+deb_shoot.counter[0]                   FD1S3IX      CD       In      0.000     5.479 r     -         
+=====================================================================================================
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                       Starting                                         Arrival           
+Instance               Reference     Type        Pin       Net          Time        Slack 
+                       Clock                                                              
+------------------------------------------------------------------------------------------
+pong_pll.PLLInst_0     System        EHXPLLJ     CLKOP     CLKOP_i      0.000       10.000
+pong_pll.PLLInst_0     System        EHXPLLJ     CLKOS     CLK40_90     0.000       10.000
+==========================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                            Starting                                         Required           
+Instance                                    Reference     Type        Pin       Net          Time         Slack 
+                                            Clock                                                               
+----------------------------------------------------------------------------------------------------------------
+pong_vo_phy_ddr.PCLK\.ddr.Inst3_ODDRXE0     System        ODDRXE      SCLK      CLK40_90     10.000       10.000
+pong_pll.PLLInst_0                          System        EHXPLLJ     CLKFB     CLKOP_i      10.000       10.000
+================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.000
+    + Clock delay at ending point:           0.000 (ideal)
+    + Estimated clock delay at ending point: 0.000
+    = Required time:                         10.000
+
+    - Propagation time:                      0.000
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 10.000
+
+    Number of logic level(s):                0
+    Starting point:                          pong_pll.PLLInst_0 / CLKOP
+    Ending point:                            pong_pll.PLLInst_0 / CLKFB
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            System [rising]
+
+Instance / Net                     Pin       Pin               Arrival     No. of    
+Name                   Type        Name      Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------
+pong_pll.PLLInst_0     EHXPLLJ     CLKOP     Out     0.000     0.000 r     -         
+CLKOP_i                Net         -         -       -         -           634       
+pong_pll.PLLInst_0     EHXPLLJ     CLKFB     In      0.000     0.000 r     -         
+=====================================================================================
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+
+Finished final timing analysis (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 324MB peak: 358MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 324MB peak: 358MB)
+
+---------------------------------------
+Resource Usage Report
+Part: lcmxo2_4000hc-5
+
+Register bits: 652 of 4320 (15%)
+PIC Latch:       0
+I/O cells:       27
+
+
+Details:
+BB:             1
+CCU2D:          809
+EHXPLLJ:        1
+FD1P3AX:        62
+FD1P3BX:        16
+FD1P3DX:        86
+FD1P3IX:        44
+FD1P3JX:        22
+FD1S3AX:        61
+FD1S3BX:        20
+FD1S3DX:        127
+FD1S3IX:        184
+FD1S3JX:        24
+GSR:            1
+IB:             5
+IFS1P3DX:       3
+INV:            19
+L6MUX21:        11
+OB:             21
+ODDRXE:         16
+OFS1P3BX:       2
+OFS1P3DX:       1
+ORCALUT4:       1924
+PFUMX:          53
+PUR:            1
+VHI:            15
+VLO:            12
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:23s; Memory used current: 121MB peak: 358MB)
+
+Process took 0h:00m:23s realtime, 0h:00m:23s cputime
+# Tue May 26 20:44:44 2026
+
+###########################################################]
+
+
+Synthesis exit by 0.
+
+edif2ngd  -l "MachXO2" -d LCMXO2-4000HC -path "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1" -path "C:/Users/Rafal/Desktop/szymon_to_fpga"   "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/fpga_game_SD_impl1.edi" "fpga_game_SD_impl1.ngo"   
+edif2ngd:  version Diamond (64-bit) 3.12.0.240.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="STATE_GAME_CLEAR"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="STATE_GAMEOVER"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="STATE_LEVEL_CLEAR"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="STATE_PLAY"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="STATE_LOAD_LEVEL"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="STATE_START"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="DEMO_WAIT"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="TIME_LIMIT"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="TANK_H"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="TANK_W"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="SIM_MODE"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="SCR_H"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="SCR_W"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="D"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="D"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="D"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="FSM_FRONT_PORCH"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="FSM_ACTIVE"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="FSM_BACK_PORCH"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="FSM_SYNC"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="FSM_IDLE"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="D"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="D"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="D"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="SCR_W"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="SCR_H"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="SIM_MODE"  />
+    <postMsg mid="1121028" type="Warning" dynamic="1" navigation="0" arg0="CTRL_DELAY"  />
+Writing the design to fpga_game_SD_impl1.ngo...
+
+Total CPU Time: 0 secs  
+Total REAL Time: 0 secs  
+Peak Memory Usage: 28 MB
+
+
+ngdbuild  -a "MachXO2" -d LCMXO2-4000HC  -p "C:/lscc/diamond/3.12/ispfpga/xo2c00/data"  -p "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1" -p "C:/Users/Rafal/Desktop/szymon_to_fpga"  "fpga_game_SD_impl1.ngo" "fpga_game_SD_impl1.ngd"  	
+ngdbuild:  version Diamond (64-bit) 3.12.0.240.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+Reading 'fpga_game_SD_impl1.ngo' ...
+Loading NGL library 'C:/lscc/diamond/3.12/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.12/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.12/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.12/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="EncB_QA" arg2="EncB_QA"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="EncB_QB" arg2="EncB_QB"  />
+    <postMsg mid="1163101" type="Warning" dynamic="1" navigation="0" arg0="2"  />
+
+Design Results:
+   3540 blocks expanded
+Complete the first expansion.
+Writing 'fpga_game_SD_impl1.ngd' ...
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 40 MB
+
+
+map -a "MachXO2" -p LCMXO2-4000HC -t TQFP144 -s 5 -oc Commercial   "fpga_game_SD_impl1.ngd" -o "fpga_game_SD_impl1_map.ncd" -pr "fpga_game_SD_impl1.prf" -mp "fpga_game_SD_impl1.mrp" -lpf "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/fpga_game_SD_impl1_synplify.lpf" -lpf "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game_SD.lpf"  -c 0           
+map:  version Diamond (64-bit) 3.12.0.240.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+   Process the file: fpga_game_SD_impl1.ngd
+   Picdevice="LCMXO2-4000HC"
+
+   Pictype="TQFP144"
+
+   Picspeed=5
+
+   Remove unused logic
+
+   Do not produce over sized NCDs.
+
+Part used: LCMXO2-4000HCTQFP144, Performance used: 5.
+
+Loading device for application map from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.12/ispfpga.
+Package Status:                     Final          Version 1.44.
+
+Running general design DRC...
+
+Removing unused logic...
+
+Optimizing...
+
+80 CCU2 constant inputs absorbed.
+
+    <postMsg mid="51001030" type="Warning" dynamic="1" navigation="0" arg0="rst_clean"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="EncB_QA"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="EncB_QB"  />
+
+
+
+Design Summary:
+   Number of registers:    652 out of  4665 (14%)
+      PFU registers:          646 out of  4320 (15%)
+      PIO registers:            6 out of   345 (2%)
+   Number of SLICEs:      1786 out of  2160 (83%)
+      SLICEs as Logic/ROM:   1786 out of  2160 (83%)
+      SLICEs as RAM:            0 out of  1620 (0%)
+      SLICEs as Carry:        809 out of  2160 (37%)
+   Number of LUT4s:        3562 out of  4320 (82%)
+      Number used as logic LUTs:        1944
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      1618
+      Number used as shift registers:     0
+   Number of PIO sites used: 27 + 4(JTAG) out of 115 (27%)
+   Number of IDDR/ODDR/TDDR cells used: 16 out of 345 (5%)
+      Number of IDDR cells:   0
+      Number of ODDR cells:  16
+      Number of TDDR cells:   0
+   Number of PIO using at least one IDDR/ODDR/TDDR: 16 (0 differential)
+      Number of PIO using IDDR only:        0 (0 differential)
+      Number of PIO using ODDR only:       16 (0 differential)
+      Number of PIO using TDDR only:        0 (0 differential)
+      Number of PIO using IDDR/ODDR:        0 (0 differential)
+      Number of PIO using IDDR/TDDR:        0 (0 differential)
+      Number of PIO using ODDR/TDDR:        0 (0 differential)
+      Number of PIO using IDDR/ODDR/TDDR:   0 (0 differential)
+   Number of block RAMs:  0 out of 10 (0%)
+   Number of GSRs:        1 out of 1 (100%)
+   EFB used :        No
+   JTAG used :       No
+   Readback used :   No
+   Oscillator used : No
+   Startup used :    No
+   POR :             On
+   Bandgap :         On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  1 out of 2 (50%)
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of CLKDIVC:  0 out of 4 (0%)
+   Number of ECLKSYNCA:  0 out of 4 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
+   Number of clocks:  3
+     Net CLK_c: 21 loads, 21 rising, 0 falling (Driver: PIO CLK )
+     Net CLK40_0: 371 loads, 371 rising, 0 falling (Driver: pong_pll/PLLInst_0 )
+     Net CLK40_90: 1 loads, 1 rising, 0 falling (Driver: pong_pll/PLLInst_0 )
+   Number of Clock Enables:  31
+     Net deb_shoot.btn_out_0_sqmuxa: 1 loads, 0 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/un1_f_ld_rack_0: 2 loads, 2 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/tick: 4 loads, 4 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_rdy_RNO_0: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_run_RNO: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/f_sample: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_run: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bs_rdy: 2 loads, 2 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bs_ack: 2 loads, 2 LSLICEs
+     Net pong_hdmi_i2c_cfg/x_ack: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/data_cnte: 7 loads, 7 LSLICEs
+     Net pong_hdmi_i2c_cfg/cfg_addre: 5 loads, 5 LSLICEs
+     Net pong_hdmi_i2c_cfg/N_12_i: 5 loads, 5 LSLICEs
+     Net my_pong_inst/direction_1_sqmuxa: 7 loads, 7 LSLICEs
+     Net my_pong_inst/i42: 2 loads, 2 LSLICEs
+     Net my_pong_inst/state[0]: 15 loads, 15 LSLICEs
+     Net my_pong_inst/demo_mode_1_sqmuxa_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/next_bullet_x_0_sqmuxa: 1 loads, 1 LSLICEs
+     Net my_pong_inst/N_1244_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/start_of_frame: 25 loads, 25 LSLICEs
+     Net my_pong_inst/N_81_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/un1_state_779: 2 loads, 2 LSLICEs
+     Net my_pong_inst/N_1222_i: 2 loads, 2 LSLICEs
+     Net my_pong_inst/un1_i43_819_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/un1_i43_817_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/un1_i43_794_i: 12 loads, 12 LSLICEs
+     Net my_pong_inst/un1_i43_793_i: 12 loads, 12 LSLICEs
+     Net pong_vga_sync_gen/cnt_vae: 8 loads, 8 LSLICEs
+     Net pong_vga_sync_gen/fsm_tic: 2 loads, 2 LSLICEs
+     Net pong_vga_sync_gen/cnt_v_1_sqmuxa_1: 1 loads, 1 LSLICEs
+     Net deb_rst/btn_out_0_sqmuxa: 1 loads, 1 LSLICEs
+   Number of local set/reset loads for net rst_clean merged into GSR:  268
+   Number of LSRs:  12
+     Net rst_clean: 21 loads, 21 LSLICEs
+     Net un1_VID_DE_i: 3 loads, 3 LSLICEs
+     Net my_pong_inst/tank_x10: 19 loads, 19 LSLICEs
+     Net my_pong_inst/dec_rot/un3_step_up_i: 2 loads, 2 LSLICEs
+     Net my_pong_inst/state[4]: 1 loads, 1 LSLICEs
+     Net my_pong_inst/direction_0_sqmuxa_RNIBJH01: 6 loads, 6 LSLICEs
+     Net my_pong_inst/demo_mode_RNIOR191: 5 loads, 5 LSLICEs
+     Net my_pong_inst/un1_timerlto20_RNIR9MO: 11 loads, 11 LSLICEs
+     Net my_pong_inst/i41: 57 loads, 57 LSLICEs
+     Net my_pong_inst/un1_bullet_timerlto16_RNI7EKD: 9 loads, 9 LSLICEs
+     Net deb_shoot/btn_out_0_sqmuxa_RNICROP: 9 loads, 9 LSLICEs
+     Net deb_rst/btn_out_0_sqmuxa_RNI658O: 9 loads, 9 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net my_pong_inst/V_CNT_i_1[6]: 129 loads
+     Net my_pong_inst/ANB3_i_1: 104 loads
+     Net my_pong_inst/i42: 80 loads
+     Net my_pong_inst/ANC2_1: 62 loads
+     Net my_pong_inst/i41: 60 loads
+     Net my_pong_inst/next_e_bullet_dir[0]: 56 loads
+     Net my_pong_inst/un1_H_CNT_0_axb1: 56 loads
+     Net my_pong_inst/un1_x_vcntlt10: 52 loads
+     Net my_pong_inst/N_80: 51 loads
+     Net un1_x_hcnt_1_c7: 50 loads
+ 
+
+   Number of warnings:  3
+   Number of errors:    0
+
+
+
+Total CPU Time: 1 secs  
+Total REAL Time: 0 secs  
+Peak Memory Usage: 75 MB
+
+Dumping design to file fpga_game_SD_impl1_map.ncd.
+
+mpartrce -p "fpga_game_SD_impl1.p2t" -f "fpga_game_SD_impl1.p3t" -tf "fpga_game_SD_impl1.pt" "fpga_game_SD_impl1_map.ncd" "fpga_game_SD_impl1.ncd"
+
+---- MParTrce Tool ----
+Removing old design directory at request of -rem command line option to this program.
+Running par. Please wait . . .
+
+Lattice Place and Route Report for Design "fpga_game_SD_impl1_map.ncd"
+Tue May 26 20:44:49 2026
+
+PAR: Place And Route Diamond (64-bit) 3.12.0.240.2.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/Users/Rafal/Desktop/szymon_to_fpga/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 fpga_game_SD_impl1_map.ncd fpga_game_SD_impl1.dir/5_1.ncd fpga_game_SD_impl1.prf
+Preference file: fpga_game_SD_impl1.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file fpga_game_SD_impl1_map.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     TQFP144
+Performance: 5
+Loading device for application par from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.12/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+Device utilization summary:
+
+   PIO (prelim)   27+4(JTAG)/280     11% used
+                  27+4(JTAG)/115     27% bonded
+   IOLOGIC           21/280           7% used
+
+   SLICE           1786/2160         82% used
+
+   GSR                1/1           100% used
+   PLL                1/2            50% used
+
+
+Number of Signals: 4100
+Number of Connections: 11767
+
+Pin Constraint Summary:
+   27 out of 27 pins locked (100% locked).
+
+    <postMsg mid="61091062" type="Warning" dynamic="0" navigation="0"  />
+The following 3 signals are selected to use the primary clock routing resources:
+    CLK40_0 (driver: pong_pll/PLLInst_0, clk load #: 370)
+    CLK40_90 (driver: pong_pll/PLLInst_0, clk load #: 1)
+    CLK_c (driver: CLK, clk load #: 21)
+
+    <postMsg mid="61061008" type="Warning" dynamic="5" navigation="0" arg0="CLK_c" arg1="Primary" arg2="CLK" arg3="105" arg4="Primary"  />
+
+The following 8 signals are selected to use the secondary clock routing resources:
+    my_pong_inst/i41 (driver: my_pong_inst/SLICE_1863, clk load #: 0, sr load #: 57, ce load #: 0)
+    my_pong_inst/start_of_frame (driver: my_pong_inst/SLICE_1256, clk load #: 0, sr load #: 0, ce load #: 25)
+    rst_clean (driver: SLICE_1058, clk load #: 0, sr load #: 21, ce load #: 0)
+    my_pong_inst/tank_x10 (driver: my_pong_inst/SLICE_1242, clk load #: 0, sr load #: 19, ce load #: 0)
+    my_pong_inst/state[0] (driver: my_pong_inst/SLICE_947, clk load #: 0, sr load #: 0, ce load #: 15)
+    my_pong_inst/un1_i43_794_i (driver: my_pong_inst/SLICE_1256, clk load #: 0, sr load #: 0, ce load #: 12)
+    my_pong_inst/un1_i43_793_i (driver: my_pong_inst/SLICE_1270, clk load #: 0, sr load #: 0, ce load #: 12)
+    my_pong_inst/un1_timerlto20_RNIR9MO (driver: my_pong_inst/SLICE_1829, clk load #: 0, sr load #: 11, ce load #: 0)
+
+Signal rst_clean is selected as Global Set/Reset.
+Starting Placer Phase 0.
+..........
+Finished Placer Phase 0.  REAL time: 4 secs 
+
+Starting Placer Phase 1.
+....................
+Placer score = 2401571.
+Finished Placer Phase 1.  REAL time: 13 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  2347861
+Finished Placer Phase 2.  REAL time: 14 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clock Resources:
+  CLK_PIN    : 0 out of 8 (0%)
+  General PIO: 1 out of 280 (0%)
+  PLL        : 1 out of 2 (50%)
+  DCM        : 0 out of 2 (0%)
+  DCC        : 0 out of 8 (0%)
+
+Global Clocks:
+  PRIMARY "CLK40_0" from CLKOP on comp "pong_pll/PLLInst_0" on PLL site "RPLL", clk load = 370
+  PRIMARY "CLK40_90" from CLKOS on comp "pong_pll/PLLInst_0" on PLL site "RPLL", clk load = 1
+  PRIMARY "CLK_c" from comp "CLK" on PIO site "105 (PR3A)", clk load = 21
+  SECONDARY "my_pong_inst/i41" from F1 on comp "my_pong_inst/SLICE_1863" on site "R12C15C", clk load = 0, ce load = 0, sr load = 57
+  SECONDARY "my_pong_inst/start_of_frame" from F1 on comp "my_pong_inst/SLICE_1256" on site "R2C21D", clk load = 0, ce load = 25, sr load = 0
+  SECONDARY "rst_clean" from Q0 on comp "SLICE_1058" on site "R10C26B", clk load = 0, ce load = 0, sr load = 21
+  SECONDARY "my_pong_inst/tank_x10" from F1 on comp "my_pong_inst/SLICE_1242" on site "R20C21D", clk load = 0, ce load = 0, sr load = 19
+  SECONDARY "my_pong_inst/state[0]" from Q0 on comp "my_pong_inst/SLICE_947" on site "R13C17C", clk load = 0, ce load = 15, sr load = 0
+  SECONDARY "my_pong_inst/un1_i43_794_i" from F0 on comp "my_pong_inst/SLICE_1256" on site "R2C21D", clk load = 0, ce load = 12, sr load = 0
+  SECONDARY "my_pong_inst/un1_i43_793_i" from F0 on comp "my_pong_inst/SLICE_1270" on site "R9C2D", clk load = 0, ce load = 12, sr load = 0
+  SECONDARY "my_pong_inst/un1_timerlto20_RNIR9MO" from F1 on comp "my_pong_inst/SLICE_1829" on site "R12C17D", clk load = 0, ce load = 0, sr load = 11
+
+  PRIMARY  : 3 out of 8 (37%)
+  SECONDARY: 8 out of 8 (100%)
+
+Edge Clocks:
+  No edge clock selected.
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   27 + 4(JTAG) out of 280 (11.1%) PIO sites used.
+   27 + 4(JTAG) out of 115 (27.0%) bonded PIO sites used.
+   Number of PIO comps: 27; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+----------------+------------+-----------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref |
++----------+----------------+------------+-----------+
+| 0        | 12 / 28 ( 42%) | 2.5V       | -         |
+| 1        | 1 / 29 (  3%)  | 2.5V       | -         |
+| 2        | 0 / 29 (  0%)  | -          | -         |
+| 3        | 5 / 9 ( 55%)   | 2.5V       | -         |
+| 4        | 5 / 10 ( 50%)  | 2.5V       | -         |
+| 5        | 4 / 10 ( 40%)  | 2.5V       | -         |
++----------+----------------+------------+-----------+
+
+Total placer CPU time: 14 secs 
+
+Dumping design to file fpga_game_SD_impl1.dir/5_1.ncd.
+
+0 connections routed; 11767 unrouted.
+Starting router resource preassignment
+
+Completed router resource preassignment. Real time: 17 secs 
+
+Start NBR router at 20:45:06 05/26/26
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design.                                               
+*****************************************************************
+
+Start NBR special constraint process at 20:45:06 05/26/26
+
+Start NBR section for initial routing at 20:45:08 05/26/26
+Level 1, iteration 1
+79(0.03%) conflicts; 9669(82.17%) untouched conns; 19671382 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.420ns/-19671.382ns; real time: 20 secs 
+Level 2, iteration 1
+15(0.01%) conflicts; 9669(82.17%) untouched conns; 20851227 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.460ns/-20851.228ns; real time: 20 secs 
+Level 3, iteration 1
+10(0.00%) conflicts; 9669(82.17%) untouched conns; 20852075 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.460ns/-20852.076ns; real time: 21 secs 
+Level 4, iteration 1
+324(0.13%) conflicts; 0(0.00%) untouched conn; 22193179 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.460ns/-22193.180ns; real time: 22 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 20:45:11 05/26/26
+Level 4, iteration 1
+178(0.07%) conflicts; 0(0.00%) untouched conn; 21553773 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-21553.774ns; real time: 23 secs 
+Level 4, iteration 2
+80(0.03%) conflicts; 0(0.00%) untouched conn; 22161917 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22161.918ns; real time: 23 secs 
+Level 4, iteration 3
+28(0.01%) conflicts; 0(0.00%) untouched conn; 22202300 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22202.300ns; real time: 24 secs 
+Level 4, iteration 4
+11(0.00%) conflicts; 0(0.00%) untouched conn; 22202300 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22202.300ns; real time: 24 secs 
+Level 4, iteration 5
+5(0.00%) conflicts; 0(0.00%) untouched conn; 22298226 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22298.226ns; real time: 24 secs 
+Level 4, iteration 6
+3(0.00%) conflicts; 0(0.00%) untouched conn; 22298226 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22298.226ns; real time: 24 secs 
+Level 4, iteration 7
+2(0.00%) conflicts; 0(0.00%) untouched conn; 22691837 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22691.837ns; real time: 24 secs 
+Level 4, iteration 8
+2(0.00%) conflicts; 0(0.00%) untouched conn; 22691837 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.350ns/-22691.837ns; real time: 24 secs 
+Level 4, iteration 9
+6(0.00%) conflicts; 0(0.00%) untouched conn; 22790173 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.905ns/-22790.173ns; real time: 24 secs 
+Level 4, iteration 10
+2(0.00%) conflicts; 0(0.00%) untouched conn; 22790173 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.905ns/-22790.173ns; real time: 24 secs 
+Level 4, iteration 11
+1(0.00%) conflict; 0(0.00%) untouched conn; 22796202 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.930ns/-22796.202ns; real time: 25 secs 
+Level 4, iteration 12
+1(0.00%) conflict; 0(0.00%) untouched conn; 22796202 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.930ns/-22796.202ns; real time: 25 secs 
+Level 4, iteration 13
+0(0.00%) conflict; 0(0.00%) untouched conn; 22796210 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.930ns/-22796.210ns; real time: 25 secs 
+
+Start NBR section for performance tuning (iteration 1) at 20:45:14 05/26/26
+Level 4, iteration 1
+1(0.00%) conflict; 0(0.00%) untouched conn; 22794722 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.930ns/-22794.722ns; real time: 25 secs 
+Level 4, iteration 2
+0(0.00%) conflict; 0(0.00%) untouched conn; 22796210 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.930ns/-22796.210ns; real time: 26 secs 
+
+Start NBR section for re-routing at 20:45:15 05/26/26
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 22686804 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -47.930ns/-22686.804ns; real time: 26 secs 
+
+Start NBR section for post-routing at 20:45:15 05/26/26
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 1727 (14.68%)
+  Estimated worst slack<setup> : -47.930ns
+  Timing score<setup> : 51483253
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+Total CPU time 27 secs 
+Total REAL time: 29 secs 
+Completely routed.
+End of route.  11767 routed (100.00%); 0 unrouted.
+
+Hold time timing score: 0, hold timing errors: 0
+
+Timing score: 51483253 
+
+Dumping design to file fpga_game_SD_impl1.dir/5_1.ncd.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = -47.930
+PAR_SUMMARY::Timing score<setup/<ns>> = 51483.253
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.304
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 28 secs 
+Total REAL time to completion: 30 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+Exiting par with exit code 0
+Exiting mpartrce with exit code 0
+
+trce -f "fpga_game_SD_impl1.pt" -o "fpga_game_SD_impl1.twr" "fpga_game_SD_impl1.ncd" "fpga_game_SD_impl1.prf"
+trce:  version Diamond (64-bit) 3.12.0.240.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application trce from file fpga_game_sd_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     TQFP144
+Performance: 5
+Loading device for application trce from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.12/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.12.0.240.2
+Tue May 26 20:45:19 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o fpga_game_SD_impl1.twr -gui -msgset C:/Users/Rafal/Desktop/szymon_to_fpga/promote.xml fpga_game_SD_impl1.ncd fpga_game_SD_impl1.prf 
+Design file:     fpga_game_sd_impl1.ncd
+Preference file: fpga_game_sd_impl1.prf
+Device,speed:    LCMXO2-4000HC,5
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 4096  Score: 51483253
+Cumulative negative slack: 51483253
+
+Constraints cover 8547825 paths, 3 nets, and 11728 connections (99.67% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.12.0.240.2
+Tue May 26 20:45:20 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o fpga_game_SD_impl1.twr -gui -msgset C:/Users/Rafal/Desktop/szymon_to_fpga/promote.xml fpga_game_SD_impl1.ncd fpga_game_SD_impl1.prf 
+Design file:     fpga_game_sd_impl1.ncd
+Preference file: fpga_game_sd_impl1.prf
+Device,speed:    LCMXO2-4000HC,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 8547825 paths, 3 nets, and 11727 connections (99.66% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 51483253 (setup), 0 (hold)
+Cumulative negative slack: 51483253 (51483253+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Total CPU Time: 1 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 81 MB
+
+
+tmcheck -par "fpga_game_SD_impl1.par" 
+
+bitgen -f "fpga_game_SD_impl1.t2b" -w "fpga_game_SD_impl1.ncd"  -jedec "fpga_game_SD_impl1.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.12.0.240.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file fpga_game_SD_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     TQFP144
+Performance: 5
+Loading device for application Bitgen from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.12/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from fpga_game_SD_impl1.prf.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                         2.08**  |
++---------------------------------+---------------------------------+
+|                  CONFIG_SECURE  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                          INBUF  |                           ON**  |
++---------------------------------+---------------------------------+
+|                      JTAG_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                       SDM_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|        MUX_CONFIGURATION_PORTS  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  CONFIGURATION  |                          CFG**  |
++---------------------------------+---------------------------------+
+|                COMPRESS_CONFIG  |                           ON**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|               ONE_TIME_PROGRAM  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                 ENABLE_TRANSFR  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SHAREDEBRINIT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|            BACKGROUND_RECONFIG  |                          OFF**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 1.95.
+ 
+Saving bit stream in "fpga_game_SD_impl1.jed".
+ 
+===========
+UFM Summary.
+===========
+UFM Size:        767 Pages (128*767 Bits).
+UFM Utilization: General Purpose Flash Memory.
+ 
+Available General Purpose Flash Memory:  767 Pages (Page 0 to Page 766).
+Initialized UFM Pages:                     0 Page.
+ 
+Total CPU Time: 3 secs 
+Total REAL Time: 3 secs 
+Peak Memory Usage: 287 MB

@@ -1,0 +1,2542 @@
+<HTML>
+<HEAD><TITLE>Project Summary</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Mrp"></A>
+             Lattice Mapping Report File for Design Module 'top'
+
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -a MachXO2 -p LCMXO2-4000HC -t TQFP144 -s 5 -oc Commercial
+     fpga_game_SD_impl1.ngd -o fpga_game_SD_impl1_map.ncd -pr
+     fpga_game_SD_impl1.prf -mp fpga_game_SD_impl1.mrp -lpf C:/Users/Rafal/Deskt
+     op/szymon_to_fpga/impl1/fpga_game_SD_impl1_synplify.lpf -lpf
+     C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game_SD.lpf -c 0 -gui -msgset
+     C:/Users/Rafal/Desktop/szymon_to_fpga/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LCMXO2-4000HCTQFP144
+Target Performance:   5
+Mapper:  xo2c00,  version:  Diamond (64-bit) 3.12.0.240.2
+Mapped on:  05/26/26  20:44:47
+
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of registers:    652 out of  4665 (14%)
+      PFU registers:          646 out of  4320 (15%)
+      PIO registers:            6 out of   345 (2%)
+   Number of SLICEs:      1786 out of  2160 (83%)
+      SLICEs as Logic/ROM:   1786 out of  2160 (83%)
+      SLICEs as RAM:            0 out of  1620 (0%)
+      SLICEs as Carry:        809 out of  2160 (37%)
+   Number of LUT4s:        3562 out of  4320 (82%)
+      Number used as logic LUTs:        1944
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      1618
+      Number used as shift registers:     0
+   Number of PIO sites used: 27 + 4(JTAG) out of 115 (27%)
+   Number of IDDR/ODDR/TDDR cells used: 16 out of 345 (5%)
+      Number of IDDR cells:   0
+      Number of ODDR cells:  16
+      Number of TDDR cells:   0
+   Number of PIO using at least one IDDR/ODDR/TDDR: 16 (0 differential)
+      Number of PIO using IDDR only:        0 (0 differential)
+      Number of PIO using ODDR only:       16 (0 differential)
+      Number of PIO using TDDR only:        0 (0 differential)
+      Number of PIO using IDDR/ODDR:        0 (0 differential)
+      Number of PIO using IDDR/TDDR:        0 (0 differential)
+      Number of PIO using ODDR/TDDR:        0 (0 differential)
+      Number of PIO using IDDR/ODDR/TDDR:   0 (0 differential)
+   Number of block RAMs:  0 out of 10 (0%)
+   Number of GSRs:        1 out of 1 (100%)
+   EFB used :        No
+   JTAG used :       No
+   Readback used :   No
+   Oscillator used : No
+   Startup used :    No
+   POR :             On
+   Bandgap :         On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  1 out of 2 (50%)
+
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of CLKDIVC:  0 out of 4 (0%)
+   Number of ECLKSYNCA:  0 out of 4 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+   Number of clocks:  3
+     Net CLK_c: 21 loads, 21 rising, 0 falling (Driver: PIO CLK )
+     Net CLK40_0: 371 loads, 371 rising, 0 falling (Driver: pong_pll/PLLInst_0 )
+     
+     Net CLK40_90: 1 loads, 1 rising, 0 falling (Driver: pong_pll/PLLInst_0 )
+   Number of Clock Enables:  31
+     Net deb_shoot.btn_out_0_sqmuxa: 1 loads, 0 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/un1_f_ld_rack_0: 2 loads, 2 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/tick: 4 loads, 4 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_rdy_RNO_0: 1 loads, 1 LSLICEs
+     
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_run_RNO: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/f_sample: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_run: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bs_rdy: 2 loads, 2 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bs_ack: 2 loads, 2 LSLICEs
+     Net pong_hdmi_i2c_cfg/x_ack: 1 loads, 1 LSLICEs
+     Net pong_hdmi_i2c_cfg/i2c_phy1/data_cnte: 7 loads, 7 LSLICEs
+     Net pong_hdmi_i2c_cfg/cfg_addre: 5 loads, 5 LSLICEs
+     Net pong_hdmi_i2c_cfg/N_12_i: 5 loads, 5 LSLICEs
+     Net my_pong_inst/direction_1_sqmuxa: 7 loads, 7 LSLICEs
+     Net my_pong_inst/i42: 2 loads, 2 LSLICEs
+     Net my_pong_inst/state[0]: 15 loads, 15 LSLICEs
+     Net my_pong_inst/demo_mode_1_sqmuxa_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/next_bullet_x_0_sqmuxa: 1 loads, 1 LSLICEs
+     Net my_pong_inst/N_1244_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/start_of_frame: 25 loads, 25 LSLICEs
+     Net my_pong_inst/N_81_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/un1_state_779: 2 loads, 2 LSLICEs
+     Net my_pong_inst/N_1222_i: 2 loads, 2 LSLICEs
+     Net my_pong_inst/un1_i43_819_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/un1_i43_817_i: 1 loads, 1 LSLICEs
+     Net my_pong_inst/un1_i43_794_i: 12 loads, 12 LSLICEs
+     Net my_pong_inst/un1_i43_793_i: 12 loads, 12 LSLICEs
+     Net pong_vga_sync_gen/cnt_vae: 8 loads, 8 LSLICEs
+     Net pong_vga_sync_gen/fsm_tic: 2 loads, 2 LSLICEs
+     Net pong_vga_sync_gen/cnt_v_1_sqmuxa_1: 1 loads, 1 LSLICEs
+     Net deb_rst/btn_out_0_sqmuxa: 1 loads, 1 LSLICEs
+   Number of local set/reset loads for net rst_clean merged into GSR:  268
+   Number of LSRs:  12
+     Net rst_clean: 21 loads, 21 LSLICEs
+     Net un1_VID_DE_i: 3 loads, 3 LSLICEs
+     Net my_pong_inst/tank_x10: 19 loads, 19 LSLICEs
+     Net my_pong_inst/dec_rot/un3_step_up_i: 2 loads, 2 LSLICEs
+     Net my_pong_inst/state[4]: 1 loads, 1 LSLICEs
+     Net my_pong_inst/direction_0_sqmuxa_RNIBJH01: 6 loads, 6 LSLICEs
+     Net my_pong_inst/demo_mode_RNIOR191: 5 loads, 5 LSLICEs
+
+     Net my_pong_inst/un1_timerlto20_RNIR9MO: 11 loads, 11 LSLICEs
+     Net my_pong_inst/i41: 57 loads, 57 LSLICEs
+     Net my_pong_inst/un1_bullet_timerlto16_RNI7EKD: 9 loads, 9 LSLICEs
+     Net deb_shoot/btn_out_0_sqmuxa_RNICROP: 9 loads, 9 LSLICEs
+     Net deb_rst/btn_out_0_sqmuxa_RNI658O: 9 loads, 9 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net my_pong_inst/V_CNT_i_1[6]: 129 loads
+     Net my_pong_inst/ANB3_i_1: 104 loads
+     Net my_pong_inst/i42: 80 loads
+     Net my_pong_inst/ANC2_1: 62 loads
+     Net my_pong_inst/i41: 60 loads
+     Net my_pong_inst/next_e_bullet_dir[0]: 56 loads
+     Net my_pong_inst/un1_H_CNT_0_axb1: 56 loads
+     Net my_pong_inst/un1_x_vcntlt10: 52 loads
+     Net my_pong_inst/N_80: 51 loads
+     Net un1_x_hcnt_1_c7: 50 loads
+
+
+
+
+   Number of warnings:  3
+   Number of errors:    0
+     
+
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+WARNING - map: Using local reset signal 'rst_clean' to infer global GSR net.
+WARNING - map: IO buffer missing for top level port EncB_QA...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port EncB_QB...logic will be
+     discarded.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| I2C_D               | BIDIR     | LVCMOS25  | OUT/TRI    |
++---------------------+-----------+-----------+------------+
+| LED[0]              | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| CLK                 | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_PCLK        | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DE          | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_VSYNC       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_HSYNC       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[3]      | OUTPUT    | LVCMOS25  |            |
+
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[6]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[9]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[2]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[5]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[8]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[11]     | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[1]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[4]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[7]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[10]     | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| VID_DDR_DAT[0]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Button              | INPUT     | LVCMOS25  | IN         |
++---------------------+-----------+-----------+------------+
+| EncA_QB             | INPUT     | LVCMOS25  | IN         |
++---------------------+-----------+-----------+------------+
+| EncA_QA             | INPUT     | LVCMOS25  | IN         |
++---------------------+-----------+-----------+------------+
+| I2C_C               | OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| LED[3]              | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| LED[2]              | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| LED[1]              | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| nRST                | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Block pong_vga_sync_gen/VCC undriven or does not drive anything - clipped.
+Block del1/VCC undriven or does not drive anything - clipped.
+Block del2/VCC undriven or does not drive anything - clipped.
+Block del3/VCC undriven or does not drive anything - clipped.
+Block my_pong_inst/dec_rot/GND undriven or does not drive anything - clipped.
+Block my_pong_inst/dec_rot/VCC undriven or does not drive anything - clipped.
+Block pong_vo_phy_ddr/VCC undriven or does not drive anything - clipped.
+Block pong_hdmi_i2c_cfg/i2c_phy1/VCC undriven or does not drive anything -
+     clipped.
+Block pong_hdmi_i2c_cfg/i2c_phy1/GND undriven or does not drive anything -
+     clipped.
+Block pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/VCC undriven or does not drive
+     anything - clipped.
+
+Block pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/GND undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg.i2c_phy1.bit_sender.sen_0_i was merged into signal
+     pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/sen_0
+Signal pong_hdmi_i2c_cfg/i2c_phy1/bs_rdy_i was merged into signal
+     pong_hdmi_i2c_cfg/i2c_phy1/bs_rdy
+Signal deb_rst/GND undriven or does not drive anything - clipped.
+Signal deb_shoot/GND undriven or does not drive anything - clipped.
+Signal pong_pll/GND undriven or does not drive anything - clipped.
+Signal pong_vga_sync_gen/GND undriven or does not drive anything - clipped.
+Signal my_pong_inst/GND undriven or does not drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/GND undriven or does not drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/i2c_phy1/scaler/GND undriven or does not drive anything
+     - clipped.
+Signal un1_x_vcnt_1_cry_1_0_S0 undriven or does not drive anything - clipped.
+Signal un1_x_vcnt_1_cry_7_0_S1 undriven or does not drive anything - clipped.
+Signal un1_x_vcnt_1_cry_9_0_S0 undriven or does not drive anything - clipped.
+Signal un1_x_vcnt_1_cry_9_0_COUT undriven or does not drive anything - clipped.
+Signal deb_rst/counter_1_cry_0_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal deb_rst/counter_1_cry_0_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal deb_rst/N_1 undriven or does not drive anything - clipped.
+Signal deb_rst/counter_1_s_15_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal deb_rst/counter_1_s_15_0_COUT_0 undriven or does not drive anything -
+     clipped.
+Signal deb_shoot/counter_1_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal deb_shoot/counter_1_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal deb_shoot/N_1 undriven or does not drive anything - clipped.
+Signal deb_shoot/counter_1_s_15_0_S1 undriven or does not drive anything -
+     clipped.
+Signal deb_shoot/counter_1_s_15_0_COUT undriven or does not drive anything -
+     clipped.
+Signal pong_pll/CLKINTFB undriven or does not drive anything - clipped.
+Signal pong_pll/DPHSRC undriven or does not drive anything - clipped.
+Signal pong_pll/PLLACK undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO0 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO1 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO2 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO3 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO4 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO5 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO6 undriven or does not drive anything - clipped.
+Signal pong_pll/PLLDATO7 undriven or does not drive anything - clipped.
+Signal pong_pll/REFCLK undriven or does not drive anything - clipped.
+Signal pong_pll/INTLOCK undriven or does not drive anything - clipped.
+Signal pong_pll/LOCK undriven or does not drive anything - clipped.
+Signal pong_pll/CLKOS3 undriven or does not drive anything - clipped.
+Signal pong_pll/CLK40_180 undriven or does not drive anything - clipped.
+Signal pong_vga_sync_gen/cnt_va_cry_0_S0[0] undriven or does not drive anything
+     - clipped.
+Signal pong_vga_sync_gen/N_1 undriven or does not drive anything - clipped.
+Signal pong_vga_sync_gen/cnt_va_cry_0_COUT[9] undriven or does not drive
+
+     anything - clipped.
+Signal pong_vga_sync_gen/cnt_ha_cry_0_S0[0] undriven or does not drive anything
+     - clipped.
+Signal pong_vga_sync_gen/N_2 undriven or does not drive anything - clipped.
+Signal pong_vga_sync_gen/cnt_ha_cry_0_COUT[9] undriven or does not drive
+     anything - clipped.
+Signal pong_vga_sync_gen/un1_cnt_v_10_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal pong_vga_sync_gen/un1_cnt_v_10_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal pong_vga_sync_gen/N_3 undriven or does not drive anything - clipped.
+Signal pong_vga_sync_gen/un1_cnt_v_10_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal pong_vga_sync_gen/un1_cnt_h_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal pong_vga_sync_gen/un1_cnt_h_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal pong_vga_sync_gen/N_4 undriven or does not drive anything - clipped.
+Signal pong_vga_sync_gen/un1_cnt_h_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_y[0]_11_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_y[0]_11_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_8 undriven or does not drive anything - clipped.
+Signal my_pong_inst/next_enemy_y[0]_11_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_x[0]_11_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_x[0]_11_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_9 undriven or does not drive anything - clipped.
+Signal my_pong_inst/next_enemy_x[0]_11_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_x[1]_11_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_x[1]_11_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_10 undriven or does not drive anything - clipped.
+Signal my_pong_inst/next_enemy_x[1]_11_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_y[1]_11_0_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/next_enemy_y[1]_11_0_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_12 undriven or does not drive anything - clipped.
+Signal my_pong_inst/next_enemy_y[1]_11_0_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_0_0_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_0_0_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_13 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_0_0_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_0_0_cry_0_0_S1 undriven or does not
+
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_0_0_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_15 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_0_0_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_0dupdup_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_0dupdup_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_16 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_1dupdup_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_1dupdup_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_3dup_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_3dup_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_0dupdup_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_0dupdup_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_17 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_1dupdup_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_1dupdup_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_3dupdup_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_3dupdup_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_0dup_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_0dup_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_18 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_1dup_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_3dup_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_3dup_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_0dup_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_0dup_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_19 undriven or does not drive anything - clipped.
+
+Signal my_pong_inst/un1_next_tank_x_852_cry_1dup_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_s_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_s_3_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/idle_timer_cry_0_S0[0] undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_20 undriven or does not drive anything - clipped.
+Signal my_pong_inst/idle_timer_s_0_S1[29] undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/idle_timer_s_0_COUT[29] undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un3_bullet_timer_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un3_bullet_timer_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_21 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un3_bullet_timer_cry_15_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un4_timer_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un4_timer_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_22 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un4_timer_cry_19_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un2_heartbeat_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un2_heartbeat_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_24 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un2_heartbeat_cry_23_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un26_get_font_pixel_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un26_get_font_pixel_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_25 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un26_get_font_pixel_s_13_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un26_get_font_pixel_s_13_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_get_font_pixel_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_get_font_pixel_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_26 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_get_font_pixel_s_13_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_get_font_pixel_s_13_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un15_get_font_pixel_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un15_get_font_pixel_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/N_27 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un15_get_font_pixel_s_13_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un15_get_font_pixel_s_13_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un48_get_font_pixel_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un48_get_font_pixel_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_28 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un48_get_font_pixel_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un48_get_font_pixel_s_13_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un48_get_font_pixel_s_13_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_32 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_s_13_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_s_13_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_4[6] undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un70_get_font_pixel_4_cry_6_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_33 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_4_cry_12_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un70_get_font_pixel_4_cry_12_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_34 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_s_13_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_s_13_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_4[6] undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un59_get_font_pixel_4_cry_6_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_35 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_4_cry_12_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un59_get_font_pixel_4_cry_12_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un191_0_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un191_0_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+
+Signal my_pong_inst/N_36 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un191_0_s_12_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un191_0_s_12_0_COUT undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un192_0_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un192_0_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_37 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un192_0_s_12_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un192_0_s_12_0_COUT undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un201_0_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un201_0_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_38 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un201_0_cry_4_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un201_0_cry_4_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un201_0_s_12_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un201_0_s_12_0_COUT undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un202_0_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un202_0_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_40 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un202_0_cry_2_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un202_0_s_12_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un202_0_s_12_0_COUT undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_42 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un203_0_cry_2_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_cry_2_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_cry_4_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_cry_4_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_s_12_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un203_0_s_12_0_COUT undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_next_bullet_x_846_cry_0_0_S1 undriven or does not drive
+
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_846_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_44 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_846_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_0_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_0_0_S0_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_45 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un11_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un11_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_46 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un11_ec_p_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un11_ec_p_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_next_tank_x_181_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_181_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_47 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_181_s_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_181_s_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_48 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_s_5_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_852_s_5_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_847_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_847_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_49 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_847_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_0_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_0_0_S0_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_50 undriven or does not drive anything - clipped.
+
+Signal my_pong_inst/un1_next_bullet_y_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_400_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_400_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_52 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_x_400_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_401_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_401_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_53 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_401_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un21_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un21_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_54 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un21_ec_p_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un21_ec_p_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_next_tank_y_180_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_180_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_55 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_180_s_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_180_s_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_56 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_s_5_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_tank_y_853_s_5_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un2097_ec_w_1_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un2097_ec_w_1_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_59 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un2097_ec_w_1_s_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un2097_ec_w_1_s_9_0_COUT undriven or does not drive anything
+     - clipped.
+
+Signal my_pong_inst/un13_ec_f_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un13_ec_f_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_62 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un13_ec_f_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un13_ec_f_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un698_ec_w_1_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un698_ec_w_1_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_64 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un698_ec_w_1_s_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un698_ec_w_1_s_9_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_dec_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_dec_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_66 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_dec_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_199_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_199_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_67 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_199_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_199_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_68 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_200_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_200_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_69 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_200_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_200_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_70 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_cry_9_0_COUT undriven or does not drive
+
+     anything - clipped.
+Signal my_pong_inst/un32_ec_f_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un32_ec_f_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_71 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un32_ec_f_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un32_ec_f_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_next_enemy_y[1]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_enemy_y[1]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_72 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_enemy_y[1]_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_enemy_y[0]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_enemy_y[0]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_73 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_enemy_y[0]_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_enemy_x[1]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_enemy_x[1]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_74 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_enemy_x[1]_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un26_ec_f_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un26_ec_f_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_75 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un26_ec_f_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un26_ec_f_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_next_enemy_x[0]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_enemy_x[0]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_76 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_enemy_x[0]_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un7_ec_f_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un7_ec_f_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_77 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un7_ec_f_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un7_ec_f_cry_10_0_COUT undriven or does not drive anything -
+     clipped.
+
+Signal my_pong_inst/un1748_ec_w_1_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1748_ec_w_1_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_78 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1748_ec_w_1_s_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1748_ec_w_1_s_9_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un349_ec_w_1_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un349_ec_w_1_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_82 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un349_ec_w_1_s_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un349_ec_w_1_s_9_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_849_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_849_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_83 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_849_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_198_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_198_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_84 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_198_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_198_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_85 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_cry_9_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_201_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_201_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_86 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_201_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_201_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_91 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_cry_9_0_COUT undriven or does not drive
+
+     anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_848_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_848_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_92 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_848_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_inc_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_inc_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_94 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_inc_cry_9_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_95 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_102_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_96 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_3_0_S0 undriven or does not drive anything
+
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_101_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_cry_0_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_0_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_97 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_cry_1_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_1_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_3_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_3_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_5_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_5_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_7_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_7_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_9_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_9_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_10_0_S1_0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_cry_10_0_COUT_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_cry_0_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_0_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_98 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_cry_1_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_1_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_3_0_S1_0 undriven or does not drive anything -
+
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_3_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_5_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_5_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_7_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_7_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_9_0_S1_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_9_0_S0_0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_10_0_S1_0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_cry_10_0_COUT_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_103 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_H_CNT_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_104 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_1_0_S0 undriven or does not drive anything -
+
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_10_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_V_CNT_cry_10_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_105 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_394_cry_11_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_108 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_1_0_S1 undriven or does not drive anything
+
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_393_cry_11_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_109 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_392_cry_11_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+
+Signal my_pong_inst/N_111 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_391_cry_11_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_112 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_347_cry_11_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_0_0_S1 undriven or does not drive anything
+     - clipped.
+
+Signal my_pong_inst/un1_V_CNT_346_cry_0_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_113 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_3_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_3_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_5_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_5_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_7_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_7_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_346_cry_11_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un51_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_116 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un51_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un51_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+
+Signal my_pong_inst/un46_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_117 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un46_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un46_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un41_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_118 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un41_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un41_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+
+Signal my_pong_inst/un41_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un36_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_120 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un36_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un36_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un24_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_122 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un24_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+
+Signal my_pong_inst/un24_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un24_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un19_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_124 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un19_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un19_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un14_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_127 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un14_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+
+Signal my_pong_inst/un14_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un14_ec_p_cry_11_0_COUT undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un9_ec_p_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/N_128 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un9_ec_p_cry_1_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_1_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_3_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_3_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_5_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_5_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_7_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_7_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_9_0_S1 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_9_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_11_0_S0 undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un9_ec_p_cry_11_0_COUT undriven or does not drive anything -
+     clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_0_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_0_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_129 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_1_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_1_0_S0_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_3_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_3_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_5_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_5_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_7_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_7_0_S0_1 undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/un1_next_bullet_y_cry_9_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_9_0_S0_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_10_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_10_0_COUT_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_130 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_1_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_1_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_5_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_7_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_7_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_9_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_9_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_0_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_0_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_131 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_1_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_1_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_3_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_3_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_5_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_5_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_7_0_S1_1 undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/un1_next_bullet_x_cry_7_0_S0_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_9_0_S1_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_9_0_S0_1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_10_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_10_0_COUT_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_132 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_5_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_7_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_7_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_9_0_S1_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_9_0_S0_0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_10_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_cry_10_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_133 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_1_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_1_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_3_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_3_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_5_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_5_0_S0 undriven or does not
+     drive anything - clipped.
+
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_7_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_7_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_9_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_9_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_11_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_531_cry_11_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_134 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_1_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_1_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_3_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_3_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_5_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_5_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_7_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_7_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_9_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_9_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_11_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_530_cry_11_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_135 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_5_0_S1 undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/un1_next_bullet_y_529_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_7_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_7_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_529_cry_11_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_136 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_5_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_7_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_7_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_528_cry_11_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_137 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/un1_next_bullet_y_527_cry_5_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_7_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_7_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_y_527_cry_11_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_138 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_3_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_3_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_5_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_5_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_7_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_7_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_11_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_next_bullet_x_526_cry_11_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_139 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_1_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_1_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_3_0_S1 undriven or does not
+     drive anything - clipped.
+
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_3_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_5_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_5_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_7_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_7_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_9_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_9_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_10_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_x_486_cry_10_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_0_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_0_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/N_140 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_1_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_1_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_3_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_3_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_5_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_5_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_7_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_7_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_9_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_9_0_S0 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_10_0_S1 undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_next_e_bullet_y_485_cry_10_0_COUT undriven or does not
+     drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_142 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+
+Signal my_pong_inst/un1_H_CNT_98_0_I_21_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_21_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_33_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_98_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_143 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_21_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_21_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_33_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_97_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_144 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_21_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_21_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_33_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_96_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_145 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_21_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_21_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_33_0_S0 undriven or does not drive anything
+
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_99_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_148 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_366_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_149 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_365_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_150 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_364_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+
+Signal my_pong_inst/un1_H_CNT_363_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_152 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_363_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_154 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_361_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_155 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_360_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_156 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_9_0_S1 undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/un1_tank_y_274_0_I_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_y_274_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_157 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_tank_x_276_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_158 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_275_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_159 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_21_0_S0 undriven or does not drive
+
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[1]_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_163 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_y[0]_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_164 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_277_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_166 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[1]_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+
+Signal my_pong_inst/un1_H_CNT_279_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_167 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_279_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_168 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_H_CNT_278_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_169 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_280_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_1_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_1_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/N_173 undriven or does not drive anything - clipped.
+
+Signal my_pong_inst/un1_enemy_x[0]_0_I_9_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_9_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_enemy_x[0]_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_1_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_1_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/N_174 undriven or does not drive anything - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_9_0_S1 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_9_0_S0 undriven or does not drive anything
+     - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_21_0_S1 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_21_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_33_0_S0 undriven or does not drive
+     anything - clipped.
+Signal my_pong_inst/un1_V_CNT_281_0_I_33_0_COUT undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_addr_cry_0_S0[0] undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/N_1 undriven or does not drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_addr_s_0_S1[7] undriven or does not drive anything
+     - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_addr_s_0_COUT[7] undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_wait_3_cry_0_0_S1 undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_wait_3_cry_0_0_S0 undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/N_7 undriven or does not drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_wait_3_s_31_0_S1 undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/cfg_wait_3_s_31_0_COUT undriven or does not drive
+     anything - clipped.
+Signal pong_hdmi_i2c_cfg/i2c_phy1/scaler/scaler_4_cry_0_0_S1 undriven or does
+     not drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/i2c_phy1/scaler/scaler_4_cry_0_0_S0 undriven or does
+     not drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/i2c_phy1/scaler/N_1 undriven or does not drive anything
+     - clipped.
+Signal pong_hdmi_i2c_cfg/i2c_phy1/scaler/scaler_4_s_15_0_S1 undriven or does not
+     drive anything - clipped.
+Signal pong_hdmi_i2c_cfg/i2c_phy1/scaler/scaler_4_s_15_0_COUT undriven or does
+     not drive anything - clipped.
+Signal x_vcnt_i[1] undriven or does not drive anything - clipped.
+
+Signal un1_x_vcnt_1_cry_0_0_S0 undriven or does not drive anything - clipped.
+Signal N_1 undriven or does not drive anything - clipped.
+Block pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/sen_0_RNIU44E was optimized away.
+Block pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/bit_rdy_RNIMN04 was optimized away.
+Block deb_rst/GND was optimized away.
+Block deb_shoot/GND was optimized away.
+Block pong_pll/GND was optimized away.
+Block pong_vga_sync_gen/GND was optimized away.
+Block my_pong_inst/GND was optimized away.
+Block pong_hdmi_i2c_cfg/GND was optimized away.
+Block pong_hdmi_i2c_cfg/i2c_phy1/scaler/GND was optimized away.
+
+     
+
+
+
+<A name="mrp_pll"></A><B><U><big>PLL/DLL Summary</big></U></B>
+---------------
+
+PLL 1:                                     Pin/Node Value
+  PLL Instance Name:                                pong_pll/PLLInst_0
+  PLL Type:                                         EHXPLLJ
+  Input Clock:                             PIN      CLK_c
+  Output Clock(P):                         NODE     CLK40_0
+  Output Clock(S):                         NODE     CLK40_90
+  Output Clock(S2):                                 NONE
+  Output Clock(S3):                                 NONE
+  Feedback Signal:                         NODE     CLK40_0
+  Reset Signal:                                     NONE
+  M Divider Reset Signal:                           NONE
+  C Divider Reset Signal:                           NONE
+  D Divider Reset Signal:                           NONE
+  Standby Signal:                                   NONE
+  PLL LOCK signal:                                  NONE
+  PLL Data bus CLK Signal:                          NONE
+  PLL Data bus Strobe Signal:                       NONE
+  PLL Data bus Reset Signal:                        NONE
+  PLL Data bus Write Enable Signal:                 NONE
+  PLL Data bus Address0:                            NONE
+  PLL Data bus Address1:                            NONE
+  PLL Data bus Address2:                            NONE
+  PLL Data bus Address3:                            NONE
+  PLL Data bus Address4:                            NONE
+  PLL Data In bus Data0:                            NONE
+  PLL Data In bus Data1:                            NONE
+  PLL Data In bus Data2:                            NONE
+  PLL Data In bus Data3:                            NONE
+  PLL Data In bus Data4:                            NONE
+  PLL Data In bus Data5:                            NONE
+  PLL Data In bus Data6:                            NONE
+  PLL Data In bus Data7:                            NONE
+  PLL Data bus Acknowledge:                         NONE
+  PLL Data Out bus Data0:                           NONE
+  PLL Data Out bus Data1:                           NONE
+  PLL Data Out bus Data2:                           NONE
+  PLL Data Out bus Data3:                           NONE
+  PLL Data Out bus Data4:                           NONE
+  PLL Data Out bus Data5:                           NONE
+
+  PLL Data Out bus Data6:                           NONE
+  PLL Data Out bus Data7:                           NONE
+  Input Clock Frequency (MHz):                      50.0000
+  Output Clock(P) Frequency (MHz):                  40.0000
+  Output Clock(S) Frequency (MHz):                  40.0000
+  Output Clock(S2) Frequency (MHz):                 NA
+  Output Clock(S3) Frequency (MHz):                 NA
+  CLKOP Post Divider A Input:                       DIVA
+  CLKOS Post Divider B Input:                       DIVB
+  CLKOS2 Post Divider C Input:                      DIVC
+  CLKOS3 Post Divider D Input:                      DIVD
+  Pre Divider A Input:                              VCO_PHASE
+  Pre Divider B Input:                              VCO_PHASE
+  Pre Divider C Input:                              VCO_PHASE
+  Pre Divider D Input:                              VCO_PHASE
+  VCO Bypass A Input:                               VCO_PHASE
+  VCO Bypass B Input:                               VCO_PHASE
+  VCO Bypass C Input:                               VCO_PHASE
+  VCO Bypass D Input:                               VCO_PHASE
+  FB_MODE:                                          CLKOP
+  CLKI Divider:                                     5
+  CLKFB Divider:                                    4
+  CLKOP Divider:                                    13
+  CLKOS Divider:                                    13
+  CLKOS2 Divider:                                   13
+  CLKOS3 Divider:                                   1
+  Fractional N Divider:                             0
+  CLKOP Desired Phase Shift(degree):                0
+  CLKOP Trim Option Rising/Falling:                 RISING
+  CLKOP Trim Option Delay:                          0
+  CLKOS Desired Phase Shift(degree):                90
+  CLKOS Trim Option Rising/Falling:                 RISING
+  CLKOS Trim Option Delay:                          0
+  CLKOS2 Desired Phase Shift(degree):               180
+  CLKOS3 Desired Phase Shift(degree):               0
+
+
+
+<A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
+---------------
+
+Instance Name: pong_pll/PLLInst_0
+         Type: EHXPLLJ
+
+
+
+<A name="mrp_gsr"></A><B><U><big>GSR Usage</big></U></B>
+---------
+
+GSR Component:
+   The local reset signal 'rst_clean' of the design has been inferred as Global
+        Set Reset (GSR). The reset signal used for GSR control is 'rst_clean'.
+        
+
+     GSR Property:
+   The design components with GSR property set to ENABLED will respond to global
+        set reset while the components with GSR property set to DISABLED will
+        not.
+        
+
+
+     Components on inferred reset domain with GSR Property disabled
+--------------------------------------------------------------
+
+     These components have the GSR property set to DISABLED and are on the
+     inferred reset domain. The components will respond to the reset signal
+     'rst_clean' via the local reset on the component and not the GSR component.
+     
+
+     Type and number of components of the type: 
+   Register = 41 
+
+     Type and instance name of component: 
+   Register : my_pong_inst/heartbeat[24]
+   Register : my_pong_inst/heartbeat[23]
+   Register : my_pong_inst/heartbeat[22]
+   Register : my_pong_inst/heartbeat[21]
+   Register : my_pong_inst/heartbeat[20]
+   Register : my_pong_inst/heartbeat[19]
+   Register : my_pong_inst/heartbeat[18]
+   Register : my_pong_inst/heartbeat[17]
+   Register : my_pong_inst/heartbeat[16]
+   Register : my_pong_inst/heartbeat[15]
+   Register : my_pong_inst/heartbeat[14]
+   Register : my_pong_inst/heartbeat[13]
+   Register : my_pong_inst/heartbeat[12]
+   Register : my_pong_inst/heartbeat[11]
+   Register : my_pong_inst/heartbeat[10]
+   Register : my_pong_inst/heartbeat[9]
+   Register : my_pong_inst/heartbeat[8]
+   Register : my_pong_inst/heartbeat[7]
+   Register : my_pong_inst/heartbeat[6]
+   Register : my_pong_inst/heartbeat[5]
+   Register : my_pong_inst/heartbeat[4]
+   Register : my_pong_inst/heartbeat[3]
+   Register : my_pong_inst/heartbeat[2]
+   Register : my_pong_inst/heartbeat[1]
+   Register : my_pong_inst/heartbeat[0]
+   Register : my_pong_inst/lfsr[14]
+   Register : my_pong_inst/lfsr[13]
+   Register : my_pong_inst/lfsr[12]
+   Register : my_pong_inst/lfsr[11]
+   Register : my_pong_inst/lfsr[10]
+   Register : my_pong_inst/lfsr[9]
+   Register : my_pong_inst/lfsr[8]
+   Register : my_pong_inst/lfsr[7]
+   Register : my_pong_inst/lfsr[6]
+   Register : my_pong_inst/lfsr[5]
+   Register : my_pong_inst/lfsr[4]
+   Register : my_pong_inst/lfsr[3]
+   Register : my_pong_inst/lfsr[2]
+   Register : my_pong_inst/lfsr[1]
+   Register : my_pong_inst/lfsr[0]
+   Register : my_pong_inst/lfsr[15]
+
+
+
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 1 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 75 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights
+     reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

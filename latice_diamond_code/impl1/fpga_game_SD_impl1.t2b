@@ -1,0 +1,5 @@
+
+
+-g RamCfg:Reset
+
+-path "C:/Users/Rafal/Desktop/szymon_to_fpga"  

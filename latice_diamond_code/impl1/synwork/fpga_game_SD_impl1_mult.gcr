@@ -1,0 +1,116 @@
+i pong_pll.CLKOP_i
+m 0 0
+u 165 637
+p {t:pong_pll.PLLInst_0.CLKOP}{t:pong_pll.CLKOP_inferred_clock.I[0]}{t:pong_pll.CLKOP_inferred_clock.OUT[0]}{p:pong_pll.CLKOP}{t:pong_pll.CLKOP}{t:pong_hdmi_i2c_cfg.CLK}{p:pong_hdmi_i2c_cfg.CLK}{t:pong_hdmi_i2c_cfg.cfg_state[4].C}
+e ckid0_0 {t:pong_hdmi_i2c_cfg.cfg_state[4].C} dffr
+c ckid0_0 {t:pong_pll.PLLInst_0.CLKOP} EHXPLLJ Unsupported/too complex instance on clock path
+i CLK
+m 0 0
+u 4 34
+p {p:CLK}{t:deb_shoot.clk}{p:deb_shoot.clk}{t:deb_shoot.counter[15:0].C}
+e ckid0_1 {t:deb_shoot.counter[15:0].C} sdffr
+c ckid0_1 {p:CLK} port Unsupported/too complex instance on clock path
+i pong_vo_phy_ddr.PCLK®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.PCLK®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DE®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DE®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.VSYNC®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.VSYNC®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.HSYNC®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.HSYNC®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ3Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ3Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ6Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ6Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ9Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ9Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ2Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ2Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ5Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ5Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ8Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ8Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ11Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ11Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ1Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ1Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ4Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ4Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ7Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ7Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ10Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ10Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ0Ý®ddr.buf_douto0
+m 0 0
+u 0 0
+i pong_vo_phy_ddr.DATAÛ0Ý®ddr.buf_clkout
+m 0 0
+u 0 0
+i pong_pll.CLKOS2
+m 0 0
+u 0 0
+i pong_pll.CLKOS
+m 0 0
+u 0 0
+l 0 0 0 0 0
+r 0 0 0 0 0 0 0 0

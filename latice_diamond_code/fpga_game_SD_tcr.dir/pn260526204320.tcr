@@ -1,0 +1,23 @@
+#Start recording tcl command: 5/26/2026 20:22:00
+#Project Location: C:/Users/Rafal/Desktop/szymon_to_fpga; Project name: fpga_game_SD
+prj_project new -name "fpga_game_SD" -impl "impl1" -dev LCMXO2-4000HC-5TG144C -synthesis "synplify"
+file copy -force -- "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/clk_divider.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/ddr.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/delay.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/dev_i2c_phy.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/dev_i2c_phy_bit.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source"
+file copy -force -- "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/dev_i2c_phy_scaler.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/hdmi_i2c_cfg.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/pll_75mhz.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/pong_main.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/pong_top.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source"
+file copy -force -- "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/rect_painter.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/tb.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/uart_rx.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/uart_tx.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/vga_sync_gen.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source"
+file copy -force -- "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/vo_phy_ddr.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source"
+prj_src add "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/clk_divider.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/ddr.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/delay.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/dev_i2c_phy.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/dev_i2c_phy_bit.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/dev_i2c_phy_scaler.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/hdmi_i2c_cfg.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pll_75mhz.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pong_main.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pong_top.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/rect_painter.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/tb.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/uart_rx.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/uart_tx.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/vga_sync_gen.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/vo_phy_ddr.v"
+prj_project save
+prj_src syn_sim -src "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/tb.v" SimulateOnly
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_src add "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/pll_50_to_40Mhz_0_90_180.v"
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_src remove "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/pll_50_to_40Mhz_0_90_180.v"
+file copy -force -- "C:/Users/Rafal/Desktop/szymon_to_fpga/fpga_game/fpga_game/fpga_game/src/pll_50_to_40Mhz_0_90_180.v" "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source"
+prj_src add "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pll_50_to_40Mhz_0_90_180.v"
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Synthesis -impl impl1 -task Synplify_Synthesis -forceAll
+prj_run Export -impl impl1 -task Bitgen -forceAll
+prj_run Export -impl impl1 -task Bitgen -forceAll
+prj_run Export -impl impl1 -task Bitgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+#Stop recording: 5/26/2026 20:43:20

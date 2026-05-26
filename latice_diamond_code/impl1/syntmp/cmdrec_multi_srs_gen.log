@@ -1,0 +1,7 @@
+C:\lscc\diamond\3.12\synpbase\bin64\syn_nfilter.exe  -link  -top  top  -multisrs  C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\fpga_game_SD_impl1_comp.srs  -osyn  C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\fpga_game_SD_impl1_mult.srs  -log  C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synlog\fpga_game_SD_impl1_multi_srs_gen.srr 
+relcom:..\..\..\..\..\..\lscc\diamond\3.12\synpbase\bin64\syn_nfilter.exe -link -top top -multisrs ..\synwork\fpga_game_SD_impl1_comp.srs -osyn ..\synwork\fpga_game_SD_impl1_mult.srs -log ..\synlog\fpga_game_SD_impl1_multi_srs_gen.srr
+rc:0 success:1 runtime:0
+file:..\synwork\fpga_game_SD_impl1_comp.srs|io:i|time:1779821056|size:117077|exec:0|csum:F7A004CFDCC0B11523C784DE7A2B7753
+file:..\synwork\fpga_game_SD_impl1_mult.srs|io:o|time:1779821057|size:7567|exec:0|csum:
+file:..\synlog\fpga_game_SD_impl1_multi_srs_gen.srr|io:o|time:1779821057|size:1146|exec:0|csum:
+file:..\..\..\..\..\..\lscc\diamond\3.12\synpbase\bin64\syn_nfilter.exe|io:i|time:1603959522|size:8875008|exec:1|csum:43373AFF0ED6BCEB26CB4B4947B972DD

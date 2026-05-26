@@ -1,0 +1,199 @@
+Selecting top level module top
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":1:7:1:15|Synthesizing module debouncer in library work.
+Running optimization stage 1 on debouncer .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1124:7:1124:9|Synthesizing module VLO in library work.
+Running optimization stage 1 on VLO .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1730:7:1730:13|Synthesizing module EHXPLLJ in library work.
+Running optimization stage 1 on EHXPLLJ .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pll_50_to_40Mhz_0_90_180.v":8:7:8:30|Synthesizing module pll_50_to_40Mhz_0_90_180 in library work.
+Running optimization stage 1 on pll_50_to_40Mhz_0_90_180 .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":6:7:6:18|Synthesizing module vga_sync_gen in library work.
+Running optimization stage 1 on vga_sync_gen .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\delay.v":1:7:1:11|Synthesizing module delay in library work.
+
+	W=32'b00000000000000000000000000000001
+	D=32'b00000000000000000000000000000011
+   Generated name = delay_1s_3s
+Running optimization stage 1 on delay_1s_3s .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":4:7:4:18|Synthesizing module quad_decoder in library work.
+Running optimization stage 1 on quad_decoder .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":22:7:22:15|Synthesizing module pong_main in library work.
+
+	SCR_W=32'b00000000000000000000000000111100
+	SCR_H=32'b00000000000000000000000000101000
+	SIM_MODE=32'b00000000000000000000000000000000
+	TANK_W=32'b00000000000000000000000000000011
+	TANK_H=32'b00000000000000000000000000000011
+	TIME_LIMIT=32'b00000000000100110001001011010000
+	DEMO_WAIT=32'b00101100101101000001011110000000
+	STATE_START=3'b000
+	STATE_LOAD_LEVEL=3'b001
+	STATE_PLAY=3'b010
+	STATE_LEVEL_CLEAR=3'b011
+	STATE_GAMEOVER=3'b100
+	STATE_GAME_CLEAR=3'b101
+   Generated name = pong_main_Z1
+Running optimization stage 1 on pong_main_Z1 .......
+@W: CL169 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning unused register enemy_hit_flag[1:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning unused register enemy_fired. Make sure that there are no unused intermediate registers.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_e_bullet_y[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_e_bullet_x[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_e_bullet_dir[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_bullet_y[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_bullet_x[10:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Feedback mux created for signal next_bullet_dir[1:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":10:7:10:16|Synthesizing module vo_phy_ddr in library work.
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":857:7:857:8|Synthesizing module OB in library work.
+Running optimization stage 1 on OB .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1601:7:1601:12|Synthesizing module ODDRXE in library work.
+Running optimization stage 1 on ODDRXE .......
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\machxo2.v":1120:7:1120:9|Synthesizing module VHI in library work.
+Running optimization stage 1 on VHI .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\ddr.v":8:7:8:9|Synthesizing module ddr in library work.
+Running optimization stage 1 on ddr .......
+Running optimization stage 1 on vo_phy_ddr .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_scaler.v":9:7:9:24|Synthesizing module dev_i2c_phy_scaler in library work.
+Running optimization stage 1 on dev_i2c_phy_scaler .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_bit.v":9:7:9:21|Synthesizing module dev_i2c_phy_bit in library work.
+@N: CG179 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy_bit.v":129:90:129:94|Removing redundant assignment.
+Running optimization stage 1 on dev_i2c_phy_bit .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":16:7:16:17|Synthesizing module dev_i2c_phy in library work.
+@W: CG360 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|Removing wire o_run, as there is no assignment to it.
+@W: CG133 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":46:12:46:14|Object run is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on dev_i2c_phy .......
+@W: CL318 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|*Output o_run has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":1:7:1:18|Synthesizing module hdmi_i2c_cfg in library work.
+@W: CG360 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":10:12:10:20|Removing wire x_run_stb, as there is no assignment to it.
+Running optimization stage 1 on hdmi_i2c_cfg .......
+@N: CG364 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":22:7:22:9|Synthesizing module top in library work.
+Running optimization stage 1 on top .......
+Running optimization stage 2 on top .......
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":39:22:39:28|Input EncB_QA is unused.
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_top.v":40:22:40:28|Input EncB_QB is unused.
+Running optimization stage 2 on hdmi_i2c_cfg .......
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":46:0:46:5|Trying to extract state machine for register cfg_state.
+Extracted state machine for register cfg_state
+State machine has 5 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000000011
+   00000000000000000000000000000100
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 10 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 7 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 5 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL156 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":10:12:10:20|*Input x_run_stb to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+Running optimization stage 2 on dev_i2c_phy .......
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":84:0:84:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 34 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000001010
+   00000000000000000000000000001011
+   00000000000000000000000000001100
+   00000000000000000000000000001101
+   00000000000000000000000000010100
+   00000000000000000000000000010101
+   00000000000000000000000000010110
+   00000000000000000000000000010111
+   00000000000000000000000000110010
+   00000000000000000000000000110011
+   00000000000000000000000000110100
+   00000000000000000000000000110101
+   00000000000000000000000000110110
+   00000000000000000000000000110111
+   00000000000000000000000000111000
+   00000000000000000000000000111001
+   00000000000000000000000001000110
+   00000000000000000000000001000111
+   00000000000000000000000001001000
+   00000000000000000000000001001001
+   00000000000000000000000001001010
+   00000000000000000000000001001011
+   00000000000000000000000001001100
+   00000000000000000000000001001101
+   00000000000000000000000001001110
+   00000000000000000000000001001111
+   00000000000000000000000001010000
+   00000000000000000000000001010001
+   00000000000000000000000001010010
+   00000000000000000000000001010011
+   00000000000000000000000001010100
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":21:20:21:24|Input i_run is unused.
+Running optimization stage 2 on dev_i2c_phy_bit .......
+Running optimization stage 2 on dev_i2c_phy_scaler .......
+Running optimization stage 2 on ddr .......
+Running optimization stage 2 on VHI .......
+Running optimization stage 2 on ODDRXE .......
+Running optimization stage 2 on OB .......
+Running optimization stage 2 on vo_phy_ddr .......
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vo_phy_ddr.v":16:20:16:30|Input i_phy_rst90 is unused.
+Running optimization stage 2 on pong_main_Z1 .......
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[17] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[18] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[19] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[20] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[21] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[22] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[23] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[24] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[25] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit bullet_timer[26] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[21] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[22] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[23] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[24] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[25] is always 0.
+@N: CL189 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Register bit timer[26] is always 0.
+@W: CL190 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Optimizing register bit idle_timer[30] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Optimizing register bit idle_timer[31] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 7 to 6 of r_red[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 4 to 1 of r_red[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bit 6 of r_green[7:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 4 to 1 of r_green[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 7 to 1 of r_blue[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning register bits 31 to 30 of idle_timer[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Pruning register bits 26 to 21 of timer[26:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Pruning register bits 26 to 17 of bullet_timer[26:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 6 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+   101
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":34:22:34:28|Input EncB_QA is unused.
+@N: CL159 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":34:31:34:37|Input EncB_QB is unused.
+Running optimization stage 2 on quad_decoder .......
+Running optimization stage 2 on delay_1s_3s .......
+@N: CL135 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\delay.v":23:12:23:17|Found sequential shift genblk1.del_stage[2].d with address depth of 3 words and data bit width of 1.
+Running optimization stage 2 on vga_sync_gen .......
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":111:0:111:5|Trying to extract state machine for register fsm_v.
+Extracted state machine for register fsm_v
+State machine has 5 reachable states with original encodings of:
+   00000000
+   00011110
+   00101000
+   00110010
+   00111100
+@N: CL201 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":89:0:89:5|Trying to extract state machine for register fsm_h.
+Extracted state machine for register fsm_h
+State machine has 5 reachable states with original encodings of:
+   00000000
+   00011110
+   00101000
+   00110010
+   00111100
+Running optimization stage 2 on pll_50_to_40Mhz_0_90_180 .......
+Running optimization stage 2 on EHXPLLJ .......
+Running optimization stage 2 on VLO .......
+Running optimization stage 2 on debouncer .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\synwork\layer0.rt.csv
+

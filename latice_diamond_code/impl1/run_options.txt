@@ -1,0 +1,93 @@
+#--  Synopsys, Inc.
+#--  Version Q-2020.03L-SP1
+#--  Project file C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\run_options.txt
+#--  Written on Tue May 26 20:44:16 2026
+
+
+#project files
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/clk_divider.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/ddr.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/delay.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/dev_i2c_phy.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/dev_i2c_phy_bit.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/dev_i2c_phy_scaler.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/hdmi_i2c_cfg.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pll_75mhz.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pong_main.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pong_top.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/rect_painter.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/uart_rx.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/uart_tx.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/vga_sync_gen.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/vo_phy_ddr.v"
+add_file -verilog -vlog_std v2001 "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/source/pll_50_to_40Mhz_0_90_180.v"
+
+
+#implementation: "impl1"
+impl -add impl1 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+set_option -include_path {C:/Users/Rafal/Desktop/szymon_to_fpga}
+
+#device options
+set_option -technology MACHXO2
+set_option -part LCMXO2_4000HC
+set_option -package TG144C
+set_option -speed_grade -5
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module "top"
+
+# hdl_compiler_options
+set_option -distributed_compile 0
+set_option -hdl_strict_syntax 0
+
+# mapper_without_write_options
+set_option -frequency 100
+set_option -srs_instrumentation 1
+
+# mapper_options
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+# Lattice XP
+set_option -maxfan 1000
+set_option -disable_io_insertion 0
+set_option -retiming 0
+set_option -pipe 1
+set_option -forcegsr false
+set_option -fix_gated_and_generated_clocks 1
+set_option -rw_check_on_ram 1
+set_option -update_models_cp 0
+set_option -syn_edif_array_rename 1
+set_option -Write_declared_clocks_only 1
+set_option -seqshift_no_replicate 0
+
+# NFilter
+set_option -no_sequential_opt 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+set_option -multi_file_compilation_unit 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./fpga_game_SD_impl1.edi"
+
+#set log file 
+set_option log_file "C:/Users/Rafal/Desktop/szymon_to_fpga/impl1/fpga_game_SD_impl1.srf" 
+impl -active "impl1"

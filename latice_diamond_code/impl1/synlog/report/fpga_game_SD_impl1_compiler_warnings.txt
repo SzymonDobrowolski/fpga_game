@@ -1,0 +1,21 @@
+@W: CL169 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning unused register enemy_hit_flag[1:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning unused register enemy_fired. Make sure that there are no unused intermediate registers.
+@W: CG360 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|Removing wire o_run, as there is no assignment to it.
+@W: CG133 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":46:12:46:14|Object run is declared but not assigned. Either assign a value or remove the declaration.
+@W: CL318 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":22:20:22:24|*Output o_run has undriven bits; assigning undriven bits to 'Z'.  Simulation mismatch possible. Assign all bits of the output.
+@W: CG360 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":10:12:10:20|Removing wire x_run_stb, as there is no assignment to it.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 10 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 7 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":26:0:26:5|Pruning register bit 5 of cfg_data[11:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL156 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":10:12:10:20|*Input x_run_stb to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+@W: CL190 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Optimizing register bit idle_timer[30] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Optimizing register bit idle_timer[31] to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 7 to 6 of r_red[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 4 to 1 of r_red[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bit 6 of r_green[7:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 4 to 1 of r_green[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":466:4:466:9|Pruning register bits 7 to 1 of r_blue[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Pruning register bits 31 to 30 of idle_timer[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Pruning register bits 26 to 21 of timer[26:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\source\pong_main.v":91:4:91:9|Pruning register bits 26 to 17 of bullet_timer[26:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+

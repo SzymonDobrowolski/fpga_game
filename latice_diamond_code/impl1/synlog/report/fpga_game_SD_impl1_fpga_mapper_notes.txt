@@ -1,0 +1,50 @@
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MO106 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|Found ROM bitmap_14[10:0] (in view: work.pong_main_Z1(verilog)) with 10 words by 11 bits.
+@N: MO106 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":379:12:379:15|Found ROM get_font_pixel_5\.bitmap_12[14:0] (in view: work.pong_main_Z1(verilog)) with 10 words by 15 bits.
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":189:0:189:5|Found counter in view:work.vga_sync_gen(verilog) instance cnt_ha[10:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Found counter in view:work.vga_sync_gen(verilog) instance cnt_va[10:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Found counter in view:work.pong_main_Z1(verilog) instance idle_timer[29:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Found counter in view:work.pong_main_Z1(verilog) instance score_tens[3:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":199:4:199:9|Found counter in view:work.pong_main_Z1(verilog) instance score_ones[3:0] 
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_V_CNT_281 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_enemy_x\[0\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_V_CNT_280 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_H_CNT_278 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_H_CNT_279 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_enemy_x\[1\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_V_CNT_277 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l0\.un1_enemy_y\[0\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') _l1\.un1_enemy_y\[1\] (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_H_CNT_275 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_tank_x_276 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :|Found 11 by 11 bit equality operator ('==') un1_tank_y_274 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":437:20:437:43|Found 11 by 11 bit equality operator ('==') un1_H_CNT_360 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":438:49:438:72|Found 11 by 11 bit equality operator ('==') un1_V_CNT_361 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":457:28:457:60|Found 11 by 11 bit equality operator ('==') _l1\.un1_H_CNT_363 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":457:28:457:60|Found 11 by 11 bit equality operator ('==') _l0\.un1_H_CNT_364 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":458:66:458:98|Found 11 by 11 bit equality operator ('==') _l1\.un1_V_CNT_365 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":458:66:458:98|Found 11 by 11 bit equality operator ('==') _l0\.un1_V_CNT_366 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":444:63:444:82|Found 11 by 11 bit equality operator ('==') un1_V_CNT_99 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":443:57:443:74|Found 11 by 11 bit equality operator ('==') un1_V_CNT_96 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":443:36:443:54|Found 11 by 11 bit equality operator ('==') un1_H_CNT_97 (in view: work.pong_main_Z1(verilog))
+@N: MF179 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":444:40:444:60|Found 11 by 11 bit equality operator ('==') un1_H_CNT_98 (in view: work.pong_main_Z1(verilog))
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing sequential instance tank_x[10] (in view: work.pong_main_Z1(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Removing sequential instance tank_y[10] (in view: work.pong_main_Z1(verilog)) because it does not drive other instances.
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\hdmi_i2c_cfg.v":46:0:46:5|Found counter in view:work.hdmi_i2c_cfg(verilog) instance cfg_addr[7:0] 
+@N: MO231 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\dev_i2c_phy.v":170:0:170:5|Found counter in view:work.dev_i2c_phy(verilog) instance data_cnt[3:0] 
+@N: FA113 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":300:8:300:9|Pipelining module un1_p_step_842[3:0]. For more information, search for "pipelining" in Online Help.
+@N: MF169 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Pushed in register p_step[3:0].
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Replicating instance pong_vga_sync_gen.cnt_va[2] (in view: work.top(verilog)) with 4 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Replicating instance pong_vga_sync_gen.cnt_va[4] (in view: work.top(verilog)) with 5 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\vga_sync_gen.v":196:0:196:5|Replicating instance pong_vga_sync_gen.cnt_va[5] (in view: work.top(verilog)) with 4 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Replicating instance my_pong_inst.next_tank_x[0] (in view: work.top(verilog)) with 33 loads 2 times to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":299:4:299:9|Replicating instance my_pong_inst.next_tank_y[0] (in view: work.top(verilog)) with 30 loads 1 time to improve timing.
+@N: FX271 :"c:\users\rafal\desktop\szymon_to_fpga\impl1\source\pong_main.v":333:4:333:9|Replicating instance my_pong_inst.next_enemy_x\[0\][0] (in view: work.top(verilog)) with 35 loads 2 times to improve timing.
+@N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
+@N: FX1056 |Writing EDF file: C:\Users\Rafal\Desktop\szymon_to_fpga\impl1\fpga_game_SD_impl1.edi
+@N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+@N: MT286 |System clock period 0.000 stretches to negative invalid value -- ignoring stretching.

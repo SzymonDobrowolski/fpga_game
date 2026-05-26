@@ -1,0 +1,2520 @@
+<HTML>
+<HEAD><TITLE>Lattice TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Par_Twr"></A><B><U><big>Place & Route TRACE Report</big></U></B>
+
+Loading design for application trce from file fpga_game_sd_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     TQFP144
+Performance: 5
+Loading device for application trce from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.12/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.12.0.240.2</big></U></B>
+Tue May 26 20:45:19 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o fpga_game_SD_impl1.twr -gui -msgset C:/Users/Rafal/Desktop/szymon_to_fpga/promote.xml fpga_game_SD_impl1.ncd fpga_game_SD_impl1.prf 
+Design file:     fpga_game_sd_impl1.ncd
+Preference file: fpga_game_sd_impl1.prf
+Device,speed:    LCMXO2-4000HC,5
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_0_0' Target='right'>FREQUENCY NET "CLK_c" 50.000000 MHz (0 errors)</A></LI>            630 items scored, 0 timing errors detected.
+Report:  126.072MHz is the maximum frequency for this preference.
+
+<FONT COLOR=red><LI><A href='#par_twr_pref_0_1' Target='right'><FONT COLOR=red>FREQUENCY NET "CLK40_0" 40.000000 MHz (4096 errors)</FONT></A></LI>
+</FONT>            4096 items scored, 4096 timing errors detected.
+Warning:  13.712MHz is the maximum frequency for this preference.
+
+<LI><A href='#par_twr_pref_0_2' Target='right'>FREQUENCY NET "CLK40_90" 40.000000 MHz (0 errors)</A></LI>            0 items scored, 0 timing errors detected.
+Report:  125.000MHz is the maximum frequency for this preference.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="par_twr_pref_0_0"></A>Preference: FREQUENCY NET "CLK_c" 50.000000 MHz ;
+            630 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 12.068ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[0]  (to CLK_c +)
+
+   Delay:               7.684ns  (28.9% logic, 71.1% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.684ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_821 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.068ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_821:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     2.096      R19C2A.F0 to     R19C3B.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.684   (28.9% logic, 71.1% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_821:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R19C3B.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.294ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[12]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[0]  (to CLK_c +)
+
+   Delay:               7.458ns  (29.7% logic, 70.3% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.458ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_821 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.294ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_821:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q1 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.035      R20C3C.Q1 to      R19C3A.C1 deb_shoot/counter[12]
+CTOF_DEL    ---     0.452      R19C3A.C1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     2.096      R19C2A.F0 to     R19C3B.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.458   (29.7% logic, 70.3% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_821:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R19C3B.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.407ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[10]  (to CLK_c +)
+                   FF                        deb_shoot/counter[9]
+
+   Delay:               7.345ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.345ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_789 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.407ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_789:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.757      R19C2A.F0 to     R20C3B.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.345   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_789:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3B.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.407ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[14]  (to CLK_c +)
+                   FF                        deb_shoot/counter[13]
+
+   Delay:               7.345ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.345ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_787 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.407ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_787:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.757      R19C2A.F0 to     R20C3D.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.345   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_787:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3D.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.407ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[8]  (to CLK_c +)
+                   FF                        deb_shoot/counter[7]
+
+   Delay:               7.345ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.345ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_790 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.407ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_790:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.757      R19C2A.F0 to     R20C3A.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.345   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_790:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3A.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.407ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[12]  (to CLK_c +)
+                   FF                        deb_shoot/counter[11]
+
+   Delay:               7.345ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.345ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_788 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.407ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.757      R19C2A.F0 to     R20C3C.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.345   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.420ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[2]  (to CLK_c +)
+                   FF                        deb_shoot/counter[1]
+
+   Delay:               7.332ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.332ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_793 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.420ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_793:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.744      R19C2A.F0 to     R20C2B.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.332   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_793:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C2B.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.420ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[6]  (to CLK_c +)
+                   FF                        deb_shoot/counter[5]
+
+   Delay:               7.332ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.332ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_791 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.420ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_791:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.744      R19C2A.F0 to     R20C2D.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.332   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_791:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C2D.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.420ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[11]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[4]  (to CLK_c +)
+                   FF                        deb_shoot/counter[3]
+
+   Delay:               7.332ns  (30.2% logic, 69.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.332ns physical path delay deb_shoot/SLICE_788 to deb_shoot/SLICE_792 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.420ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_788 to deb_shoot/SLICE_792:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3C.CLK to      R20C3C.Q0 deb_shoot/SLICE_788 (from CLK_c)
+ROUTE         2     1.261      R20C3C.Q0 to      R19C3A.B1 deb_shoot/counter[11]
+CTOF_DEL    ---     0.452      R19C3A.B1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     1.744      R19C2A.F0 to     R20C2C.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.332   (30.2% logic, 69.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_788:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_792:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C2C.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.471ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[10]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[0]  (to CLK_c +)
+
+   Delay:               7.281ns  (30.4% logic, 69.6% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.281ns physical path delay deb_shoot/SLICE_789 to deb_shoot/SLICE_821 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.248ns LSR_SET requirement (totaling 19.752ns) by 12.471ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_789 to deb_shoot/SLICE_821:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R20C3B.CLK to      R20C3B.Q1 deb_shoot/SLICE_789 (from CLK_c)
+ROUTE         2     0.858      R20C3B.Q1 to      R19C3A.A1 deb_shoot/counter[10]
+CTOF_DEL    ---     0.452      R19C3A.A1 to      R19C3A.F1 deb_shoot/SLICE_1703
+ROUTE         1     0.610      R19C3A.F1 to      R19C3A.B0 deb_shoot/btn_out_0_sqmuxa_8
+CTOF_DEL    ---     0.452      R19C3A.B0 to      R19C3A.F0 deb_shoot/SLICE_1703
+ROUTE         1     0.882      R19C3A.F0 to      R19C2A.B1 deb_shoot/btn_out_0_sqmuxa_12
+CTOF_DEL    ---     0.452      R19C2A.B1 to      R19C2A.F1 deb_shoot/SLICE_1702
+ROUTE         2     0.618      R19C2A.F1 to      R19C2A.B0 deb_shoot.btn_out_0_sqmuxa
+CTOF_DEL    ---     0.452      R19C2A.B0 to      R19C2A.F0 deb_shoot/SLICE_1702
+ROUTE         9     2.096      R19C2A.F0 to     R19C3B.LSR deb_shoot/btn_out_0_sqmuxa_RNICROP (to CLK_c)
+                  --------
+                    7.281   (30.4% logic, 69.6% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_789:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R20C3B.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_821:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     4.540      105.PADDI to     R19C3B.CLK CLK_c
+                  --------
+                    4.540   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:  126.072MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="par_twr_pref_0_1"></A>Preference: FREQUENCY NET "CLK40_0" 40.000000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 9.586ns (weighted slack = -47.930ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_x[10]  (to CLK40_0 +)
+
+   Delay:              10.306ns  (41.4% logic, 58.6% route), 11 logic levels.
+
+ Constraint Details:
+
+     10.306ns physical path delay Button_MGIOL to my_pong_inst/SLICE_560 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.586ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_560:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22A.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22A.D1 to     R12C22A.F1 my_pong_inst/SLICE_1132
+ROUTE         1     0.544     R12C22A.F1 to     R12C22A.D0 my_pong_inst/N_796
+CTOF_DEL    ---     0.452     R12C22A.D0 to     R12C22A.F0 my_pong_inst/SLICE_1132
+ROUTE         2     0.686     R12C22A.F0 to     R13C22A.C1 my_pong_inst/N_809
+C1TOFCO_DE  ---     0.786     R13C22A.C1 to    R13C22A.FCO my_pong_inst/SLICE_565
+ROUTE         1     0.000    R13C22A.FCO to    R13C22B.FCI my_pong_inst/un1_next_bullet_x_846_cry_0
+FCITOFCO_D  ---     0.146    R13C22B.FCI to    R13C22B.FCO my_pong_inst/SLICE_564
+ROUTE         1     0.000    R13C22B.FCO to    R13C22C.FCI my_pong_inst/un1_next_bullet_x_846_cry_2
+FCITOFCO_D  ---     0.146    R13C22C.FCI to    R13C22C.FCO my_pong_inst/SLICE_563
+ROUTE         1     0.000    R13C22C.FCO to    R13C22D.FCI my_pong_inst/un1_next_bullet_x_846_cry_4
+FCITOFCO_D  ---     0.146    R13C22D.FCI to    R13C22D.FCO my_pong_inst/SLICE_562
+ROUTE         1     0.000    R13C22D.FCO to    R13C23A.FCI my_pong_inst/un1_next_bullet_x_846_cry_6
+FCITOFCO_D  ---     0.146    R13C23A.FCI to    R13C23A.FCO my_pong_inst/SLICE_561
+ROUTE         1     0.000    R13C23A.FCO to    R13C23B.FCI my_pong_inst/un1_next_bullet_x_846_cry_8
+FCITOF1_DE  ---     0.569    R13C23B.FCI to     R13C23B.F1 my_pong_inst/SLICE_560
+ROUTE         1     0.000     R13C23B.F1 to    R13C23B.DI1 my_pong_inst/un1_next_bullet_x_846_cry_9_0_S1 (to CLK40_0)
+                  --------
+                   10.306   (41.4% logic, 58.6% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_560:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R13C23B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.534ns (weighted slack = -47.670ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_x[9]  (to CLK40_0 +)
+
+   Delay:              10.254ns  (41.1% logic, 58.9% route), 11 logic levels.
+
+ Constraint Details:
+
+     10.254ns physical path delay Button_MGIOL to my_pong_inst/SLICE_560 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.534ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_560:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22A.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22A.D1 to     R12C22A.F1 my_pong_inst/SLICE_1132
+ROUTE         1     0.544     R12C22A.F1 to     R12C22A.D0 my_pong_inst/N_796
+CTOF_DEL    ---     0.452     R12C22A.D0 to     R12C22A.F0 my_pong_inst/SLICE_1132
+ROUTE         2     0.686     R12C22A.F0 to     R13C22A.C1 my_pong_inst/N_809
+C1TOFCO_DE  ---     0.786     R13C22A.C1 to    R13C22A.FCO my_pong_inst/SLICE_565
+ROUTE         1     0.000    R13C22A.FCO to    R13C22B.FCI my_pong_inst/un1_next_bullet_x_846_cry_0
+FCITOFCO_D  ---     0.146    R13C22B.FCI to    R13C22B.FCO my_pong_inst/SLICE_564
+ROUTE         1     0.000    R13C22B.FCO to    R13C22C.FCI my_pong_inst/un1_next_bullet_x_846_cry_2
+FCITOFCO_D  ---     0.146    R13C22C.FCI to    R13C22C.FCO my_pong_inst/SLICE_563
+ROUTE         1     0.000    R13C22C.FCO to    R13C22D.FCI my_pong_inst/un1_next_bullet_x_846_cry_4
+FCITOFCO_D  ---     0.146    R13C22D.FCI to    R13C22D.FCO my_pong_inst/SLICE_562
+ROUTE         1     0.000    R13C22D.FCO to    R13C23A.FCI my_pong_inst/un1_next_bullet_x_846_cry_6
+FCITOFCO_D  ---     0.146    R13C23A.FCI to    R13C23A.FCO my_pong_inst/SLICE_561
+ROUTE         1     0.000    R13C23A.FCO to    R13C23B.FCI my_pong_inst/un1_next_bullet_x_846_cry_8
+FCITOF0_DE  ---     0.517    R13C23B.FCI to     R13C23B.F0 my_pong_inst/SLICE_560
+ROUTE         1     0.000     R13C23B.F0 to    R13C23B.DI0 my_pong_inst/un1_next_bullet_x_846_cry_9_0_S0 (to CLK40_0)
+                  --------
+                   10.254   (41.1% logic, 58.9% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_560:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R13C23B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.440ns (weighted slack = -47.200ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_x[8]  (to CLK40_0 +)
+
+   Delay:              10.160ns  (40.6% logic, 59.4% route), 10 logic levels.
+
+ Constraint Details:
+
+     10.160ns physical path delay Button_MGIOL to my_pong_inst/SLICE_561 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.440ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_561:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22A.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22A.D1 to     R12C22A.F1 my_pong_inst/SLICE_1132
+ROUTE         1     0.544     R12C22A.F1 to     R12C22A.D0 my_pong_inst/N_796
+CTOF_DEL    ---     0.452     R12C22A.D0 to     R12C22A.F0 my_pong_inst/SLICE_1132
+ROUTE         2     0.686     R12C22A.F0 to     R13C22A.C1 my_pong_inst/N_809
+C1TOFCO_DE  ---     0.786     R13C22A.C1 to    R13C22A.FCO my_pong_inst/SLICE_565
+ROUTE         1     0.000    R13C22A.FCO to    R13C22B.FCI my_pong_inst/un1_next_bullet_x_846_cry_0
+FCITOFCO_D  ---     0.146    R13C22B.FCI to    R13C22B.FCO my_pong_inst/SLICE_564
+ROUTE         1     0.000    R13C22B.FCO to    R13C22C.FCI my_pong_inst/un1_next_bullet_x_846_cry_2
+FCITOFCO_D  ---     0.146    R13C22C.FCI to    R13C22C.FCO my_pong_inst/SLICE_563
+ROUTE         1     0.000    R13C22C.FCO to    R13C22D.FCI my_pong_inst/un1_next_bullet_x_846_cry_4
+FCITOFCO_D  ---     0.146    R13C22D.FCI to    R13C22D.FCO my_pong_inst/SLICE_562
+ROUTE         1     0.000    R13C22D.FCO to    R13C23A.FCI my_pong_inst/un1_next_bullet_x_846_cry_6
+FCITOF1_DE  ---     0.569    R13C23A.FCI to     R13C23A.F1 my_pong_inst/SLICE_561
+ROUTE         1     0.000     R13C23A.F1 to    R13C23A.DI1 my_pong_inst/un1_next_bullet_x_846_cry_7_0_S1 (to CLK40_0)
+                  --------
+                   10.160   (40.6% logic, 59.4% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_561:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R13C23A.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.402ns (weighted slack = -47.010ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_y[10]  (to CLK40_0 +)
+
+   Delay:              10.122ns  (39.3% logic, 60.7% route), 9 logic levels.
+
+ Constraint Details:
+
+     10.122ns physical path delay Button_MGIOL to my_pong_inst/SLICE_531 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.402ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22B.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22B.D1 to     R12C22B.F1 my_pong_inst/SLICE_1288
+ROUTE         1     0.384     R12C22B.F1 to     R12C22B.C0 my_pong_inst/N_774
+CTOF_DEL    ---     0.452     R12C22B.C0 to     R12C22B.F0 my_pong_inst/SLICE_1288
+ROUTE         1     0.954     R12C22B.F0 to     R12C24C.C1 my_pong_inst/N_787
+C1TOFCO_DE  ---     0.786     R12C24C.C1 to    R12C24C.FCO my_pong_inst/SLICE_534
+ROUTE         1     0.000    R12C24C.FCO to    R12C24D.FCI my_pong_inst/un1_next_bullet_y_847_cry_4
+FCITOFCO_D  ---     0.146    R12C24D.FCI to    R12C24D.FCO my_pong_inst/SLICE_533
+ROUTE         1     0.000    R12C24D.FCO to    R12C25A.FCI my_pong_inst/un1_next_bullet_y_847_cry_6
+FCITOFCO_D  ---     0.146    R12C25A.FCI to    R12C25A.FCO my_pong_inst/SLICE_532
+ROUTE         1     0.000    R12C25A.FCO to    R12C25B.FCI my_pong_inst/un1_next_bullet_y_847_cry_8
+FCITOF1_DE  ---     0.569    R12C25B.FCI to     R12C25B.F1 my_pong_inst/SLICE_531
+ROUTE         1     0.000     R12C25B.F1 to    R12C25B.DI1 my_pong_inst/un1_next_bullet_y_847_cry_9_0_S1 (to CLK40_0)
+                  --------
+                   10.122   (39.3% logic, 60.7% route), 9 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R12C25B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.390ns (weighted slack = -46.950ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_y[10]  (to CLK40_0 +)
+
+   Delay:              10.110ns  (42.2% logic, 57.8% route), 11 logic levels.
+
+ Constraint Details:
+
+     10.110ns physical path delay Button_MGIOL to my_pong_inst/SLICE_531 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.390ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     0.734     R13C24D.F1 to     R14C24D.C1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R14C24D.C1 to     R14C24D.F1 my_pong_inst/SLICE_1131
+ROUTE         1     0.384     R14C24D.F1 to     R14C24D.C0 my_pong_inst/N_770
+CTOF_DEL    ---     0.452     R14C24D.C0 to     R14C24D.F0 my_pong_inst/SLICE_1131
+ROUTE         2     1.036     R14C24D.F0 to     R12C24A.C1 my_pong_inst/N_783
+C1TOFCO_DE  ---     0.786     R12C24A.C1 to    R12C24A.FCO my_pong_inst/SLICE_536
+ROUTE         1     0.000    R12C24A.FCO to    R12C24B.FCI my_pong_inst/un1_next_bullet_y_847_cry_0
+FCITOFCO_D  ---     0.146    R12C24B.FCI to    R12C24B.FCO my_pong_inst/SLICE_535
+ROUTE         1     0.000    R12C24B.FCO to    R12C24C.FCI my_pong_inst/un1_next_bullet_y_847_cry_2
+FCITOFCO_D  ---     0.146    R12C24C.FCI to    R12C24C.FCO my_pong_inst/SLICE_534
+ROUTE         1     0.000    R12C24C.FCO to    R12C24D.FCI my_pong_inst/un1_next_bullet_y_847_cry_4
+FCITOFCO_D  ---     0.146    R12C24D.FCI to    R12C24D.FCO my_pong_inst/SLICE_533
+ROUTE         1     0.000    R12C24D.FCO to    R12C25A.FCI my_pong_inst/un1_next_bullet_y_847_cry_6
+FCITOFCO_D  ---     0.146    R12C25A.FCI to    R12C25A.FCO my_pong_inst/SLICE_532
+ROUTE         1     0.000    R12C25A.FCO to    R12C25B.FCI my_pong_inst/un1_next_bullet_y_847_cry_8
+FCITOF1_DE  ---     0.569    R12C25B.FCI to     R12C25B.F1 my_pong_inst/SLICE_531
+ROUTE         1     0.000     R12C25B.F1 to    R12C25B.DI1 my_pong_inst/un1_next_bullet_y_847_cry_9_0_S1 (to CLK40_0)
+                  --------
+                   10.110   (42.2% logic, 57.8% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R12C25B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.388ns (weighted slack = -46.940ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_x[7]  (to CLK40_0 +)
+
+   Delay:              10.108ns  (40.3% logic, 59.7% route), 10 logic levels.
+
+ Constraint Details:
+
+     10.108ns physical path delay Button_MGIOL to my_pong_inst/SLICE_561 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.388ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_561:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22A.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22A.D1 to     R12C22A.F1 my_pong_inst/SLICE_1132
+ROUTE         1     0.544     R12C22A.F1 to     R12C22A.D0 my_pong_inst/N_796
+CTOF_DEL    ---     0.452     R12C22A.D0 to     R12C22A.F0 my_pong_inst/SLICE_1132
+ROUTE         2     0.686     R12C22A.F0 to     R13C22A.C1 my_pong_inst/N_809
+C1TOFCO_DE  ---     0.786     R13C22A.C1 to    R13C22A.FCO my_pong_inst/SLICE_565
+ROUTE         1     0.000    R13C22A.FCO to    R13C22B.FCI my_pong_inst/un1_next_bullet_x_846_cry_0
+FCITOFCO_D  ---     0.146    R13C22B.FCI to    R13C22B.FCO my_pong_inst/SLICE_564
+ROUTE         1     0.000    R13C22B.FCO to    R13C22C.FCI my_pong_inst/un1_next_bullet_x_846_cry_2
+FCITOFCO_D  ---     0.146    R13C22C.FCI to    R13C22C.FCO my_pong_inst/SLICE_563
+ROUTE         1     0.000    R13C22C.FCO to    R13C22D.FCI my_pong_inst/un1_next_bullet_x_846_cry_4
+FCITOFCO_D  ---     0.146    R13C22D.FCI to    R13C22D.FCO my_pong_inst/SLICE_562
+ROUTE         1     0.000    R13C22D.FCO to    R13C23A.FCI my_pong_inst/un1_next_bullet_x_846_cry_6
+FCITOF0_DE  ---     0.517    R13C23A.FCI to     R13C23A.F0 my_pong_inst/SLICE_561
+ROUTE         1     0.000     R13C23A.F0 to    R13C23A.DI0 my_pong_inst/un1_next_bullet_x_846_cry_7_0_S0 (to CLK40_0)
+                  --------
+                   10.108   (40.3% logic, 59.7% route), 10 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_561:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R13C23A.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.350ns (weighted slack = -46.750ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_y[9]  (to CLK40_0 +)
+
+   Delay:              10.070ns  (39.0% logic, 61.0% route), 9 logic levels.
+
+ Constraint Details:
+
+     10.070ns physical path delay Button_MGIOL to my_pong_inst/SLICE_531 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.350ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22B.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22B.D1 to     R12C22B.F1 my_pong_inst/SLICE_1288
+ROUTE         1     0.384     R12C22B.F1 to     R12C22B.C0 my_pong_inst/N_774
+CTOF_DEL    ---     0.452     R12C22B.C0 to     R12C22B.F0 my_pong_inst/SLICE_1288
+ROUTE         1     0.954     R12C22B.F0 to     R12C24C.C1 my_pong_inst/N_787
+C1TOFCO_DE  ---     0.786     R12C24C.C1 to    R12C24C.FCO my_pong_inst/SLICE_534
+ROUTE         1     0.000    R12C24C.FCO to    R12C24D.FCI my_pong_inst/un1_next_bullet_y_847_cry_4
+FCITOFCO_D  ---     0.146    R12C24D.FCI to    R12C24D.FCO my_pong_inst/SLICE_533
+ROUTE         1     0.000    R12C24D.FCO to    R12C25A.FCI my_pong_inst/un1_next_bullet_y_847_cry_6
+FCITOFCO_D  ---     0.146    R12C25A.FCI to    R12C25A.FCO my_pong_inst/SLICE_532
+ROUTE         1     0.000    R12C25A.FCO to    R12C25B.FCI my_pong_inst/un1_next_bullet_y_847_cry_8
+FCITOF0_DE  ---     0.517    R12C25B.FCI to     R12C25B.F0 my_pong_inst/SLICE_531
+ROUTE         1     0.000     R12C25B.F0 to    R12C25B.DI0 my_pong_inst/un1_next_bullet_y_847_cry_9_0_S0 (to CLK40_0)
+                  --------
+                   10.070   (39.0% logic, 61.0% route), 9 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R12C25B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.338ns (weighted slack = -46.690ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_y[9]  (to CLK40_0 +)
+
+   Delay:              10.058ns  (41.9% logic, 58.1% route), 11 logic levels.
+
+ Constraint Details:
+
+     10.058ns physical path delay Button_MGIOL to my_pong_inst/SLICE_531 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.338ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     0.734     R13C24D.F1 to     R14C24D.C1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R14C24D.C1 to     R14C24D.F1 my_pong_inst/SLICE_1131
+ROUTE         1     0.384     R14C24D.F1 to     R14C24D.C0 my_pong_inst/N_770
+CTOF_DEL    ---     0.452     R14C24D.C0 to     R14C24D.F0 my_pong_inst/SLICE_1131
+ROUTE         2     1.036     R14C24D.F0 to     R12C24A.C1 my_pong_inst/N_783
+C1TOFCO_DE  ---     0.786     R12C24A.C1 to    R12C24A.FCO my_pong_inst/SLICE_536
+ROUTE         1     0.000    R12C24A.FCO to    R12C24B.FCI my_pong_inst/un1_next_bullet_y_847_cry_0
+FCITOFCO_D  ---     0.146    R12C24B.FCI to    R12C24B.FCO my_pong_inst/SLICE_535
+ROUTE         1     0.000    R12C24B.FCO to    R12C24C.FCI my_pong_inst/un1_next_bullet_y_847_cry_2
+FCITOFCO_D  ---     0.146    R12C24C.FCI to    R12C24C.FCO my_pong_inst/SLICE_534
+ROUTE         1     0.000    R12C24C.FCO to    R12C24D.FCI my_pong_inst/un1_next_bullet_y_847_cry_4
+FCITOFCO_D  ---     0.146    R12C24D.FCI to    R12C24D.FCO my_pong_inst/SLICE_533
+ROUTE         1     0.000    R12C24D.FCO to    R12C25A.FCI my_pong_inst/un1_next_bullet_y_847_cry_6
+FCITOFCO_D  ---     0.146    R12C25A.FCI to    R12C25A.FCO my_pong_inst/SLICE_532
+ROUTE         1     0.000    R12C25A.FCO to    R12C25B.FCI my_pong_inst/un1_next_bullet_y_847_cry_8
+FCITOF0_DE  ---     0.517    R12C25B.FCI to     R12C25B.F0 my_pong_inst/SLICE_531
+ROUTE         1     0.000     R12C25B.F0 to    R12C25B.DI0 my_pong_inst/un1_next_bullet_y_847_cry_9_0_S0 (to CLK40_0)
+                  --------
+                   10.058   (41.9% logic, 58.1% route), 11 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_531:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R12C25B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.294ns (weighted slack = -46.470ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot_stateio  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_bullet_x[6]  (to CLK40_0 +)
+
+   Delay:              10.014ns  (39.7% logic, 60.3% route), 9 logic levels.
+
+ Constraint Details:
+
+     10.014ns physical path delay Button_MGIOL to my_pong_inst/SLICE_562 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.397ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.720ns) by 9.294ns
+
+ Physical Path Details:
+
+      Data path Button_MGIOL to my_pong_inst/SLICE_562:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2INP_DEL   ---     0.523   IOL_L20A.CLK to    IOL_L20A.IN Button_MGIOL (from CLK_c)
+ROUTE        10     2.657    IOL_L20A.IN to     R12C18B.C0 shoot_clean
+CTOF_DEL    ---     0.452     R12C18B.C0 to     R12C18B.F0 my_pong_inst/SLICE_1315
+ROUTE         3     1.029     R12C18B.F0 to     R13C24D.D1 my_pong_inst/N_1226
+CTOF_DEL    ---     0.452     R13C24D.D1 to     R13C24D.F1 my_pong_inst/SLICE_924
+ROUTE        34     1.120     R13C24D.F1 to     R12C22A.D1 my_pong_inst/next_bullet_x_0_sqmuxa
+CTOF_DEL    ---     0.452     R12C22A.D1 to     R12C22A.F1 my_pong_inst/SLICE_1132
+ROUTE         1     0.544     R12C22A.F1 to     R12C22A.D0 my_pong_inst/N_796
+CTOF_DEL    ---     0.452     R12C22A.D0 to     R12C22A.F0 my_pong_inst/SLICE_1132
+ROUTE         2     0.686     R12C22A.F0 to     R13C22A.C1 my_pong_inst/N_809
+C1TOFCO_DE  ---     0.786     R13C22A.C1 to    R13C22A.FCO my_pong_inst/SLICE_565
+ROUTE         1     0.000    R13C22A.FCO to    R13C22B.FCI my_pong_inst/un1_next_bullet_x_846_cry_0
+FCITOFCO_D  ---     0.146    R13C22B.FCI to    R13C22B.FCO my_pong_inst/SLICE_564
+ROUTE         1     0.000    R13C22B.FCO to    R13C22C.FCI my_pong_inst/un1_next_bullet_x_846_cry_2
+FCITOFCO_D  ---     0.146    R13C22C.FCI to    R13C22C.FCO my_pong_inst/SLICE_563
+ROUTE         1     0.000    R13C22C.FCO to    R13C22D.FCI my_pong_inst/un1_next_bullet_x_846_cry_4
+FCITOF1_DE  ---     0.569    R13C22D.FCI to     R13C22D.F1 my_pong_inst/SLICE_562
+ROUTE         1     0.000     R13C22D.F1 to    R13C22D.DI1 my_pong_inst/un1_next_bullet_x_846_cry_5_0_S1 (to CLK40_0)
+                  --------
+                   10.014   (39.7% logic, 60.3% route), 9 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to Button_MGIOL:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.693      105.PADDI to   IOL_L20A.CLK CLK_c
+                  --------
+                    6.065   (22.6% logic, 77.4% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_562:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to    R13C22D.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Error: The following path exceeds requirements by 9.275ns (weighted slack = -46.375ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/state  (from CLK_c +)
+   Destination:    FF         Data in        my_pong_inst/next_e_bullet_x[10]  (to CLK40_0 +)
+
+   Delay:              10.148ns  (44.4% logic, 55.6% route), 12 logic levels.
+
+ Constraint Details:
+
+     10.148ns physical path delay SLICE_1058 to my_pong_inst/SLICE_350 exceeds
+      (delay constraint based on source clock period of 20.000ns and destination clock period of 25.000ns)
+      5.000ns delay constraint less
+      2.244ns skew and
+      1.733ns feedback compensation and
+      0.150ns DIN_SET requirement (totaling 0.873ns) by 9.275ns
+
+ Physical Path Details:
+
+      Data path SLICE_1058 to my_pong_inst/SLICE_350:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R10C26B.CLK to     R10C26B.Q0 SLICE_1058 (from CLK_c)
+ROUTE        31     0.689     R10C26B.Q0 to     R10C25C.C1 rst_clean
+CTOF_DEL    ---     0.452     R10C25C.C1 to     R10C25C.F1 my_pong_inst/SLICE_1737
+ROUTE         4     0.566     R10C25C.F1 to     R10C25A.D1 my_pong_inst/N_102
+CTOF_DEL    ---     0.452     R10C25A.D1 to     R10C25A.F1 my_pong_inst/SLICE_1308
+ROUTE        24     0.594     R10C25A.F1 to     R10C25B.D0 my_pong_inst/next_e_bullet_dir_0_sqmuxa_403_sn
+CTOF_DEL    ---     0.452     R10C25B.D0 to     R10C25B.F0 my_pong_inst/SLICE_1306
+ROUTE        22     2.090     R10C25B.F0 to      R9C23C.M0 my_pong_inst/un1_next_e_bullet_x_810_m0s2
+MTOOFX_DEL  ---     0.345      R9C23C.M0 to    R9C23C.OFX0 my_pong_inst/un1_next_e_bullet_x_810_m1[0]/SLICE_1092
+ROUTE         2     0.680    R9C23C.OFX0 to      R9C22C.C0 my_pong_inst/un1_next_e_bullet_x_810_m1[0]
+CTOF_DEL    ---     0.452      R9C22C.C0 to      R9C22C.F0 my_pong_inst/SLICE_1827
+ROUTE         1     1.028      R9C22C.F0 to      R9C21A.C1 my_pong_inst/un1_next_e_bullet_x_810[0]
+C1TOFCO_DE  ---     0.786      R9C21A.C1 to     R9C21A.FCO my_pong_inst/SLICE_355
+ROUTE         1     0.000     R9C21A.FCO to     R9C21B.FCI my_pong_inst/un1_next_e_bullet_x_848_cry_0
+FCITOFCO_D  ---     0.146     R9C21B.FCI to     R9C21B.FCO my_pong_inst/SLICE_354
+ROUTE         1     0.000     R9C21B.FCO to     R9C21C.FCI my_pong_inst/un1_next_e_bullet_x_848_cry_2
+FCITOFCO_D  ---     0.146     R9C21C.FCI to     R9C21C.FCO my_pong_inst/SLICE_353
+ROUTE         1     0.000     R9C21C.FCO to     R9C21D.FCI my_pong_inst/un1_next_e_bullet_x_848_cry_4
+FCITOFCO_D  ---     0.146     R9C21D.FCI to     R9C21D.FCO my_pong_inst/SLICE_352
+ROUTE         1     0.000     R9C21D.FCO to     R9C22A.FCI my_pong_inst/un1_next_e_bullet_x_848_cry_6
+FCITOFCO_D  ---     0.146     R9C22A.FCI to     R9C22A.FCO my_pong_inst/SLICE_351
+ROUTE         1     0.000     R9C22A.FCO to     R9C22B.FCI my_pong_inst/un1_next_e_bullet_x_848_cry_8
+FCITOF1_DE  ---     0.569     R9C22B.FCI to      R9C22B.F1 my_pong_inst/SLICE_350
+ROUTE         1     0.000      R9C22B.F1 to     R9C22B.DI1 my_pong_inst/un1_next_e_bullet_x_848_cry_9_0_S1 (to CLK40_0)
+                  --------
+                   10.148   (44.4% logic, 55.6% route), 12 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to SLICE_1058:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     4.540      105.PADDI to    R10C26B.CLK CLK_c
+                  --------
+                    5.912   (23.2% logic, 76.8% route), 1 logic levels.
+
+      Destination Clock Path CLK to my_pong_inst/SLICE_350:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.372        105.PAD to      105.PADDI CLK
+ROUTE        21     0.716      105.PADDI to      RPLL.CLKI CLK_c
+CLKI2OP_DE  ---     0.000      RPLL.CLKI to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.580     RPLL.CLKOP to     R9C22B.CLK CLK40_0
+                  --------
+                    3.668   (37.4% logic, 62.6% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000     RPLL.CLKFB to     RPLL.CLKOP pong_pll/PLLInst_0
+ROUTE       371     1.733     RPLL.CLKOP to     RPLL.CLKFB CLK40_0
+                  --------
+                    1.733   (0.0% logic, 100.0% route), 1 logic levels.
+
+Warning:  13.712MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="par_twr_pref_0_2"></A>Preference: FREQUENCY NET "CLK40_90" 40.000000 MHz ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 17.000ns
+         The internal maximum frequency of the following component is 125.000 MHz
+
+ Logical Details:  Cell type  Pin name       Component name
+
+   Destination:    IOLOGIC    CLK            VID_DDR_PCLK_MGIOL
+
+   Delay:               8.000ns -- based on Minimum Pulse Width
+
+Report:  125.000MHz is the maximum frequency for this preference.
+
+<A name="ptwr_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "CLK_c" 50.000000 MHz ;   |   50.000 MHz|  126.072 MHz|   5  
+                                        |             |             |
+FREQUENCY NET "CLK40_0" 40.000000 MHz ; |   40.000 MHz|   13.712 MHz|  11 *
+                                        |             |             |
+FREQUENCY NET "CLK40_90" 40.000000 MHz  |             |             |
+;                                       |   40.000 MHz|  125.000 MHz|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+1 preference(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/r_green_5[0]">my_pong_inst/r_green_5[0]</a>               |       1|    1302|     31.79%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/r_green_5_iv_1_0[0]">my_pong_inst/r_green_5_iv_1_0[0]</a>        |       1|    1278|     31.20%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_is_e_bullet">my_pong_inst/un1_is_e_bullet</a>            |       3|    1260|     30.76%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/V_CNT_i_1[6]">my_pong_inst/V_CNT_i_1[6]</a>               |     129|    1153|     28.15%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=rst_clean">rst_clean</a>                               |      31|    1145|     27.95%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/g1_0">my_pong_inst/g1_0</a>                       |       3|    1034|     25.24%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_is_bullet_3_2">my_pong_inst/un1_is_bullet_3_2</a>          |       2|     951|     23.22%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=un1_x_vcnt_1_cry_2">un1_x_vcnt_1_cry_2</a>                      |       1|     911|     22.24%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_V_CNT_0_axb3">my_pong_inst/un1_V_CNT_0_axb3</a>           |      27|     886|     21.63%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/ANB3_i_1">my_pong_inst/ANB3_i_1</a>                   |     104|     845|     20.63%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un201_0_cry_7">my_pong_inst/un201_0_cry_7</a>              |       1|     775|     18.92%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_is_e_bullet_N_2L1">my_pong_inst/un1_is_e_bullet_N_2L1</a>      |       2|     756|     18.46%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=un1_x_vcnt_1_cry_9_0_S1">un1_x_vcnt_1_cry_9_0_S1</a>                 |      18|     748|     18.26%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=un1_x_vcnt_1_cry_8">un1_x_vcnt_1_cry_8</a>                      |       1|     729|     17.80%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/is_wall_func_66_i_1">my_pong_inst/is_wall_func_66_i_1</a>        |       3|     710|     17.33%
+                                        |        |        |
+my_pong_inst/un1_is_e_bullet_N_2L1_RNIB6|        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_is_e_bullet_N_2L1_RNIB6LV2">LV2</a>                                     |       2|     681|     16.63%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_m1_e_0">my_pong_inst/un1_m1_e_0</a>                 |       5|     644|     15.72%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=un1_x_vcnt_1_cry_3_0_S0">un1_x_vcnt_1_cry_3_0_S0</a>                 |      39|     644|     15.72%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un70_get_font_pixel_cry_8">my_pong_inst/un70_get_font_pixel_cry_8</a>  |       1|     642|     15.67%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=un1_x_vcnt_1_cry_6">un1_x_vcnt_1_cry_6</a>                      |       1|     618|     15.09%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_x_hcntlto9_d">my_pong_inst/un1_x_hcntlto9_d</a>           |      12|     585|     14.28%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un201_0_cry_5">my_pong_inst/un201_0_cry_5</a>              |       1|     545|     13.31%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/N_102">my_pong_inst/N_102</a>                      |       4|     536|     13.09%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_V_CNT_215_axbxc4_a0">my_pong_inst/un1_V_CNT_215_axbxc4_a0</a>    |       4|     516|     12.60%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un201_0_cry_8_0_S0">my_pong_inst/un201_0_cry_8_0_S0</a>         |       2|     514|     12.55%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=un1_x_vcnt_1_cry_4">un1_x_vcnt_1_cry_4</a>                      |       1|     483|     11.79%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un70_get_font_pixel_cry_10">my_pong_inst/un70_get_font_pixel_cry_10</a> |       1|     479|     11.69%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/un1_x_hcntlt7">my_pong_inst/un1_x_hcntlt7</a>              |       2|     474|     11.57%
+                                        |        |        |
+<a href="bali://?app=PHYSICAL_VIEW&amp;sig=LocateNet&amp;args=my_pong_inst/next_bullet_x_0_sqmuxa">my_pong_inst/next_bullet_x_0_sqmuxa</a>     |      34|     410|     10.01%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+<A name="ptwr_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 3 clocks:
+
+Clock Domain: CLK_c   Source: CLK.PAD   Loads: 21
+   Covered under: FREQUENCY NET "CLK_c" 50.000000 MHz ;
+
+Clock Domain: CLK40_90   Source: pong_pll/PLLInst_0.CLKOS   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: CLK40_0   Source: pong_pll/PLLInst_0.CLKOP   Loads: 371
+   Covered under: FREQUENCY NET "CLK40_0" 40.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: CLK_c   Source: CLK.PAD
+      Covered under: FREQUENCY NET "CLK40_0" 40.000000 MHz ;   Transfers: 2
+
+
+<A name="ptwr_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 4096  Score: 51483253
+Cumulative negative slack: 51483253
+
+Constraints cover 8547825 paths, 3 nets, and 11728 connections (99.67% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.12.0.240.2</big></U></B>
+Tue May 26 20:45:20 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o fpga_game_SD_impl1.twr -gui -msgset C:/Users/Rafal/Desktop/szymon_to_fpga/promote.xml fpga_game_SD_impl1.ncd fpga_game_SD_impl1.prf 
+Design file:     fpga_game_sd_impl1.ncd
+Preference file: fpga_game_sd_impl1.prf
+Device,speed:    LCMXO2-4000HC,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_1_0' Target='right'>FREQUENCY NET "CLK_c" 50.000000 MHz (0 errors)</A></LI>            630 items scored, 0 timing errors detected.
+
+<LI><A href='#par_twr_pref_1_1' Target='right'>FREQUENCY NET "CLK40_0" 40.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
+
+<LI><A href='#par_twr_pref_1_2' Target='right'>FREQUENCY NET "CLK40_90" 40.000000 MHz (0 errors)</A></LI>            0 items scored, 0 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="par_twr_pref_1_0"></A>Preference: FREQUENCY NET "CLK_c" 50.000000 MHz ;
+            630 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[8]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[8]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_799 to deb_rst/SLICE_799 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_799 to deb_rst/SLICE_799:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C30A.CLK to     R20C30A.Q1 deb_rst/SLICE_799 (from CLK_c)
+ROUTE         2     0.132     R20C30A.Q1 to     R20C30A.A1 deb_rst/counter[8]
+CTOF_DEL    ---     0.101     R20C30A.A1 to     R20C30A.F1 deb_rst/SLICE_799
+ROUTE         1     0.000     R20C30A.F1 to    R20C30A.DI1 deb_rst/counter_1[8] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_799:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30A.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_799:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30A.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[14]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[14]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_796 to deb_rst/SLICE_796 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_796 to deb_rst/SLICE_796:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C30D.CLK to     R20C30D.Q1 deb_rst/SLICE_796 (from CLK_c)
+ROUTE         2     0.132     R20C30D.Q1 to     R20C30D.A1 deb_rst/counter[14]
+CTOF_DEL    ---     0.101     R20C30D.A1 to     R20C30D.F1 deb_rst/SLICE_796
+ROUTE         1     0.000     R20C30D.F1 to    R20C30D.DI1 deb_rst/counter_1[14] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_796:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_796:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[7]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[7]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_799 to deb_rst/SLICE_799 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_799 to deb_rst/SLICE_799:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C30A.CLK to     R20C30A.Q0 deb_rst/SLICE_799 (from CLK_c)
+ROUTE         2     0.132     R20C30A.Q0 to     R20C30A.A0 deb_rst/counter[7]
+CTOF_DEL    ---     0.101     R20C30A.A0 to     R20C30A.F0 deb_rst/SLICE_799
+ROUTE         1     0.000     R20C30A.F0 to    R20C30A.DI0 deb_rst/counter_1[7] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_799:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30A.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_799:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30A.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[12]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[12]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_797 to deb_rst/SLICE_797 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_797 to deb_rst/SLICE_797:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C30C.CLK to     R20C30C.Q1 deb_rst/SLICE_797 (from CLK_c)
+ROUTE         2     0.132     R20C30C.Q1 to     R20C30C.A1 deb_rst/counter[12]
+CTOF_DEL    ---     0.101     R20C30C.A1 to     R20C30C.F1 deb_rst/SLICE_797
+ROUTE         1     0.000     R20C30C.F1 to    R20C30C.DI1 deb_rst/counter_1[12] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_797:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30C.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_797:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30C.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[3]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[3]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_801 to deb_rst/SLICE_801 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_801 to deb_rst/SLICE_801:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C29C.CLK to     R20C29C.Q0 deb_rst/SLICE_801 (from CLK_c)
+ROUTE         2     0.132     R20C29C.Q0 to     R20C29C.A0 deb_rst/counter[3]
+CTOF_DEL    ---     0.101     R20C29C.A0 to     R20C29C.F0 deb_rst/SLICE_801
+ROUTE         1     0.000     R20C29C.F0 to    R20C29C.DI0 deb_rst/counter_1[3] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_801:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C29C.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_801:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C29C.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[13]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[13]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_796 to deb_rst/SLICE_796 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_796 to deb_rst/SLICE_796:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C30D.CLK to     R20C30D.Q0 deb_rst/SLICE_796 (from CLK_c)
+ROUTE         2     0.132     R20C30D.Q0 to     R20C30D.A0 deb_rst/counter[13]
+CTOF_DEL    ---     0.101     R20C30D.A0 to     R20C30D.F0 deb_rst/SLICE_796
+ROUTE         1     0.000     R20C30D.F0 to    R20C30D.DI0 deb_rst/counter_1[13] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_796:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_796:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C30D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[8]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[8]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_shoot/SLICE_790 to deb_shoot/SLICE_790 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_790 to deb_shoot/SLICE_790:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R20C3A.CLK to      R20C3A.Q1 deb_shoot/SLICE_790 (from CLK_c)
+ROUTE         2     0.132      R20C3A.Q1 to      R20C3A.A1 deb_shoot/counter[8]
+CTOF_DEL    ---     0.101      R20C3A.A1 to      R20C3A.F1 deb_shoot/SLICE_790
+ROUTE         1     0.000      R20C3A.F1 to     R20C3A.DI1 deb_shoot/counter_1[8] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_790:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to     R20C3A.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_790:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to     R20C3A.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[2]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[2]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_802 to deb_rst/SLICE_802 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_802 to deb_rst/SLICE_802:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C29B.CLK to     R20C29B.Q1 deb_rst/SLICE_802 (from CLK_c)
+ROUTE         2     0.132     R20C29B.Q1 to     R20C29B.A1 deb_rst/counter[2]
+CTOF_DEL    ---     0.101     R20C29B.A1 to     R20C29B.F1 deb_rst/SLICE_802
+ROUTE         1     0.000     R20C29B.F1 to    R20C29B.DI1 deb_rst/counter_1[2] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_802:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C29B.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_802:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C29B.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_shoot/counter[6]  (from CLK_c +)
+   Destination:    FF         Data in        deb_shoot/counter[6]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_shoot/SLICE_791 to deb_shoot/SLICE_791 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_shoot/SLICE_791 to deb_shoot/SLICE_791:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R20C2D.CLK to      R20C2D.Q1 deb_shoot/SLICE_791 (from CLK_c)
+ROUTE         2     0.132      R20C2D.Q1 to      R20C2D.A1 deb_shoot/counter[6]
+CTOF_DEL    ---     0.101      R20C2D.A1 to      R20C2D.F1 deb_shoot/SLICE_791
+ROUTE         1     0.000      R20C2D.F1 to     R20C2D.DI1 deb_shoot/counter_1[6] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_shoot/SLICE_791:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to     R20C2D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_shoot/SLICE_791:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to     R20C2D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.379ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              deb_rst/counter[5]  (from CLK_c +)
+   Destination:    FF         Data in        deb_rst/counter[5]  (to CLK_c +)
+
+   Delay:               0.366ns  (63.9% logic, 36.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.366ns physical path delay deb_rst/SLICE_800 to deb_rst/SLICE_800 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.379ns
+
+ Physical Path Details:
+
+      Data path deb_rst/SLICE_800 to deb_rst/SLICE_800:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R20C29D.CLK to     R20C29D.Q0 deb_rst/SLICE_800 (from CLK_c)
+ROUTE         2     0.132     R20C29D.Q0 to     R20C29D.A0 deb_rst/counter[5]
+CTOF_DEL    ---     0.101     R20C29D.A0 to     R20C29D.F0 deb_rst/SLICE_800
+ROUTE         1     0.000     R20C29D.F0 to    R20C29D.DI0 deb_rst/counter_1[5] (to CLK_c)
+                  --------
+                    0.366   (63.9% logic, 36.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path CLK to deb_rst/SLICE_800:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C29D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path CLK to deb_rst/SLICE_800:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        21     1.730      105.PADDI to    R20C29D.CLK CLK_c
+                  --------
+                    1.730   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+================================================================================
+<A name="par_twr_pref_1_1"></A>Preference: FREQUENCY NET "CLK40_0" 40.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              del3/genblk1.d_0_[0]  (from CLK40_0 +)
+   Destination:    FF         Data in        del3/genblk1.del_stage_1_.d_1__0_  (to CLK40_0 +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay SLICE_1115 to SLICE_1115 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path SLICE_1115 to SLICE_1115:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R12C4D.CLK to      R12C4D.Q0 SLICE_1115 (from CLK40_0)
+ROUTE         1     0.152      R12C4D.Q0 to      R12C4D.M1 del3/d_0_[0] (to CLK40_0)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to SLICE_1115:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R12C4D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to SLICE_1115:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R12C4D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              del2/genblk1.del_stage_1_.d_1__0_  (from CLK40_0 +)
+   Destination:    FF         Data in        del2/genblk1.del_stage_2_.d_2__0_  (to CLK40_0 +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay SLICE_1538 to SLICE_1538 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path SLICE_1538 to SLICE_1538:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R12C7D.CLK to      R12C7D.Q0 SLICE_1538 (from CLK40_0)
+ROUTE         1     0.152      R12C7D.Q0 to      R12C7D.M1 del2/d_1__0_ (to CLK40_0)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to SLICE_1538:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R12C7D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to SLICE_1538:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R12C7D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              del1/genblk1.d_0_[0]  (from CLK40_0 +)
+   Destination:    FF         Data in        del1/genblk1.del_stage_1_.d_1__0_  (to CLK40_0 +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay SLICE_1681 to SLICE_1681 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path SLICE_1681 to SLICE_1681:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R10C3D.CLK to      R10C3D.Q0 SLICE_1681 (from CLK40_0)
+ROUTE         1     0.152      R10C3D.Q0 to      R10C3D.M1 del1/d_0_[0] (to CLK40_0)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to SLICE_1681:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R10C3D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to SLICE_1681:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R10C3D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              pong_hdmi_i2c_cfg/i2c_phy1/state[2]  (from CLK40_0 +)
+   Destination:    FF         Data in        pong_hdmi_i2c_cfg/i2c_phy1/data_mode[1]  (to CLK40_0 +)
+                   FF                        pong_hdmi_i2c_cfg/i2c_phy1/data_mode[0]
+
+   Delay:               0.280ns  (47.5% logic, 52.5% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.280ns physical path delay pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1028 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1180 meets
+     -0.024ns CE_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.024ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1028 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1180:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R8C10C.CLK to      R8C10C.Q0 pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1028 (from CLK40_0)
+ROUTE        22     0.147      R8C10C.Q0 to      R8C10A.CE pong_hdmi_i2c_cfg/x_ack (to CLK40_0)
+                  --------
+                    0.280   (47.5% logic, 52.5% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1028:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R8C10C.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1180:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R8C10A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              my_pong_inst/lfsr[14]  (from CLK40_0 +)
+   Destination:    FF         Data in        my_pong_inst/lfsr[15]  (to CLK40_0 +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay my_pong_inst/SLICE_1130 to my_pong_inst/SLICE_1130 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path my_pong_inst/SLICE_1130 to my_pong_inst/SLICE_1130:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R12C18A.CLK to     R12C18A.Q0 my_pong_inst/SLICE_1130 (from CLK40_0)
+ROUTE         1     0.152     R12C18A.Q0 to     R12C18A.M1 my_pong_inst/lfsr[14] (to CLK40_0)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to my_pong_inst/SLICE_1130:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R12C18A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to my_pong_inst/SLICE_1130:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R12C18A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              my_pong_inst/lfsr[8]  (from CLK40_0 +)
+   Destination:    FF         Data in        my_pong_inst/lfsr[9]  (to CLK40_0 +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay my_pong_inst/SLICE_1251 to my_pong_inst/SLICE_1251 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path my_pong_inst/SLICE_1251 to my_pong_inst/SLICE_1251:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133      R9C9A.CLK to       R9C9A.Q0 my_pong_inst/SLICE_1251 (from CLK40_0)
+ROUTE         1     0.152       R9C9A.Q0 to       R9C9A.M1 my_pong_inst/lfsr[8] (to CLK40_0)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to my_pong_inst/SLICE_1251:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to      R9C9A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to my_pong_inst/SLICE_1251:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to      R9C9A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/sda_2  (from CLK40_0 +)
+   Destination:    FF         Data in        pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/sda_3  (to CLK40_0 +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1179 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1857 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1179 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1857:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R14C11A.CLK to     R14C11A.Q0 pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1179 (from CLK40_0)
+ROUTE         1     0.152     R14C11A.Q0 to     R14C11B.M0 pong_hdmi_i2c_cfg/i2c_phy1/bit_sender/sda_2 (to CLK40_0)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1179:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R14C11A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to pong_hdmi_i2c_cfg/i2c_phy1/SLICE_1857:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R14C11B.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              pong_hdmi_i2c_cfg/i2c_phy1/state[20]  (from CLK40_0 +)
+   Destination:    FF         Data in        pong_hdmi_i2c_cfg/i2c_phy1/state[21]  (to CLK40_0 +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay SLICE_1019 to SLICE_1019 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path SLICE_1019 to SLICE_1019:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R15C12D.CLK to     R15C12D.Q0 SLICE_1019 (from CLK40_0)
+ROUTE         2     0.154     R15C12D.Q0 to     R15C12D.M1 pong_hdmi_i2c_cfg/i2c_phy1/state[20] (to CLK40_0)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to SLICE_1019:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R15C12D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to SLICE_1019:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R15C12D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              pong_hdmi_i2c_cfg/i2c_phy1/state[30]  (from CLK40_0 +)
+   Destination:    FF         Data in        pong_hdmi_i2c_cfg/i2c_phy1/state[31]  (to CLK40_0 +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay SLICE_1025 to SLICE_1025 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path SLICE_1025 to SLICE_1025:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R15C16A.CLK to     R15C16A.Q0 SLICE_1025 (from CLK40_0)
+ROUTE         2     0.154     R15C16A.Q0 to     R15C16A.M1 pong_hdmi_i2c_cfg/i2c_phy1/state[30] (to CLK40_0)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to SLICE_1025:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R15C16A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to SLICE_1025:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to    R15C16A.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              pong_vga_sync_gen/fsm_v[2]  (from CLK40_0 +)
+   Destination:    FF         Data in        pong_vga_sync_gen/fsm_v[3]  (to CLK40_0 +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay SLICE_1050 to SLICE_1050 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path SLICE_1050 to SLICE_1050:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R14C8D.CLK to      R14C8D.Q0 SLICE_1050 (from CLK40_0)
+ROUTE         5     0.154      R14C8D.Q0 to      R14C8D.M1 pong_vga_sync_gen/fsm_v[2] (to CLK40_0)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path pong_pll/PLLInst_0 to SLICE_1050:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R14C8D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path pong_pll/PLLInst_0 to SLICE_1050:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       371     0.668     RPLL.CLKOP to     R14C8D.CLK CLK40_0
+                  --------
+                    0.668   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+================================================================================
+<A name="par_twr_pref_1_2"></A>Preference: FREQUENCY NET "CLK40_90" 40.000000 MHz ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+<A name="ptwr_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "CLK_c" 50.000000 MHz ;   |     0.000 ns|     0.379 ns|   2  
+                                        |             |             |
+FREQUENCY NET "CLK40_0" 40.000000 MHz ; |     0.000 ns|     0.304 ns|   1  
+                                        |             |             |
+FREQUENCY NET "CLK40_90" 40.000000 MHz  |             |             |
+;                                       |            -|            -|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="ptwr_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 3 clocks:
+
+Clock Domain: CLK_c   Source: CLK.PAD   Loads: 21
+   Covered under: FREQUENCY NET "CLK_c" 50.000000 MHz ;
+
+Clock Domain: CLK40_90   Source: pong_pll/PLLInst_0.CLKOS   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: CLK40_0   Source: pong_pll/PLLInst_0.CLKOP   Loads: 371
+   Covered under: FREQUENCY NET "CLK40_0" 40.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: CLK_c   Source: CLK.PAD
+      Covered under: FREQUENCY NET "CLK40_0" 40.000000 MHz ;   Transfers: 2
+
+
+<A name="ptwr_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 8547825 paths, 3 nets, and 11727 connections (99.66% coverage)
+
+
+
+<A name="ptwr_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 51483253 (setup), 0 (hold)
+Cumulative negative slack: 51483253 (51483253+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

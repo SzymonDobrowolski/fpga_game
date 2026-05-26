@@ -1,0 +1,24 @@
+#
+# Logical Preferences generated for Lattice by Synplify map202003lat, Build 172R.
+#
+
+# Period Constraints 
+#FREQUENCY NET "pong_pll/CLK40_0" 100.0 MHz;
+#FREQUENCY PORT "CLK" 100.0 MHz;
+
+
+# Output Constraints 
+
+# Input Constraints 
+
+# Point-to-point Delay Constraints 
+
+
+
+# Block Path Constraints 
+#BLOCK PATH FROM CLKNET "CLK_c" TO CLKNET "pong_pll/CLK40_0";
+#BLOCK PATH FROM CLKNET "pong_pll/CLK40_0" TO CLKNET "CLK_c";
+
+BLOCK ASYNCPATHS;
+
+# End of generated Logical Preferences.

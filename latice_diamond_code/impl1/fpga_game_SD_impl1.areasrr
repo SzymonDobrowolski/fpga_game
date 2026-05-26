@@ -1,0 +1,449 @@
+----------------------------------------------------------------------
+Report for cell top.verilog
+
+Register bits: 652 of 4320 (15%)
+PIC Latch:       0
+I/O cells:       27
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 BB        1       100.0
+                              CCU2D      809       100.0
+                            EHXPLLJ        1       100.0
+                            FD1P3AX       62       100.0
+                            FD1P3BX       16       100.0
+                            FD1P3DX       86       100.0
+                            FD1P3IX       44       100.0
+                            FD1P3JX       22       100.0
+                            FD1S3AX       61       100.0
+                            FD1S3BX       20       100.0
+                            FD1S3DX      127       100.0
+                            FD1S3IX      184       100.0
+                            FD1S3JX       24       100.0
+                                GSR        1       100.0
+                                 IB        5       100.0
+                           IFS1P3DX        3       100.0
+                                INV       19       100.0
+                            L6MUX21       11       100.0
+                                 OB       21       100.0
+                             ODDRXE       16       100.0
+                           OFS1P3BX        2       100.0
+                           OFS1P3DX        1       100.0
+                           ORCALUT4     1924       100.0
+                              PFUMX       53       100.0
+                                PUR        1       100.0
+                                VHI       15       100.0
+                                VLO       12       100.0
+SUB MODULES 
+                                ddr        1       100.0
+                              ddr_0        1       100.0
+                             ddr_10        1       100.0
+                             ddr_11        1       100.0
+                             ddr_12        1       100.0
+                             ddr_13        1       100.0
+                             ddr_14        1       100.0
+                             ddr_15        1       100.0
+                             ddr_16        1       100.0
+                             ddr_17        1       100.0
+                              ddr_4        1       100.0
+                              ddr_5        1       100.0
+                              ddr_6        1       100.0
+                              ddr_7        1       100.0
+                              ddr_8        1       100.0
+                              ddr_9        1       100.0
+                          debouncer        1       100.0
+                        debouncer_1        1       100.0
+                        delay_1s_3s        1       100.0
+                      delay_1s_3s_0        1       100.0
+                      delay_1s_3s_1        1       100.0
+                        dev_i2c_phy        1       100.0
+                    dev_i2c_phy_bit        1       100.0
+                 dev_i2c_phy_scaler        1       100.0
+                       hdmi_i2c_cfg        1       100.0
+           pll_50_to_40Mhz_0_90_180        1       100.0
+                       pong_main_Z1        1       100.0
+                       quad_decoder        1       100.0
+                       vga_sync_gen        1       100.0
+                         vo_phy_ddr        1       100.0
+                            
+                         TOTAL          3571           
+----------------------------------------------------------------------
+Report for cell hdmi_i2c_cfg.netlist
+     Instance path:  pong_hdmi_i2c_cfg
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D       31         3.8
+                            FD1P3AX        9        14.5
+                            FD1P3BX       16       100.0
+                            FD1P3DX       25        29.1
+                            FD1S3AX        1         1.6
+                            FD1S3BX       11        55.0
+                            FD1S3DX       72        56.7
+                                INV        3        15.8
+                           ORCALUT4       91         4.7
+                                VHI        4        26.7
+                                VLO        4        33.3
+SUB MODULES 
+                        dev_i2c_phy        1       100.0
+                    dev_i2c_phy_bit        1       100.0
+                 dev_i2c_phy_scaler        1       100.0
+                            
+                         TOTAL           270           
+----------------------------------------------------------------------
+Report for cell dev_i2c_phy.netlist
+     Instance path:  pong_hdmi_i2c_cfg.i2c_phy1
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D        9         1.1
+                            FD1P3BX       16       100.0
+                            FD1P3DX       17        19.8
+                            FD1S3AX        1         1.6
+                            FD1S3BX        5        25.0
+                            FD1S3DX       42        33.1
+                                INV        2        10.5
+                           ORCALUT4       71         3.7
+                                VHI        3        20.0
+                                VLO        3        25.0
+SUB MODULES 
+                    dev_i2c_phy_bit        1       100.0
+                 dev_i2c_phy_scaler        1       100.0
+                            
+                         TOTAL           171           
+----------------------------------------------------------------------
+Report for cell dev_i2c_phy_bit.netlist
+     Instance path:  pong_hdmi_i2c_cfg.i2c_phy1.bit_sender
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1P3BX        6        37.5
+                            FD1P3DX        1         1.2
+                            FD1S3AX        1         1.6
+                            FD1S3BX        4        20.0
+                            FD1S3DX        1         0.8
+                                INV        2        10.5
+                           ORCALUT4       13         0.7
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL            30           
+----------------------------------------------------------------------
+Report for cell dev_i2c_phy_scaler.netlist
+     Instance path:  pong_hdmi_i2c_cfg.i2c_phy1.scaler
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D        9         1.1
+                            FD1S3DX       16        12.6
+                           ORCALUT4        1         0.1
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL            28           
+----------------------------------------------------------------------
+Report for cell vo_phy_ddr.netlist
+     Instance path:  pong_vo_phy_ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3AX        3         4.9
+                            FD1S3IX        6         3.3
+                                 OB       16        76.2
+                             ODDRXE       16       100.0
+                                VHI        2        13.3
+                                VLO        1         8.3
+SUB MODULES 
+                                ddr        1       100.0
+                              ddr_0        1       100.0
+                             ddr_10        1       100.0
+                             ddr_11        1       100.0
+                             ddr_12        1       100.0
+                             ddr_13        1       100.0
+                             ddr_14        1       100.0
+                             ddr_15        1       100.0
+                             ddr_16        1       100.0
+                             ddr_17        1       100.0
+                              ddr_4        1       100.0
+                              ddr_5        1       100.0
+                              ddr_6        1       100.0
+                              ddr_7        1       100.0
+                              ddr_8        1       100.0
+                              ddr_9        1       100.0
+                            
+                         TOTAL            60           
+----------------------------------------------------------------------
+Report for cell ddr_0.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.PCLK.ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL             4           
+----------------------------------------------------------------------
+Report for cell ddr_17.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DE.ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_16.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.VSYNC.ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_15.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.HSYNC.ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_14.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[3].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_13.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[6].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_12.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[9].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_11.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[2].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_10.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[5].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_9.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[8].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_8.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[11].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_7.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[1].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_6.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[4].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_5.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[7].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr_4.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[10].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell ddr.netlist
+  Original Cell name ddr
+     Instance path:  pong_vo_phy_ddr.DATA[0].ddr
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                                 OB        1         4.8
+                             ODDRXE        1         6.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell pong_main_Z1.netlist
+     Instance path:  my_pong_inst
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D      730        90.2
+                            FD1P3AX       52        83.9
+                            FD1P3DX       43        50.0
+                            FD1P3IX       44       100.0
+                            FD1P3JX       22       100.0
+                            FD1S3AX       48        78.7
+                            FD1S3BX        5        25.0
+                            FD1S3DX       13        10.2
+                            FD1S3IX      146        79.3
+                            FD1S3JX       24       100.0
+                                INV       11        57.9
+                            L6MUX21       11       100.0
+                           ORCALUT4     1763        91.6
+                              PFUMX       53       100.0
+                                VHI        2        13.3
+                                VLO        2        16.7
+SUB MODULES 
+                       quad_decoder        1       100.0
+                            
+                         TOTAL          2970           
+----------------------------------------------------------------------
+Report for cell quad_decoder.netlist
+     Instance path:  my_pong_inst.dec_rot
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3IX        2         1.1
+                           ORCALUT4        3         0.2
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL             7           
+----------------------------------------------------------------------
+Report for cell delay_1s_3s_1.netlist
+  Original Cell name delay_1s_3s
+     Instance path:  del3
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3AX        3         4.9
+                                VHI        1         6.7
+                            
+                         TOTAL             4           
+----------------------------------------------------------------------
+Report for cell delay_1s_3s_0.netlist
+  Original Cell name delay_1s_3s
+     Instance path:  del2
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3AX        3         4.9
+                                VHI        1         6.7
+                            
+                         TOTAL             4           
+----------------------------------------------------------------------
+Report for cell delay_1s_3s.netlist
+  Original Cell name delay_1s_3s
+     Instance path:  del1
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            FD1S3AX        3         4.9
+                                VHI        1         6.7
+                            
+                         TOTAL             4           
+----------------------------------------------------------------------
+Report for cell vga_sync_gen.netlist
+     Instance path:  pong_vga_sync_gen
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D       24         3.0
+                            FD1P3DX       18        20.9
+                            FD1S3BX        4        20.0
+                            FD1S3DX       42        33.1
+                                INV        2        10.5
+                           ORCALUT4       49         2.5
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL           141           
+----------------------------------------------------------------------
+Report for cell pll_50_to_40Mhz_0_90_180.netlist
+     Instance path:  pong_pll
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                            EHXPLLJ        1       100.0
+                                VLO        1         8.3
+                            
+                         TOTAL             2           
+----------------------------------------------------------------------
+Report for cell debouncer_1.netlist
+  Original Cell name debouncer
+     Instance path:  deb_shoot
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D        9         1.1
+                            FD1S3IX       16         8.7
+                                INV        1         5.3
+                           ORCALUT4        7         0.4
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL            35           
+----------------------------------------------------------------------
+Report for cell debouncer.netlist
+  Original Cell name debouncer
+     Instance path:  deb_rst
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                              CCU2D        9         1.1
+                            FD1P3AX        1         1.6
+                            FD1S3IX       16         8.7
+                                INV        2        10.5
+                           ORCALUT4        7         0.4
+                                VHI        1         6.7
+                                VLO        1         8.3
+                            
+                         TOTAL            37           
